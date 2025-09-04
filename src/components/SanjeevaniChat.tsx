@@ -66,8 +66,12 @@ const SanjeevaniChat = () => {
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SIA</span>
+              <div className="w-8 h-8 rounded-full overflow-hidden">
+                <img
+                  src="/sia-avatar.png"
+                  alt="SIA Avatar"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-white font-medium">SIA Assistant</h3>

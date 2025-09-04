@@ -8,6 +8,14 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import SplashScreen from "@/components/SplashScreen";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
+import Frameworks from "./pages/Frameworks";
+import FrameworkDetail from "./pages/FrameworkDetail";
+import Compliances from "./pages/Compliances";
+import ComplianceDetail from "./pages/ComplianceDetail";
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 import SanjeevaniChat from "./components/SanjeevaniChat";
 
@@ -52,6 +60,14 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/case-studies" element={<CaseStudies />} />
+                <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
+                <Route path="/frameworks" element={<Frameworks />} />
+                <Route path="/frameworks/:id" element={<FrameworkDetail />} />
+                <Route path="/compliances" element={<Compliances />} />
+                <Route path="/compliances/:id" element={<ComplianceDetail />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>

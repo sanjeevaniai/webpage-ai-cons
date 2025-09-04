@@ -67,9 +67,18 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <a href="#case-studies" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
+            <Link to="/case-studies" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
               Case Studies
-            </a>
+            </Link>
+            <Link to="/frameworks" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors">
+              Frameworks
+            </Link>
+            <Link to="/compliances" className="text-gray-300 hover:text-purple-400 font-medium transition-colors">
+              Compliances
+            </Link>
+            <Link to="/blog" className="text-gray-300 hover:text-orange-400 font-medium transition-colors">
+              Blog
+            </Link>
             <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-500 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-sky-400/25">
               Get in touch
             </a>
@@ -146,13 +155,34 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <a
-                href="#case-studies"
+              <Link
+                to="/case-studies"
                 className="text-gray-300 hover:text-cyan-400 font-medium transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Case Studies
-              </a>
+              </Link>
+              <Link
+                to="/frameworks"
+                className="text-gray-300 hover:text-emerald-400 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Frameworks
+              </Link>
+              <Link
+                to="/compliances"
+                className="text-gray-300 hover:text-purple-400 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Compliances
+              </Link>
+              <Link
+                to="/blog"
+                className="text-gray-300 hover:text-orange-400 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
               <a
                 href="https://calendly.com/sia-sanjeevaniai/30min"
                 target="_blank"
