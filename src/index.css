@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { 
+  color-scheme: dark;
+  
+  /* Custom colors for healthcare AI theme - matching exact colors from screenshots */
+  --ink: 210 30% 14%; /* Dark navy background #1e293b */
+  --green-primary: 158 64% 52%; /* Emerald/teal green #10b981 */
+  --green-secondary: 158 64% 42%; /* Darker emerald */
+  --sky-primary: 188 82% 44%; /* Bright cyan #06b6d4 */
+  --sky-secondary: 188 82% 34%; /* Darker cyan */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 30% 8%; /* Darker navy background for better contrast */
+    --foreground: 0 0% 98%; /* Pure white text for maximum contrast */
+    --card: 210 30% 12%; /* Slightly lighter than background for cards */
+    --card-foreground: 0 0% 95%; /* Near-white text for cards */
+    --popover: 210 30% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 158 64% 52%; /* Emerald green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 210 30% 15%;
+    --muted-foreground: 0 0% 85%; /* Much brighter gray for readability */
+    --accent: 188 82% 44%; /* Cyan accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 30% 25%; /* Lighter border for visibility */
+    --input: 210 30% 18%;
+    --ring: 158 64% 52%;
+    --sidebar-background: 210 30% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 158 64% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 210 30% 25%;
+    --sidebar-ring: 158 64% 52%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gray-900 text-white antialiased;
+  }
+  
+  /* Force text visibility */
+  .text-foreground {
+    color: #ffffff !important;
+  }
+  
+  .text-muted-foreground {
+    color: #d1d5db !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+  }
+  
+  p {
+    color: #e5e7eb !important;
+  }
+}
+
+html, body { 
+  height: 100%; 
+}
+
+.no-scrollbar::-webkit-scrollbar { 
+  display: none; 
+}
+
+.no-scrollbar { 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.prose-invert a { 
+  text-decoration: underline; 
+  text-underline-offset: 4px; 
+}
