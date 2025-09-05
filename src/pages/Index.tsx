@@ -331,15 +331,23 @@ const Index = () => {
           {/* AI Security & Governance Certification */}
           <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
             <div className="text-center">
-              <img
-                src="/AI Security & Governance.png"
-                alt="AI Security & Governance Certification"
+              <img 
+                src="/AI Security & Governance.png" 
+                alt="AI Security & Governance Certification" 
                 className="w-full h-32 object-contain mb-4"
               />
               <h3 className="text-lg font-semibold text-white mb-2">AI Security & Governance</h3>
-              <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block">
-                IN PROGRESS
+              <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block mb-3">
+                VERIFIED
               </div>
+              <a 
+                href="https://education.securiti.ai/verification/1332C68E8-1332C6757-12D084B90/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-emerald-300 hover:text-emerald-200 text-sm font-medium transition-colors"
+              >
+                Verify Certificate →
+              </a>
             </div>
           </div>
 
