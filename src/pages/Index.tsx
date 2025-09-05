@@ -21,6 +21,7 @@ const Index = () => {
       {ServicesSection()}
       {CaseStudiesSection()}
       {Credentials()}
+      {Certifications()}
       {Contact()}
       <Footer />
     </div>
@@ -269,7 +270,7 @@ const Index = () => {
               <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30">
                 <h3 className="text-green-600 dark:text-green-400 font-medium mb-3">Suneeta Modekurty</h3>
                 <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                  Founder & CEO, SANJEEVANI AI | Building AI Governance & Multi-Agent Systems That Actually Work | AI You Can Trust to Increase ROI & Reduce Costs | Award-winning AI & Data Science Leader | O-1A Extraordinary Ability
+                  Founder & CEO, SANJEEVANI AI | Building AI Governance & Multi-Agent Systems That Actually Work | AI You Can Trust to Increase ROI & Reduce Costs | Award-winning AI & Data Science Leader | O-1A Extraordinary Ability | Certified AI Security & Governance Expert
                 </p>
                 <div className="flex items-center gap-2 text-xs text-gray-400">
                   <span className="w-2 h-2 bg-green-400 rounded-full"></span>
@@ -305,6 +306,85 @@ const Index = () => {
                   <p className="mt-3 text-sm text-gray-300 leading-relaxed">{c.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function Certifications() {
+    return (
+      <section id="certifications" className="mx-auto max-w-6xl px-4 mt-20 md:mt-28 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-sky-500/5 rounded-full blur-3xl"></div>
+
+        <div className="text-center mb-12 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Industry Certifications</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Certified expertise in AI governance, data security, privacy operations, and compliance frameworks
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          {/* AI Security & Governance Certification */}
+          <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
+            <div className="text-center">
+              <img
+                src="/AI Security & Governance.png"
+                alt="AI Security & Governance Certification"
+                className="w-full h-32 object-contain mb-4"
+              />
+              <h3 className="text-lg font-semibold text-white mb-2">AI Security & Governance</h3>
+              <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block">
+                IN PROGRESS
+              </div>
+            </div>
+          </div>
+
+          {/* DSPM Certification */}
+          <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-6 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
+            <div className="text-center">
+              <img
+                src="/DSPM.png"
+                alt="DSPM Certification"
+                className="w-full h-32 object-contain mb-4"
+              />
+              <h3 className="text-lg font-semibold text-white mb-2">DSPM</h3>
+              <div className="text-xs text-sky-300 font-medium bg-sky-500/20 px-2 py-1 rounded-full inline-block">
+                IN PROGRESS
+              </div>
+            </div>
+          </div>
+
+          {/* PrivacyOps Certification */}
+          <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
+            <div className="text-center">
+              <img
+                src="/PrivacyOps.png"
+                alt="PrivacyOps Certification"
+                className="w-full h-32 object-contain mb-4"
+              />
+              <h3 className="text-lg font-semibold text-white mb-2">PrivacyOps</h3>
+              <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block">
+                IN PROGRESS
+              </div>
+            </div>
+          </div>
+
+          {/* HIPAA Compliance */}
+          <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-6 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
+            <div className="text-center">
+              <div className="w-full h-32 flex items-center justify-center mb-4">
+                <div className="w-20 h-20 bg-sky-500/30 rounded-xl flex items-center justify-center">
+                  <span className="text-3xl">🏥</span>
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">HIPAA</h3>
+              <div className="text-xs text-sky-300 font-medium bg-sky-500/20 px-2 py-1 rounded-full inline-block">
+                IN PROGRESS
+              </div>
             </div>
           </div>
         </div>
