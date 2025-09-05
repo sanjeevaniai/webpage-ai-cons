@@ -19,6 +19,7 @@ const Index = () => {
       <Header />
       {Masthead()}
       {ServicesSection()}
+      {UserGroupsSection()}
       {CaseStudiesSection()}
       {Credentials()}
       {Certifications()}
@@ -202,6 +203,128 @@ const Index = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function UserGroupsSection() {
+    return (
+      <section id="user-groups" className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Solutions for Every Healthcare Stakeholder</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Tailored AI governance and implementation strategies that address the unique needs of each healthcare ecosystem participant
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* For Clinicians */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-emerald-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">👩‍⚕️</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">For Clinicians</h3>
+                <p className="text-emerald-300 text-sm font-medium">AI-Powered Clinical Decision Support</p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Personalized AI recommendations that enhance diagnostic accuracy while maintaining clinical autonomy</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">HIPAA-compliant AI tools that integrate seamlessly with existing EHR systems</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Real-time clinical insights with full audit trails and explainable AI decision support</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Reduced administrative burden through intelligent automation of routine clinical tasks</p>
+                </div>
+              </div>
+            </div>
+
+            {/* For Researchers */}
+            <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-8 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-sky-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🔬</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">For Researchers</h3>
+                <p className="text-sky-300 text-sm font-medium">Advanced AI Research Infrastructure</p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Multi-agent AI systems for complex research data analysis and hypothesis generation</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Ethical AI frameworks ensuring research integrity and reproducible results</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Data governance solutions for secure collaboration across research institutions</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">AI-powered literature review and knowledge synthesis for faster discovery</p>
+                </div>
+              </div>
+            </div>
+
+            {/* For Survivors/Caregivers */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-emerald-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🤝</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">For Survivors & Caregivers</h3>
+                <p className="text-emerald-300 text-sm font-medium">Compassionate AI Support Systems</p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Personalized AI companions that provide emotional support and health monitoring</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Privacy-first AI tools that respect patient autonomy and data ownership</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Accessible AI interfaces designed for diverse needs and technical comfort levels</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300 text-sm">Community-driven AI solutions that connect survivors and caregivers for mutual support</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-300 mb-6">
+              Ready to implement AI solutions tailored to your specific healthcare role?
+            </p>
+            <a 
+              href="#contact" 
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25"
+            >
+              Get Started with Your AI Journey
+              <span className="text-lg">→</span>
+            </a>
           </div>
         </div>
       </section>
