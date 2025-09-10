@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { caseStudiesService, CaseStudySummary } from '@/lib/caseStudies'
-import { Search, ArrowRight, TrendingUp, Shield, DollarSign, Home } from 'lucide-react'
+import { Search, ArrowRight, TrendingUp, Shield, DollarSign, Home, BarChart3, ExternalLink } from 'lucide-react'
 
 const CaseStudies = () => {
     const [caseStudies, setCaseStudies] = useState<CaseStudySummary[]>([])
@@ -66,9 +66,27 @@ const CaseStudies = () => {
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
                         AI Success Stories
                     </h1>
-                    <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+                    <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4 mb-6">
                         Discover how we've helped companies reduce loss, improve ROI, and build trustworthy AI systems that actually work.
                     </p>
+
+                    {/* Streamlit Dashboard Button */}
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a
+                            href="http://localhost:8501"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                            <BarChart3 className="w-5 h-5 mr-2" />
+                            Interactive Dashboard
+                            <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                        <div className="text-sm text-gray-400 text-center">
+                            <p>📊 Explore detailed analytics, interactive demos, and comprehensive insights</p>
+                            <p className="text-xs mt-1">Make sure to run: <code className="bg-gray-800 px-2 py-1 rounded">python launch_streamlit.py</code></p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Search Bar */}

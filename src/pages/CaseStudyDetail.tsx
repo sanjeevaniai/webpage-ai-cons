@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { caseStudiesService, CaseStudy } from '@/lib/caseStudies'
-import { ArrowLeft, TrendingUp, Shield, DollarSign, Clock, CheckCircle, Users, Home } from 'lucide-react'
+import { ArrowLeft, TrendingUp, Shield, DollarSign, Clock, CheckCircle, Users, Home, BarChart3, ExternalLink } from 'lucide-react'
 
 const CaseStudyDetail = () => {
     const { id } = useParams<{ id: string }>()
@@ -181,6 +181,26 @@ const CaseStudyDetail = () => {
                             {caseStudy.content}
                         </div>
                     </div>
+                </div>
+
+                {/* Interactive Dashboard CTA */}
+                <div className="text-center bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-8 mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                        Explore Interactive Analytics
+                    </h3>
+                    <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
+                        Dive deeper into our case studies with interactive dashboards, demos, and comprehensive analytics.
+                    </p>
+                    <a
+                        href="http://localhost:8501"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                        <BarChart3 className="w-5 h-5 mr-2" />
+                        Open Interactive Dashboard
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                    </a>
                 </div>
 
                 {/* CTA */}
