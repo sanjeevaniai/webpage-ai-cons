@@ -19,8 +19,10 @@ const Index = () => {
       <Header />
       {Masthead()}
       {ServicesSection()}
+      {HowWeEngageSection()}
       {WhatYouGetSection()}
       {UserGroupsSection()}
+      {WhyChooseUsSection()}
       {CaseStudiesSection()}
       {Credentials()}
       {Certifications()}
@@ -46,10 +48,10 @@ const Index = () => {
               Available for new projects
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-              Build AI Systems That Work — And You Can Trust
+              AI That's Safe to Ship—And Simple to Govern
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-2xl">
-              Governance, compliance, and Responsible AI for healthcare, finance/insurance, and the public sector.
+              SANJEEVANI AI helps organizations adopt AI responsibly—making it governed, compliant, and trustworthy from day one. We operate at the intersection of strategy, governance, and engineering across healthcare, fintech, edtech, and insurance, turning regulation into a design constraint that accelerates safe deployment and measurable ROI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25">
@@ -141,23 +143,23 @@ const Index = () => {
   function ServicesSection() {
     const services = [
       {
-        title: "AI Governance & Compliance Audit",
-        description: "Gap analysis vs. HIPAA/NIST/GDPR/CPRA, data flows & access, model lifecycle. Outcome: lower regulatory exposure, executive clarity.",
+        title: "AI & Data Governance",
+        description: "Design and implement frameworks aligned with HIPAA, NIST AI RMF, GDPR, CPRA, and DSPM. We translate policy into actionable controls, roles, and auditable processes.",
         symbol: "🛡️"
       },
       {
-        title: "Responsible AI Strategy (RAI/XAI)",
-        description: "Bias testing & mitigation, explainability playbook, model cards & audit logs, governance KPIs. Outcome: trustworthy AI that passes scrutiny.",
+        title: "Responsible & Explainable AI",
+        description: "Bias assessment and mitigation, fairness testing, model documentation, transparency reporting, and human-in-the-loop safeguards.",
         symbol: "📊"
       },
       {
-        title: "Executive Training & Workshops",
-        description: "Board/executive briefings, policy templates, AI risk & procurement checklists, team enablement. Outcome: leaders aligned; faster, safer adoption.",
+        title: "Executive Strategy Sessions",
+        description: "Board-level and C-suite workshops on AI risk, compliance, trust, and adoption—tailored playbooks, roadmaps, and investment cases.",
         symbol: "🎓"
       },
       {
-        title: "Applied AI Advisory (LLM/RAG/Agents)",
-        description: "Use-case selection, guardrails, RAG architecture & evaluation, LoRA/QLoRA guidance. Outcome: useful AI with reduced hallucinations.",
+        title: "Engineering Advisory",
+        description: "Architecture and reviews for multi-agent systems, RAG pipelines, and LLM fine-tuning (LoRA/QLoRA/PEFT), including evaluation, guardrails, and LLMOps.",
         symbol: "🤖"
       }
     ]
@@ -170,7 +172,7 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Services That Actually Work</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Do</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               We build AI systems that people can trust, reduce unnecessary loss, and deliver measurable ROI. Our data-driven approach ensures compliance, ethics, and real business value.
             </p>
@@ -193,6 +195,90 @@ const Index = () => {
                   <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-gray-200">{service.description}</p>
                 </div>
               );
+            })}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function HowWeEngageSection() {
+    const engagementSteps = [
+      {
+        title: "Rapid Compliance Baseline",
+        description: "Assess current state, map gaps, and deliver a 90-day roadmap with prioritized controls.",
+        icon: "📋",
+        color: "emerald"
+      },
+      {
+        title: "Build with Guardrails",
+        description: "Partner with your teams to design data pipelines, retrieval, prompts, and policies that meet regulatory and security requirements.",
+        icon: "🔧",
+        color: "cyan"
+      },
+      {
+        title: "Operationalize & Monitor",
+        description: "Establish KPIs for quality, cost, latency, and safety; instrument monitoring, alerts, and continuous evaluations.",
+        icon: "📊",
+        color: "sky"
+      },
+      {
+        title: "Enable & Advise",
+        description: "Train executives and practitioners; offer ongoing advisory and fractional CAIO support.",
+        icon: "🎓",
+        color: "purple"
+      }
+    ]
+
+    return (
+      <section id="how-we-engage" className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How We Engage</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Our proven methodology ensures your AI initiatives are built right from the start, with governance and compliance as core design principles.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {engagementSteps.map((step, i) => {
+              const colorClasses = {
+                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
+                cyan: 'border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10',
+                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
+                purple: 'border-purple-400/30 hover:border-purple-400/50 hover:bg-purple-500/5 hover:shadow-purple-500/10'
+              }
+
+              const textColorClasses = {
+                emerald: 'text-emerald-400 group-hover:text-emerald-300',
+                cyan: 'text-cyan-400 group-hover:text-cyan-300',
+                sky: 'text-sky-400 group-hover:text-sky-300',
+                purple: 'text-purple-400 group-hover:text-purple-300'
+              }
+
+              return (
+                <div
+                  key={i}
+                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[step.color]}`}
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className={`text-3xl transition-colors ${textColorClasses[step.color]}`}>
+                      {step.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white transition-colors group-hover:text-gray-100">
+                      {step.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-gray-200">
+                    {step.description}
+                  </p>
+                </div>
+              )
             })}
           </div>
         </div>
@@ -278,7 +364,7 @@ const Index = () => {
                 sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
                 purple: 'border-purple-400/30 hover:border-purple-400/50 hover:bg-purple-500/5 hover:shadow-purple-500/10'
               }
-              
+
               const textColorClasses = {
                 emerald: 'text-emerald-400 group-hover:text-emerald-300',
                 cyan: 'text-cyan-400 group-hover:text-cyan-300',
@@ -299,16 +385,15 @@ const Index = () => {
                       {deliverable.category}
                     </h3>
                   </div>
-                  
+
                   <ul className="space-y-3">
                     {deliverable.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start gap-3">
-                        <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 transition-colors ${
-                          deliverable.color === 'emerald' ? 'bg-emerald-400 group-hover:bg-emerald-300' :
+                        <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 transition-colors ${deliverable.color === 'emerald' ? 'bg-emerald-400 group-hover:bg-emerald-300' :
                           deliverable.color === 'cyan' ? 'bg-cyan-400 group-hover:bg-cyan-300' :
-                          deliverable.color === 'sky' ? 'bg-sky-400 group-hover:bg-sky-300' :
-                          'bg-purple-400 group-hover:bg-purple-300'
-                        }`}></div>
+                            deliverable.color === 'sky' ? 'bg-sky-400 group-hover:bg-sky-300' :
+                              'bg-purple-400 group-hover:bg-purple-300'
+                          }`}></div>
                         <span className="text-gray-300 leading-relaxed transition-colors group-hover:text-gray-200">
                           {item}
                         </span>
@@ -468,6 +553,81 @@ const Index = () => {
               Get Started with Your AI Journey
               <span className="text-lg">→</span>
             </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function WhyChooseUsSection() {
+    const reasons = [
+      {
+        title: "Compliance-first by design",
+        description: "Solutions and artifacts stand up to audits, security reviews, and regulators.",
+        icon: "🛡️",
+        color: "emerald"
+      },
+      {
+        title: "Pragmatic engineering",
+        description: "Production-ready patterns, not slideware—built for maintainability and scale.",
+        icon: "⚙️",
+        color: "cyan"
+      },
+      {
+        title: "Business outcomes",
+        description: "Clear metrics tied to revenue, cost, risk reduction, and user experience.",
+        icon: "📈",
+        color: "sky"
+      }
+    ]
+
+    return (
+      <section id="why-choose-us" className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Teams Choose Us</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We deliver AI solutions that are not just technically sound, but built for real-world compliance and business success.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {reasons.map((reason, i) => {
+              const colorClasses = {
+                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
+                cyan: 'border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10',
+                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10'
+              }
+
+              const textColorClasses = {
+                emerald: 'text-emerald-400 group-hover:text-emerald-300',
+                cyan: 'text-cyan-400 group-hover:text-cyan-300',
+                sky: 'text-sky-400 group-hover:text-sky-300'
+              }
+
+              return (
+                <div
+                  key={i}
+                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[reason.color]}`}
+                >
+                  <div className="text-center">
+                    <div className={`text-4xl mb-4 transition-colors ${textColorClasses[reason.color]}`}>
+                      {reason.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-4 transition-colors group-hover:text-gray-100">
+                      {reason.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-gray-200">
+                      {reason.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -723,6 +883,13 @@ const Index = () => {
         status: "active"
       },
       {
+        name: "Topmate",
+        url: "https://topmate.io/suneeta19",
+        description: "1:1 AI Strategy Consultations - $149",
+        icon: "💬",
+        status: "active"
+      },
+      {
         name: "Toptal",
         url: "#",
         description: "Top 3% AI talent network",
@@ -780,44 +947,39 @@ const Index = () => {
                 href={platform.url}
                 target={platform.status === 'active' ? '_blank' : undefined}
                 rel={platform.status === 'active' ? 'noopener noreferrer' : undefined}
-                className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${
-                  platform.status === 'active' 
-                    ? 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10 cursor-pointer' 
-                    : 'border-gray-700/30 hover:border-gray-600/50 cursor-not-allowed opacity-60'
-                }`}
+                className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${platform.status === 'active'
+                  ? 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10 cursor-pointer'
+                  : 'border-gray-700/30 hover:border-gray-600/50 cursor-not-allowed opacity-60'
+                  }`}
                 onClick={platform.status === 'coming-soon' ? (e) => e.preventDefault() : undefined}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className={`text-2xl transition-colors ${
-                    platform.status === 'active' 
-                      ? 'text-emerald-400 group-hover:text-emerald-300' 
-                      : 'text-gray-500'
-                  }`}>
+                  <div className={`text-2xl transition-colors ${platform.status === 'active'
+                    ? 'text-emerald-400 group-hover:text-emerald-300'
+                    : 'text-gray-500'
+                    }`}>
                     {platform.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className={`text-lg font-semibold transition-colors ${
-                      platform.status === 'active' 
-                        ? 'text-white group-hover:text-gray-100' 
-                        : 'text-gray-500'
-                    }`}>
+                    <h3 className={`text-lg font-semibold transition-colors ${platform.status === 'active'
+                      ? 'text-white group-hover:text-gray-100'
+                      : 'text-gray-500'
+                      }`}>
                       {platform.name}
                     </h3>
-                    <div className={`text-xs px-2 py-1 rounded-full inline-block ${
-                      platform.status === 'active' 
-                        ? 'bg-emerald-500/20 text-emerald-300' 
-                        : 'bg-gray-500/20 text-gray-400'
-                    }`}>
+                    <div className={`text-xs px-2 py-1 rounded-full inline-block ${platform.status === 'active'
+                      ? 'bg-emerald-500/20 text-emerald-300'
+                      : 'bg-gray-500/20 text-gray-400'
+                      }`}>
                       {platform.status === 'active' ? 'Available' : 'Coming Soon'}
                     </div>
                   </div>
                 </div>
-                
-                <p className={`text-sm leading-relaxed transition-colors ${
-                  platform.status === 'active' 
-                    ? 'text-gray-300 group-hover:text-gray-200' 
-                    : 'text-gray-500'
-                }`}>
+
+                <p className={`text-sm leading-relaxed transition-colors ${platform.status === 'active'
+                  ? 'text-gray-300 group-hover:text-gray-200'
+                  : 'text-gray-500'
+                  }`}>
                   {platform.description}
                 </p>
 
@@ -871,7 +1033,7 @@ const Index = () => {
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to make AI trustworthy?
+              If you need AI that's safe to ship—and simple to govern—let's talk.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -880,15 +1042,15 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
               >
-                Request an Assessment
+                Book a 1:1 Call
               </a>
               <a
-                href="https://calendly.com/sia-sanjeevaniai/30min"
+                href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-emerald-600 transition-colors"
               >
-                Book a Strategy Call
+                Connect on LinkedIn
               </a>
             </div>
           </div>
@@ -908,6 +1070,7 @@ function Footer() {
         <div className="flex flex-wrap gap-4">
           <a href="https://www.linkedin.com/company/sanjeevani-ai-llc/" target="_blank" rel="noopener noreferrer" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">LinkedIn</a>
           <a href="https://www.upwork.com/freelancers/~01968cb9a3759f39de?mp_source=share" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Upwork</a>
+          <a href="https://topmate.io/suneeta19" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 dark:hover:text-purple-300 transition-colors">Topmate</a>
           <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">Publications</a>
           <a href="#" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Speaking</a>
           <span className="text-gray-300 dark:text-gray-600">•</span>

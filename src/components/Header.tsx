@@ -68,7 +68,7 @@ const Header = () => {
                 </div>
               )}
             </div>
-            
+
             {/* Pricing Dropdown */}
             <div className="relative">
               <button
@@ -118,7 +118,7 @@ const Header = () => {
                 </div>
               )}
             </div>
-            
+
             <Link to="/case-studies" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
               Case Studies
             </Link>
@@ -210,7 +210,7 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              
+
               {/* Pricing Mobile Menu */}
               <div className="flex flex-col">
                 <button
@@ -257,7 +257,7 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              
+
               <Link
                 to="/case-studies"
                 className="text-gray-300 hover:text-cyan-400 font-medium transition-colors"
