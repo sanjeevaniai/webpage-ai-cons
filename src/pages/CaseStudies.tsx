@@ -72,19 +72,27 @@ const CaseStudies = () => {
 
                     {/* Streamlit Dashboard Button */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a
-                            href="http://localhost:8501"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                        >
-                            <BarChart3 className="w-5 h-5 mr-2" />
-                            Interactive Dashboard
-                            <ExternalLink className="w-4 h-4 ml-2" />
-                        </a>
-                        <div className="text-sm text-gray-400 text-center">
-                            <p>📊 Explore detailed analytics, interactive demos, and comprehensive insights</p>
-                            <p className="text-xs mt-1">Make sure to run: <code className="bg-gray-800 px-2 py-1 rounded">python launch_streamlit.py</code></p>
+                        <div className="space-y-4">
+                            <a
+                                href="http://localhost:8501"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                            >
+                                <BarChart3 className="w-5 h-5 mr-2" />
+                                Interactive Dashboard
+                                <ExternalLink className="w-4 h-4 ml-2" />
+                            </a>
+                            <div className="text-sm text-gray-400 text-center space-y-2">
+                                <p>📊 Explore detailed analytics, interactive demos, and comprehensive insights</p>
+                                <div className="bg-gray-800/50 rounded-lg p-3 text-left">
+                                    <p className="text-yellow-400 font-semibold mb-2">🚀 Quick Start:</p>
+                                    <p className="text-xs mb-1">1. Run: <code className="bg-gray-700 px-2 py-1 rounded">python launch_streamlit.py</code></p>
+                                    <p className="text-xs mb-1">2. Or use: <code className="bg-gray-700 px-2 py-1 rounded">./launch_dashboard.sh</code></p>
+                                    <p className="text-xs">3. Dashboard will open at http://localhost:8501</p>
+                                </div>
+                                <p className="text-xs text-blue-400">💡 For production deployment, consider using Streamlit Cloud</p>
+                            </div>
                         </div>
                     </div>
                 </div>

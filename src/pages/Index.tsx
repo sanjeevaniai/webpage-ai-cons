@@ -19,11 +19,14 @@ const Index = () => {
       <Header />
       {Masthead()}
       {ServicesSection()}
+      {WhatYouGetSection()}
       {UserGroupsSection()}
       {CaseStudiesSection()}
       {Credentials()}
       {Certifications()}
       {Contact()}
+      {PlatformLinksSection()}
+      {CTAStrip()}
       <Footer />
     </div>
   )
@@ -43,19 +46,17 @@ const Index = () => {
               Available for new projects
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-              Build AI Systems That
-              <br />
-              <span className="text-green-600 dark:text-green-400">Actually Work & You Can Trust</span>
+              Build AI Systems That Work — And You Can Trust
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-2xl">
-              We reduce unnecessary loss for companies by building trustworthy AI systems that deliver real ROI. Our data-driven AI governance and multi-agent systems follow HIPAA compliance and NIST frameworks.
+              Governance, compliance, and Responsible AI for healthcare, finance/insurance, and the public sector.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a href="#contact" className="bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25">
-                Start Your AI Journey
+              <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25">
+                Get a Governance Consultation
               </a>
               <a href="#services" className="border border-green-400/40 dark:border-green-300/30 text-green-600 dark:text-green-300 px-6 py-3 rounded-xl font-medium hover:bg-green-500/10 dark:hover:bg-green-500/20 transition-all duration-200">
-                Explore Services
+                See Services
               </a>
             </div>
             <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -140,34 +141,24 @@ const Index = () => {
   function ServicesSection() {
     const services = [
       {
-        title: "Data Science & AI Governance",
-        description: "Build trustworthy AI systems with comprehensive governance frameworks. We implement data-driven AI solutions that follow HIPAA compliance and NIST frameworks to reduce risk and ensure ethical AI deployment.",
+        title: "AI Governance & Compliance Audit",
+        description: "Gap analysis vs. HIPAA/NIST/GDPR/CPRA, data flows & access, model lifecycle. Outcome: lower regulatory exposure, executive clarity.",
         symbol: "🛡️"
       },
       {
-        title: "AI Strategy Consulting",
-        description: "Strategic guidance to reduce unnecessary loss and improve ROI through AI. We consult and coach AI strategies that deliver measurable results while maintaining the highest standards of AI ethics and compliance.",
+        title: "Responsible AI Strategy (RAI/XAI)",
+        description: "Bias testing & mitigation, explainability playbook, model cards & audit logs, governance KPIs. Outcome: trustworthy AI that passes scrutiny.",
         symbol: "📊"
       },
       {
-        title: "Multi-Agent Systems",
-        description: "Develop intelligent multi-agent systems that work seamlessly together. Our AI systems are built to be reliable, trustworthy, and deliver consistent results that you can depend on for critical business operations.",
+        title: "Executive Training & Workshops",
+        description: "Board/executive briefings, policy templates, AI risk & procurement checklists, team enablement. Outcome: leaders aligned; faster, safer adoption.",
+        symbol: "🎓"
+      },
+      {
+        title: "Applied AI Advisory (LLM/RAG/Agents)",
+        description: "Use-case selection, guardrails, RAG architecture & evaluation, LoRA/QLoRA guidance. Outcome: useful AI with reduced hallucinations.",
         symbol: "🤖"
-      },
-      {
-        title: "AI Ethics & Compliance",
-        description: "Ensure your AI systems meet the highest ethical standards and regulatory requirements. We help you build AI that people can trust, with comprehensive compliance frameworks and ongoing monitoring.",
-        symbol: "⚖️"
-      },
-      {
-        title: "ROI Optimization",
-        description: "Maximize your return on investment with AI systems that actually work. We focus on delivering measurable business value, cost reduction, and efficiency improvements through strategic AI implementation.",
-        symbol: "💰"
-      },
-      {
-        title: "Trustworthy AI Development",
-        description: "Build AI systems that people can trust and rely on. Our approach ensures transparency, explainability, and reliability in every AI solution we develop, reducing risk and building confidence.",
-        symbol: "🔒"
       }
     ]
 
@@ -186,7 +177,7 @@ const Index = () => {
           </div>
 
           {/* Main services grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, i) => {
               const isGreen = i % 2 === 0;
               return (
@@ -203,6 +194,158 @@ const Index = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function WhatYouGetSection() {
+    const deliverables = [
+      {
+        category: "AI Governance & Compliance",
+        items: [
+          "Complete HIPAA/NIST/GDPR/CPRA gap analysis",
+          "Data flow mapping and access control review",
+          "Model lifecycle governance framework",
+          "Risk assessment and mitigation strategies",
+          "Compliance monitoring dashboards",
+          "Executive summary with actionable recommendations"
+        ],
+        icon: "🛡️",
+        color: "emerald"
+      },
+      {
+        category: "Responsible AI Implementation",
+        items: [
+          "Bias testing and mitigation protocols",
+          "Explainable AI (XAI) implementation guide",
+          "Model cards and audit trail documentation",
+          "Ethical AI decision-making frameworks",
+          "Transparency and accountability measures",
+          "Stakeholder communication templates"
+        ],
+        icon: "📊",
+        color: "cyan"
+      },
+      {
+        category: "Training & Enablement",
+        items: [
+          "Executive AI governance training sessions",
+          "Team workshops on AI ethics and compliance",
+          "Policy templates and implementation guides",
+          "AI procurement and vendor evaluation checklists",
+          "Risk management playbooks",
+          "Ongoing support and consultation"
+        ],
+        icon: "🎓",
+        color: "sky"
+      },
+      {
+        category: "Technical Implementation",
+        items: [
+          "Custom LLM and RAG architecture design",
+          "Multi-agent system development and deployment",
+          "AI guardrails and safety mechanisms",
+          "Performance monitoring and evaluation metrics",
+          "Integration with existing systems",
+          "Scalable AI infrastructure recommendations"
+        ],
+        icon: "🤖",
+        color: "purple"
+      }
+    ]
+
+    return (
+      <section id="what-you-get" className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What You'll Get</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Comprehensive AI solutions that deliver measurable results, complete transparency, and long-term value for your organization.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {deliverables.map((deliverable, i) => {
+              const colorClasses = {
+                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
+                cyan: 'border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10',
+                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
+                purple: 'border-purple-400/30 hover:border-purple-400/50 hover:bg-purple-500/5 hover:shadow-purple-500/10'
+              }
+              
+              const textColorClasses = {
+                emerald: 'text-emerald-400 group-hover:text-emerald-300',
+                cyan: 'text-cyan-400 group-hover:text-cyan-300',
+                sky: 'text-sky-400 group-hover:text-sky-300',
+                purple: 'text-purple-400 group-hover:text-purple-300'
+              }
+
+              return (
+                <div
+                  key={i}
+                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[deliverable.color]}`}
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className={`text-3xl transition-colors ${textColorClasses[deliverable.color]}`}>
+                      {deliverable.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white transition-colors group-hover:text-gray-100">
+                      {deliverable.category}
+                    </h3>
+                  </div>
+                  
+                  <ul className="space-y-3">
+                    {deliverable.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start gap-3">
+                        <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 transition-colors ${
+                          deliverable.color === 'emerald' ? 'bg-emerald-400 group-hover:bg-emerald-300' :
+                          deliverable.color === 'cyan' ? 'bg-cyan-400 group-hover:bg-cyan-300' :
+                          deliverable.color === 'sky' ? 'bg-sky-400 group-hover:bg-sky-300' :
+                          'bg-purple-400 group-hover:bg-purple-300'
+                        }`}></div>
+                        <span className="text-gray-300 leading-relaxed transition-colors group-hover:text-gray-200">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/20">
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your AI Strategy?</h3>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Book a 1:1 consultation to discuss your specific needs and get a customized roadmap for implementing trustworthy AI in your organization.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://calendly.com/sia-sanjeevaniai/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
+                >
+                  Book Your Consultation
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-cyan-400/40 text-cyan-400 hover:bg-cyan-500/10 px-8 py-3 rounded-xl font-medium transition-all duration-200"
+                >
+                  Connect on LinkedIn
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -318,8 +461,8 @@ const Index = () => {
             <p className="text-lg text-gray-300 mb-6">
               Ready to implement AI solutions tailored to your specific healthcare role?
             </p>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25"
             >
               Get Started with Your AI Journey
@@ -340,39 +483,49 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Success Stories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Mini Case Studies</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Real-world AI implementations that reduced losses, improved ROI, and built trustworthy AI systems.
+              Anonymous success stories showcasing real-world AI governance implementations.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Financial Risk AI System",
-                description: "Built trustworthy AI governance system that reduced financial losses by 45% while maintaining 95% security compliance.",
-                metrics: "45% Loss Reduction • 95% Security Score"
+                title: "Healthcare Payer",
+                description: "RAG + PHI controls → 60% faster review, audit-ready logs.",
+                industry: "Healthcare"
               },
               {
-                title: "Multi-Agent Supply Chain",
-                description: "Developed reliable multi-agent system for supply chain optimization, improving ROI by 127% with full compliance.",
-                metrics: "127% ROI Improvement • Full Compliance"
+                title: "Insurance Underwriting",
+                description: "GPT+OCR pipeline w/ SHAP & exception workflow → 15–20% better risk accuracy, ~$5M est. annual savings.",
+                industry: "Insurance"
               },
               {
-                title: "AI Ethics Framework",
-                description: "Implemented comprehensive AI ethics and compliance framework, reducing risk by 78% while building stakeholder trust.",
-                metrics: "78% Risk Reduction • Stakeholder Trust"
+                title: "Public Sector",
+                description: "NIST AI RMF training & templates → standardized evaluation, faster approvals.",
+                industry: "Public Sector"
               }
             ].map((study, i) => (
               <div
                 key={i}
                 className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:bg-gray-800/20 hover:border-emerald-400/30 transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-white mb-3">{study.title}</h3>
-                <p className="text-gray-300 mb-4 leading-relaxed">{study.description}</p>
-                <div className="text-sm text-emerald-400 font-medium">{study.metrics}</div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-semibold text-white">{study.title}</h3>
+                  <span className="text-xs text-emerald-400 bg-emerald-500/20 px-2 py-1 rounded-full">
+                    {study.industry}
+                  </span>
+                </div>
+                <p className="text-gray-300 leading-relaxed">{study.description}</p>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <a href="/case-studies" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white rounded-xl font-medium transition-all duration-200">
+              View All Case Studies →
+            </a>
           </div>
         </div>
       </section>
@@ -393,7 +546,7 @@ const Index = () => {
               <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30">
                 <h3 className="text-green-600 dark:text-green-400 font-medium mb-3">Suneeta Modekurty</h3>
                 <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                  Founder & CEO, SANJEEVANI AI | Building AI Governance & Multi-Agent Systems That Actually Work | AI You Can Trust to Increase ROI & Reduce Costs | Award-winning AI & Data Science Leader | O-1A Extraordinary Ability | Certified AI Security & Governance Expert
+                  Suneeta Modekurty is an AI & Data Governance Consultant recognized with the O-1A Visa, recipient of an AI Thought Leadership Award (2025), and author of The AI-Human Synergy (2024). She helps healthcare, finance, and public-sector leaders adopt AI with governance, transparency, and measurable ROI.
                 </p>
                 <div className="flex items-center gap-2 text-xs text-gray-400">
                   <span className="w-2 h-2 bg-green-400 rounded-full"></span>
@@ -454,18 +607,18 @@ const Index = () => {
           {/* AI Security & Governance Certification */}
           <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
             <div className="text-center">
-              <img 
-                src="/AI Security & Governance.png" 
-                alt="AI Security & Governance Certification" 
+              <img
+                src="/AI Security & Governance.png"
+                alt="AI Security & Governance Certification"
                 className="w-full h-32 object-contain mb-4"
               />
               <h3 className="text-lg font-semibold text-white mb-2">AI Security & Governance</h3>
               <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block mb-3">
                 VERIFIED
               </div>
-              <a 
-                href="https://education.securiti.ai/verification/1332C68E8-1332C6757-12D084B90/" 
-                target="_blank" 
+              <a
+                href="https://education.securiti.ai/verification/1332C68E8-1332C6757-12D084B90/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-emerald-300 hover:text-emerald-200 text-sm font-medium transition-colors"
               >
@@ -552,6 +705,197 @@ const Index = () => {
       </section>
     )
   }
+
+  function PlatformLinksSection() {
+    const platforms = [
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/company/sanjeevani-ai-llc/",
+        description: "Professional network and company updates",
+        icon: "💼",
+        status: "active"
+      },
+      {
+        name: "Upwork",
+        url: "https://www.upwork.com/freelancers/~01968cb9a3759f39de?mp_source=share",
+        description: "Expert-Vetted AI Consultant",
+        icon: "🚀",
+        status: "active"
+      },
+      {
+        name: "Toptal",
+        url: "#",
+        description: "Top 3% AI talent network",
+        icon: "⭐",
+        status: "coming-soon"
+      },
+      {
+        name: "Fiverr Pro",
+        url: "#",
+        description: "Premium AI consulting services",
+        icon: "🎯",
+        status: "coming-soon"
+      },
+      {
+        name: "Wellfound",
+        url: "#",
+        description: "Startup-focused AI expertise",
+        icon: "🌱",
+        status: "coming-soon"
+      },
+      {
+        name: "Aquent",
+        url: "#",
+        description: "Enterprise AI consulting",
+        icon: "🏢",
+        status: "coming-soon"
+      },
+      {
+        name: "FlexJobs",
+        url: "#",
+        description: "Flexible AI project work",
+        icon: "⚡",
+        status: "coming-soon"
+      }
+    ]
+
+    return (
+      <section id="platforms" className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Find Me On These Platforms</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Connect with me across multiple professional platforms for AI consulting, governance, and implementation services.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {platforms.map((platform, i) => (
+              <a
+                key={i}
+                href={platform.url}
+                target={platform.status === 'active' ? '_blank' : undefined}
+                rel={platform.status === 'active' ? 'noopener noreferrer' : undefined}
+                className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${
+                  platform.status === 'active' 
+                    ? 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10 cursor-pointer' 
+                    : 'border-gray-700/30 hover:border-gray-600/50 cursor-not-allowed opacity-60'
+                }`}
+                onClick={platform.status === 'coming-soon' ? (e) => e.preventDefault() : undefined}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`text-2xl transition-colors ${
+                    platform.status === 'active' 
+                      ? 'text-emerald-400 group-hover:text-emerald-300' 
+                      : 'text-gray-500'
+                  }`}>
+                    {platform.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className={`text-lg font-semibold transition-colors ${
+                      platform.status === 'active' 
+                        ? 'text-white group-hover:text-gray-100' 
+                        : 'text-gray-500'
+                    }`}>
+                      {platform.name}
+                    </h3>
+                    <div className={`text-xs px-2 py-1 rounded-full inline-block ${
+                      platform.status === 'active' 
+                        ? 'bg-emerald-500/20 text-emerald-300' 
+                        : 'bg-gray-500/20 text-gray-400'
+                    }`}>
+                      {platform.status === 'active' ? 'Available' : 'Coming Soon'}
+                    </div>
+                  </div>
+                </div>
+                
+                <p className={`text-sm leading-relaxed transition-colors ${
+                  platform.status === 'active' 
+                    ? 'text-gray-300 group-hover:text-gray-200' 
+                    : 'text-gray-500'
+                }`}>
+                  {platform.description}
+                </p>
+
+                {platform.status === 'active' && (
+                  <div className="mt-4 flex items-center text-emerald-400 text-sm font-medium group-hover:text-emerald-300 transition-colors">
+                    Visit Profile
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                )}
+              </a>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/20">
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to Work Together?</h3>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Whether you're an enterprise, SMB, or startup implementing AI strategies, I'm here to help you build trustworthy, compliant, and effective AI systems.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://calendly.com/sia-sanjeevaniai/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
+                >
+                  Book a 1:1 Call
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-cyan-400/40 text-cyan-400 hover:bg-cyan-500/10 px-8 py-3 rounded-xl font-medium transition-all duration-200"
+                >
+                  Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function CTAStrip() {
+    return (
+      <section className="bg-gradient-to-r from-emerald-600 to-sky-600 py-12">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to make AI trustworthy?
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://calendly.com/sia-sanjeevaniai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Request an Assessment
+              </a>
+              <a
+                href="https://calendly.com/sia-sanjeevaniai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-emerald-600 transition-colors"
+              >
+                Book a Strategy Call
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 }
 
 function Footer() {
@@ -562,9 +906,9 @@ function Footer() {
           <span>© {new Date().getFullYear()} SANJEEVANI AI • Custom AI Agents & LLM Fine-tuning</span>
         </div>
         <div className="flex flex-wrap gap-4">
-          <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">LinkedIn</a>
-          <a href="#" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Publications</a>
-          <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/company/sanjeevani-ai-llc/" target="_blank" rel="noopener noreferrer" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">LinkedIn</a>
+          <a href="https://www.upwork.com/freelancers/~01968cb9a3759f39de?mp_source=share" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Upwork</a>
+          <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">Publications</a>
           <a href="#" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Speaking</a>
           <span className="text-gray-300 dark:text-gray-600">•</span>
           <a href="/privacy" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">Privacy Policy</a>

@@ -96,10 +96,10 @@ const Frameworks = () => {
                 {/* Header */}
                 <div className="text-center mb-8 sm:mb-16">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
-                        AI Governance Frameworks
+                        Frameworks
                     </h1>
                     <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto px-4">
-                        We implement industry-leading frameworks to ensure your AI systems meet the highest standards of governance, security, and compliance.
+                        How we operationalize AI governance: RAI/XAI • Model Cards • Audit Logs • Human-in-the-Loop • Evaluation & Drift Monitoring
                     </p>
                 </div>
 

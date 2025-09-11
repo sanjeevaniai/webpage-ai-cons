@@ -191,16 +191,24 @@ const CaseStudyDetail = () => {
                     <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
                         Dive deeper into our case studies with interactive dashboards, demos, and comprehensive analytics.
                     </p>
-                    <a
-                        href="http://localhost:8501"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    >
-                        <BarChart3 className="w-5 h-5 mr-2" />
-                        Open Interactive Dashboard
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                    </a>
+                    <div className="space-y-4">
+                        <a
+                            href="http://localhost:8501"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                            <BarChart3 className="w-5 h-5 mr-2" />
+                            Open Interactive Dashboard
+                            <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                        <div className="bg-white/10 rounded-lg p-4 text-left max-w-md mx-auto">
+                            <p className="text-emerald-100 font-semibold mb-2">🚀 Quick Start:</p>
+                            <p className="text-sm text-emerald-100 mb-1">1. Run: <code className="bg-emerald-800 px-2 py-1 rounded">python launch_streamlit.py</code></p>
+                            <p className="text-sm text-emerald-100 mb-1">2. Or use: <code className="bg-emerald-800 px-2 py-1 rounded">./launch_dashboard.sh</code></p>
+                            <p className="text-sm text-emerald-100">3. Dashboard opens at localhost:8501</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* CTA */}

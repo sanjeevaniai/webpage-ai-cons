@@ -5,120 +5,48 @@ import { Shield, FileText, Lock, Users, CheckCircle, AlertTriangle, Home } from 
 const Compliances = () => {
     const compliances = [
         {
-            name: "HIPAA (Health Insurance Portability and Accountability Act)",
+            name: "HIPAA",
             description: "Protects patient health information and ensures privacy in healthcare",
-            requirements: [
-                "Administrative safeguards for PHI",
-                "Physical safeguards for data centers",
-                "Technical safeguards for systems",
-                "Breach notification procedures",
-                "Business associate agreements"
-            ],
+            implementation: "We implement administrative, physical, and technical safeguards, conduct risk assessments, and establish business associate agreements.",
             icon: Shield,
             color: "from-blue-500 to-blue-600",
             category: "Healthcare"
         },
         {
-            name: "PHI (Protected Health Information)",
-            description: "Safeguards for individually identifiable health information",
-            requirements: [
-                "Minimum necessary standard",
-                "Access controls and authentication",
-                "Audit logs and monitoring",
-                "Data encryption at rest and in transit",
-                "Workforce training programs"
-            ],
-            icon: Lock,
-            color: "from-green-500 to-green-600",
-            category: "Healthcare"
-        },
-        {
-            name: "ePHI (Electronic Protected Health Information)",
-            description: "Electronic safeguards for protected health information",
-            requirements: [
-                "Encryption of ePHI in transit",
-                "Encryption of ePHI at rest",
-                "Access controls and unique user identification",
-                "Audit controls and logging",
-                "Transmission security measures"
-            ],
+            name: "NIST AI RMF",
+            description: "Risk Management Framework for AI systems",
+            implementation: "We apply the 6-step process: Govern, Map, Measure, Manage, Categorize, and Select controls for AI risk management.",
             icon: FileText,
-            color: "from-purple-500 to-purple-600",
-            category: "Healthcare"
+            color: "from-green-500 to-green-600",
+            category: "AI Governance"
         },
         {
-            name: "GDPR (General Data Protection Regulation)",
+            name: "GDPR",
             description: "EU regulation for data protection and privacy",
-            requirements: [
-                "Lawful basis for processing",
-                "Data subject rights management",
-                "Privacy by design principles",
-                "Data protection impact assessments",
-                "Breach notification within 72 hours"
-            ],
+            implementation: "We ensure lawful basis for processing, implement data subject rights, conduct DPIAs, and maintain privacy by design principles.",
             icon: Users,
             color: "from-orange-500 to-orange-600",
             category: "Privacy"
         },
         {
-            name: "CCPA (California Consumer Privacy Act)",
-            description: "California state law for consumer privacy rights",
-            requirements: [
-                "Consumer rights disclosure",
-                "Opt-out mechanisms for data sales",
-                "Data deletion requests",
-                "Non-discrimination policies",
-                "Privacy policy updates"
-            ],
+            name: "CPRA",
+            description: "California Consumer Privacy Rights Act",
+            implementation: "We implement consumer rights management, opt-out mechanisms, data deletion processes, and privacy policy updates.",
             icon: CheckCircle,
             color: "from-teal-500 to-teal-600",
             category: "Privacy"
         },
         {
-            name: "SOX (Sarbanes-Oxley Act)",
-            description: "Financial reporting and corporate governance standards",
-            requirements: [
-                "Internal control over financial reporting",
-                "Management assessment of controls",
-                "Auditor attestation requirements",
-                "Whistleblower protection",
-                "Document retention policies"
-            ],
-            icon: AlertTriangle,
-            color: "from-red-500 to-red-600",
-            category: "Financial"
-        },
-        {
-            name: "PCI DSS (Payment Card Industry Data Security Standard)",
-            description: "Security standards for payment card data",
-            requirements: [
-                "Secure network and systems maintenance",
-                "Protection of cardholder data",
-                "Vulnerability management programs",
-                "Strong access control measures",
-                "Regular security testing"
-            ],
-            icon: Shield,
-            color: "from-indigo-500 to-indigo-600",
-            category: "Financial"
-        },
-        {
-            name: "FedRAMP (Federal Risk and Authorization Management Program)",
-            description: "US government cloud security authorization program",
-            requirements: [
-                "Security assessment and authorization",
-                "Continuous monitoring capabilities",
-                "Incident response procedures",
-                "Personnel security controls",
-                "System and communications protection"
-            ],
+            name: "DSPM",
+            description: "Data Security Posture Management",
+            implementation: "We provide continuous monitoring, data discovery, classification, and security posture assessment for data assets.",
             icon: Lock,
-            color: "from-cyan-500 to-cyan-600",
-            category: "Government"
+            color: "from-purple-500 to-purple-600",
+            category: "Data Security"
         }
     ]
 
-    const categories = ["All", "Healthcare", "Privacy", "Financial", "Government"]
+    const categories = ["All", "Healthcare", "AI Governance", "Privacy", "Data Security"]
     const [selectedCategory, setSelectedCategory] = useState("All")
 
     const filteredCompliances = selectedCategory === "All"
@@ -142,10 +70,10 @@ const Compliances = () => {
                 {/* Header */}
                 <div className="text-center mb-8 sm:mb-16">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
-                        AI Compliance Standards
+                        Compliances
                     </h1>
                     <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto px-4">
-                        We ensure your AI systems meet all relevant compliance requirements across healthcare, privacy, financial, and government sectors.
+                        HIPAA, NIST AI RMF, GDPR, CPRA, DSPM — brief 1-line explainer each + how we implement controls.
                     </p>
                 </div>
 
@@ -215,20 +143,10 @@ const Compliances = () => {
                                     {compliance.description}
                                 </p>
                                 <div className="mb-6">
-                                    <h4 className="text-lg font-semibold text-white mb-3">Key Requirements:</h4>
-                                    <ul className="space-y-2">
-                                        {compliance.requirements.slice(0, 3).map((requirement, reqIndex) => (
-                                            <li key={reqIndex} className="flex items-start">
-                                                <CheckCircle className="w-4 h-4 text-emerald-400 mr-3 mt-1 flex-shrink-0" />
-                                                <span className="text-gray-300 text-sm">{requirement}</span>
-                                            </li>
-                                        ))}
-                                        {compliance.requirements.length > 3 && (
-                                            <li className="text-gray-400 text-sm">
-                                                +{compliance.requirements.length - 3} more requirements
-                                            </li>
-                                        )}
-                                    </ul>
+                                    <h4 className="text-lg font-semibold text-white mb-3">How We Implement:</h4>
+                                    <p className="text-gray-300 text-sm leading-relaxed">
+                                        {compliance.implementation}
+                                    </p>
                                 </div>
                             </Link>
                         )
