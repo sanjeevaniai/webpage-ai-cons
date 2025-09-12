@@ -4,7 +4,7 @@ import { ArrowLeft, Home, Shield, CheckCircle, AlertTriangle, Users, Target, Boo
 
 const FrameworkDetail = () => {
     const { id } = useParams<{ id: string }>()
-    const [framework, setFramework] = useState<any>(null)
+    const [framework, setFramework] = useState<typeof frameworks[keyof typeof frameworks] | null>(null)
     const [loading, setLoading] = useState(true)
     const [notFound, setNotFound] = useState(false)
 

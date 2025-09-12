@@ -4,7 +4,7 @@ import { ArrowLeft, Home, Shield, CheckCircle, AlertTriangle, Users, FileText, E
 
 const ComplianceDetail = () => {
     const { id } = useParams<{ id: string }>()
-    const [compliance, setCompliance] = useState<any>(null)
+    const [compliance, setCompliance] = useState<typeof compliances[keyof typeof compliances] | null>(null)
     const [loading, setLoading] = useState(true)
     const [notFound, setNotFound] = useState(false)
 

@@ -497,7 +497,7 @@ The future of AI is bright, and LLMs and RAG are leading the way. Organizations 
 
 const Blog = () => {
     const [searchQuery, setSearchQuery] = useState('')
-    const [filteredPosts, setFilteredPosts] = useState<any[]>([])
+    const [filteredPosts, setFilteredPosts] = useState<typeof blogPosts>([])
 
     // Use the exported blogPosts array
 

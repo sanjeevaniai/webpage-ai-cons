@@ -5,7 +5,7 @@ import { blogPosts } from './Blog'
 
 const BlogDetail = () => {
     const { id } = useParams<{ id: string }>()
-    const [post, setPost] = useState<any>(null)
+    const [post, setPost] = useState<typeof blogPosts[0] | null>(null)
     const [loading, setLoading] = useState(true)
     const [notFound, setNotFound] = useState(false)
 
@@ -104,7 +104,7 @@ const BlogDetail = () => {
                                 .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold mt-8 mb-4 text-white">$1</h2>')
                                 .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold mt-6 mb-3 text-white">$1</h3>')
                                 .replace(/^#### (.*$)/gm, '<h4 class="text-lg font-semibold mt-4 mb-2 text-white">$1</h4>')
-                                .replace(/^\- (.*$)/gm, '<li class="ml-4 mb-2">$1</li>')
+                                .replace(/^- (.*$)/gm, '<li class="ml-4 mb-2">$1</li>')
                                 .replace(/^\d+\. (.*$)/gm, '<li class="ml-4 mb-2">$1</li>')
                                 .replace(/\n\n/g, '</p><p class="mb-4">')
                                 .replace(/^(?!<[h|l])/gm, '<p class="mb-4">')
