@@ -3,6 +3,20 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { caseStudiesService, CaseStudy } from '@/lib/caseStudies'
 import { ArrowLeft, TrendingUp, Shield, DollarSign, Clock, CheckCircle, Users, Home, BarChart3, ExternalLink } from 'lucide-react'
 
+// Simple markdown to HTML converter
+const markdownToHtml = (markdown: string) => {
+    return markdown
+        .replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold text-white mb-2">$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold text-white mb-3">$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold text-white mb-4">$1</h1>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
+        .replace(/^- (.*$)/gim, '<li class="text-gray-300 mb-1">$1</li>')
+        .replace(/(<li.*<\/li>)/gims, '<ul class="list-disc list-inside text-gray-300 mb-4 space-y-1">$1</ul>')
+        .replace(/^(?!<[h|u|l])(.*$)/gim, '<p class="text-gray-300 mb-4">$1</p>')
+        .replace(/<p class="text-gray-300 mb-4"><\/p>/g, '')
+        .replace(/<p class="text-gray-300 mb-4">\s*<\/p>/g, '')
+}
+
 const CaseStudyDetail = () => {
     const { id } = useParams<{ id: string }>()
     const [caseStudy, setCaseStudy] = useState<CaseStudy | null>(null)
@@ -144,6 +158,111 @@ const CaseStudyDetail = () => {
                     </div>
                 </div>
 
+                {/* Healthcare Framework Mix - Special section for Healthcare AI Platform */}
+                {caseStudy.title === 'Healthcare AI Platform' && (
+                    <div className="bg-gradient-to-br from-emerald-500/20 to-blue-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-xl p-8 mb-12">
+                        <h3 className="text-3xl font-bold text-white mb-6 text-center">Healthcare Framework Mix</h3>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            {/* Core Framework Stack */}
+                            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+                                <h4 className="text-xl font-bold text-emerald-300 mb-4">Core Framework Stack</h4>
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <h5 className="text-lg font-semibold text-white mb-2">Regulatory Compliance</h5>
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                                <span className="text-gray-300">HIPAA (US compliance)</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                                <span className="text-gray-300">GDPR (International operations)</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                                <span className="text-gray-300">FDA AI/ML Guidance</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h5 className="text-lg font-semibold text-white mb-2">Security & Risk Management</h5>
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                                <span className="text-gray-300">NIST Cybersecurity Framework</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                                <span className="text-gray-300">HITRUST CSF</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                                <span className="text-gray-300">ISO 27001</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                                <span className="text-gray-300">DSPM (Cloud data security)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h5 className="text-lg font-semibold text-white mb-2">Interoperability</h5>
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                                                <span className="text-gray-300">HL7 FHIR</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Best Practices */}
+                            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+                                <h4 className="text-xl font-bold text-blue-300 mb-4">Best Practices</h4>
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <h5 className="text-lg font-semibold text-white mb-2">Security Architecture</h5>
+                                        <div className="space-y-2">
+                                            <div className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                                                <span className="text-gray-300 text-sm">Implement zero-trust architecture with microsegmentation</span>
+                                            </div>
+                                            <div className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                                                <span className="text-gray-300 text-sm">Deploy continuous monitoring for PHI access patterns</span>
+                                            </div>
+                                            <div className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                                                <span className="text-gray-300 text-sm">Establish data governance councils with clinical and privacy expertise</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h5 className="text-lg font-semibold text-white mb-2">AI/ML Safety</h5>
+                                        <div className="space-y-2">
+                                            <div className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                                                <span className="text-gray-300 text-sm">Use federated learning for AI training to minimize data exposure</span>
+                                            </div>
+                                            <div className="flex items-start gap-2">
+                                                <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                                                <span className="text-gray-300 text-sm">Implement differential privacy for research datasets</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 {/* Results */}
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 mb-12">
                     <h3 className="text-2xl font-bold text-white mb-6">Results & Impact</h3>
@@ -177,9 +296,10 @@ const CaseStudyDetail = () => {
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 mb-12">
                     <h3 className="text-2xl font-bold text-white mb-6">Case Study Details</h3>
                     <div className="prose prose-invert max-w-none">
-                        <div className="text-gray-300 leading-relaxed whitespace-pre-wrap">
-                            {caseStudy.content}
-                        </div>
+                        <div
+                            className="text-gray-300 leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: markdownToHtml(caseStudy.content) }}
+                        />
                     </div>
                 </div>
 

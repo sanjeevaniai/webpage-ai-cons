@@ -1962,19 +1962,28 @@ id,
 
     // Get a single case study by ID (for detail page)
     async getCaseStudyById(id: string): Promise<CaseStudy | null> {
-        const { data, error } = await supabase
-            .from('case_studies')
-            .select('*')
-            .eq('id', id)
-            .eq('published', true)
-            .single()
+        try {
+            const { data, error } = await supabase
+                .from('case_studies')
+                .select('*')
+                .eq('id', id)
+                .eq('published', true)
+                .single()
 
-        if (error) {
+            if (error) {
+                console.error('Error fetching case study from Supabase:', error)
+                // Fallback to mock data
+                const mockCaseStudy = mockCaseStudyDetails.find(cs => cs.id === id)
+                return mockCaseStudy || null
+            }
+
+            return data
+        } catch (error) {
             console.error('Error fetching case study:', error)
-            return null
+            // Fallback to mock data
+            const mockCaseStudy = mockCaseStudyDetails.find(cs => cs.id === id)
+            return mockCaseStudy || null
         }
-
-        return data
     },
 
     // Get featured case studies (for homepage)
