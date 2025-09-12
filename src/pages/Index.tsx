@@ -19,16 +19,14 @@ const Index = () => {
       <Header />
       {Masthead()}
       {ServicesSection()}
-      {HowWeEngageSection()}
       {WhatYouGetSection()}
-      {UserGroupsSection()}
       {WhyChooseUsSection()}
       {CaseStudiesSection()}
       {Credentials()}
+      {AboutSection()}
       {Certifications()}
       {Contact()}
       {PlatformLinksSection()}
-      {CTAStrip()}
       <Footer />
     </div>
   )
@@ -48,7 +46,13 @@ const Index = () => {
               Available for new projects
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-              AI That's Safe to Ship—And Simple to Govern
+              <span className="block">AI That's</span>
+              <span className="block bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent">
+                Safe to Ship
+              </span>
+              <span className="block text-4xl md:text-5xl lg:text-6xl text-gray-300 font-medium">
+                & Simple to Govern
+              </span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-2xl">
               SANJEEVANI AI helps organizations adopt AI responsibly—making it governed, compliant, and trustworthy from day one. We operate at the intersection of strategy, governance, and engineering across healthcare, fintech, edtech, and insurance, turning regulation into a design constraint that accelerates safe deployment and measurable ROI.
@@ -202,89 +206,6 @@ const Index = () => {
     )
   }
 
-  function HowWeEngageSection() {
-    const engagementSteps = [
-      {
-        title: "Rapid Compliance Baseline",
-        description: "Assess current state, map gaps, and deliver a 90-day roadmap with prioritized controls.",
-        icon: "📋",
-        color: "emerald"
-      },
-      {
-        title: "Build with Guardrails",
-        description: "Partner with your teams to design data pipelines, retrieval, prompts, and policies that meet regulatory and security requirements.",
-        icon: "🔧",
-        color: "cyan"
-      },
-      {
-        title: "Operationalize & Monitor",
-        description: "Establish KPIs for quality, cost, latency, and safety; instrument monitoring, alerts, and continuous evaluations.",
-        icon: "📊",
-        color: "sky"
-      },
-      {
-        title: "Enable & Advise",
-        description: "Train executives and practitioners; offer ongoing advisory and fractional CAIO support.",
-        icon: "🎓",
-        color: "purple"
-      }
-    ]
-
-    return (
-      <section id="how-we-engage" className="mt-24 md:mt-32 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
-
-        <div className="mx-auto max-w-7xl px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How We Engage</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Our proven methodology ensures your AI initiatives are built right from the start, with governance and compliance as core design principles.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {engagementSteps.map((step, i) => {
-              const colorClasses = {
-                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
-                cyan: 'border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10',
-                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
-                purple: 'border-purple-400/30 hover:border-purple-400/50 hover:bg-purple-500/5 hover:shadow-purple-500/10'
-              }
-
-              const textColorClasses = {
-                emerald: 'text-emerald-400 group-hover:text-emerald-300',
-                cyan: 'text-cyan-400 group-hover:text-cyan-300',
-                sky: 'text-sky-400 group-hover:text-sky-300',
-                purple: 'text-purple-400 group-hover:text-purple-300'
-              }
-
-              return (
-                <div
-                  key={i}
-                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[step.color]}`}
-                >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className={`text-3xl transition-colors ${textColorClasses[step.color]}`}>
-                      {step.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white transition-colors group-hover:text-gray-100">
-                      {step.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-gray-200">
-                    {step.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   function WhatYouGetSection() {
     const deliverables = [
@@ -437,127 +358,6 @@ const Index = () => {
     )
   }
 
-  function UserGroupsSection() {
-    return (
-      <section id="user-groups" className="mt-24 md:mt-32 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl"></div>
-
-        <div className="mx-auto max-w-7xl px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Solutions for Every Healthcare Stakeholder</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Tailored AI governance and implementation strategies that address the unique needs of each healthcare ecosystem participant
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* For Clinicians */}
-            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-emerald-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">👩‍⚕️</span>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">For Clinicians</h3>
-                <p className="text-emerald-300 text-sm font-medium">AI-Powered Clinical Decision Support</p>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Personalized AI recommendations that enhance diagnostic accuracy while maintaining clinical autonomy</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">HIPAA-compliant AI tools that integrate seamlessly with existing EHR systems</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Real-time clinical insights with full audit trails and explainable AI decision support</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Reduced administrative burden through intelligent automation of routine clinical tasks</p>
-                </div>
-              </div>
-            </div>
-
-            {/* For Researchers */}
-            <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-8 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-sky-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🔬</span>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">For Researchers</h3>
-                <p className="text-sky-300 text-sm font-medium">Advanced AI Research Infrastructure</p>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Multi-agent AI systems for complex research data analysis and hypothesis generation</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Ethical AI frameworks ensuring research integrity and reproducible results</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Data governance solutions for secure collaboration across research institutions</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">AI-powered literature review and knowledge synthesis for faster discovery</p>
-                </div>
-              </div>
-            </div>
-
-            {/* For Survivors/Caregivers */}
-            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-emerald-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🤝</span>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">For Survivors & Caregivers</h3>
-                <p className="text-emerald-300 text-sm font-medium">Compassionate AI Support Systems</p>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Personalized AI companions that provide emotional support and health monitoring</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Privacy-first AI tools that respect patient autonomy and data ownership</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Accessible AI interfaces designed for diverse needs and technical comfort levels</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Community-driven AI solutions that connect survivors and caregivers for mutual support</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-12">
-            <p className="text-lg text-gray-300 mb-6">
-              Ready to implement AI solutions tailored to your specific healthcare role?
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25"
-            >
-              Get Started with Your AI Journey
-              <span className="text-lg">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   function WhyChooseUsSection() {
     const reasons = [
@@ -643,49 +443,102 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Mini Case Studies</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Who We Serve</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Anonymous success stories showcasing real-world AI governance implementations.
+              Digital health teams and compliance leaders across healthcare, finance, and edtech who need AI that's safe to ship and simple to govern.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Healthcare Payer",
-                description: "RAG + PHI controls → 60% faster review, audit-ready logs.",
-                industry: "Healthcare"
+                title: "Digital Health Teams",
+                description: "HIPAA-compliant AI systems for clinical decision support, patient monitoring, and diagnostic assistance. From pilot models to production-grade, audit-ready systems.",
+                industry: "Healthcare",
+                icon: "🏥",
+                color: "emerald"
               },
               {
-                title: "Insurance Underwriting",
-                description: "GPT+OCR pipeline w/ SHAP & exception workflow → 15–20% better risk accuracy, ~$5M est. annual savings.",
-                industry: "Insurance"
+                title: "Finance Compliance Leaders",
+                description: "AI governance frameworks for risk management, fraud detection, and regulatory reporting. Ensuring AI systems meet financial regulations and audit requirements.",
+                industry: "Finance",
+                icon: "💼",
+                color: "cyan"
               },
               {
-                title: "Public Sector",
-                description: "NIST AI RMF training & templates → standardized evaluation, faster approvals.",
-                industry: "Public Sector"
+                title: "EdTech Founders",
+                description: "Responsible AI implementation for personalized learning, content generation, and student assessment. Building trustworthy AI that enhances education outcomes.",
+                industry: "EdTech",
+                icon: "🎓",
+                color: "sky"
+              },
+              {
+                title: "Healthcare Compliance Teams",
+                description: "NIST AI RMF alignment, PHI protection, and audit-ready documentation. Moving from compliance burden to competitive advantage through AI governance.",
+                industry: "Healthcare",
+                icon: "🛡️",
+                color: "purple"
+              },
+              {
+                title: "FinTech Startups",
+                description: "AI safety and governance for payment systems, lending algorithms, and customer service. Building AI that regulators trust and customers rely on.",
+                industry: "FinTech",
+                icon: "🚀",
+                color: "emerald"
+              },
+              {
+                title: "EdTech Compliance Officers",
+                description: "Student data protection, algorithmic transparency, and educational equity. Ensuring AI in education serves all learners fairly and safely.",
+                industry: "EdTech",
+                icon: "📚",
+                color: "cyan"
               }
-            ].map((study, i) => (
-              <div
-                key={i}
-                className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:bg-gray-800/20 hover:border-emerald-400/30 transition-all duration-300"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-white">{study.title}</h3>
-                  <span className="text-xs text-emerald-400 bg-emerald-500/20 px-2 py-1 rounded-full">
-                    {study.industry}
-                  </span>
+            ].map((audience, i) => {
+              const colorClasses = {
+                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
+                cyan: 'border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10',
+                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
+                purple: 'border-purple-400/30 hover:border-purple-400/50 hover:bg-purple-500/5 hover:shadow-purple-500/10'
+              }
+
+              return (
+                <div
+                  key={i}
+                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[audience.color]}`}
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-3xl">{audience.icon}</div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-white mb-1">{audience.title}</h3>
+                      <span className="text-xs text-emerald-400 bg-emerald-500/20 px-2 py-1 rounded-full">
+                        {audience.industry}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                    {audience.description}
+                  </p>
                 </div>
-                <p className="text-gray-300 leading-relaxed">{study.description}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="text-center mt-12">
-            <a href="/case-studies" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white rounded-xl font-medium transition-all duration-200">
-              View All Case Studies →
-            </a>
+            <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/20">
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to Move from Pilot to Production?</h3>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Whether you're a digital health team, compliance leader, or edtech founder, we help you build AI systems that are audit-ready, regulator-approved, and business-ready.
+              </p>
+              <a
+                href="https://calendly.com/sia-sanjeevaniai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
+              >
+                Book Your Strategy Call
+                <span className="ml-2">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -742,6 +595,105 @@ const Index = () => {
                   <p className="mt-3 text-sm text-gray-300 leading-relaxed">{c.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function AboutSection() {
+    return (
+      <section id="about" className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-6xl px-4 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            {/* Profile Image */}
+            <div className="lg:col-span-4">
+              <div className="relative">
+                <img
+                  src="/suneeta-profile.png"
+                  alt="Suneeta Modekurty"
+                  className="w-full max-w-sm mx-auto lg:mx-0 rounded-2xl shadow-2xl"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg">
+                  O-1A Visa Holder
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="lg:col-span-8">
+              <div className="mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About Suneeta Modekurty</h2>
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  Suneeta Modekurty is an AI & Data Governance Consultant and Responsible AI Strategist, helping regulated enterprises build AI that is governed, safe, and profitable by design. With 25+ years of cross-industry experience, she advises leadership teams on AI policy, compliance, and scalable architecture.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                  Suneeta holds the prestigious O-1A U.S. visa for extraordinary ability in AI & Data Science, and is the recipient of the AI Thought Leadership Award (2025). She is the author of <em className="text-emerald-400">The AI-Human Synergy</em> (Amazon, 2024) and has served as a mentor, speaker, and AI policy advisor across global platforms.
+                </p>
+              </div>
+
+              {/* Expertise Areas */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-white mb-6">Her expertise spans:</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-emerald-400/20">
+                      <h4 className="text-emerald-400 font-semibold mb-2">Governance Frameworks</h4>
+                      <p className="text-gray-300 text-sm">NIST AI RMF, EU AI Act, ISO 42001, HIPAA, GDPR, CPRA</p>
+                    </div>
+                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-cyan-400/20">
+                      <h4 className="text-cyan-400 font-semibold mb-2">Responsible AI & LLM Safety</h4>
+                      <p className="text-gray-300 text-sm">Bias mitigation, XAI, ALTAI, Model Cards, LLMOps</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-sky-400/20">
+                      <h4 className="text-sky-400 font-semibold mb-2">Engineering Strategy</h4>
+                      <p className="text-gray-300 text-sm">Multi-agent systems, RAG pipelines, LLM fine-tuning</p>
+                    </div>
+                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-purple-400/20">
+                      <h4 className="text-purple-400 font-semibold mb-2">Privacy & Security</h4>
+                      <p className="text-gray-300 text-sm">Differential Privacy, PETs, OWASP LLM, MITRE ATLAS, AI Red-Teaming</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Current Work */}
+              <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/20">
+                <h3 className="text-lg font-semibold text-white mb-4">Current Work</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Suneeta currently advises founders, digital health teams, and compliance leaders across healthcare, finance, and edtech — helping them move from pilot models to production-grade, audit-ready systems with clear business ROI.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  She also mentors early-stage teams and is building her next venture, <span className="text-emerald-400 font-semibold">SANJEEVANI AI</span>, a consultancy and platform dedicated to governance-first AI adoption.
+                </p>
+              </div>
+
+              {/* Call to Action */}
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://calendly.com/sia-sanjeevaniai/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 text-center"
+                >
+                  Book a Consultation
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-cyan-400/40 text-cyan-400 hover:bg-cyan-500/10 px-6 py-3 rounded-xl font-medium transition-all duration-200 text-center"
+                >
+                  Connect on LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -934,9 +886,9 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Find Me On These Platforms</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Professional Platforms</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Connect with me across multiple professional platforms for AI consulting, governance, and implementation services.
+              Connect across multiple professional platforms for AI consulting, governance, and implementation services.
             </p>
           </div>
 
@@ -1027,37 +979,6 @@ const Index = () => {
     )
   }
 
-  function CTAStrip() {
-    return (
-      <section className="bg-gradient-to-r from-emerald-600 to-sky-600 py-12">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              If you need AI that's safe to ship—and simple to govern—let's talk.
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://calendly.com/sia-sanjeevaniai/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                Book a 1:1 Call
-              </a>
-              <a
-                href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-emerald-600 transition-colors"
-              >
-                Connect on LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
 }
 
 function Footer() {
