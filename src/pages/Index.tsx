@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import Header from '@/components/Header'
 import NoiseBg from '@/components/NoiseBg'
 import Rotator from '@/components/Rotator'
+import ConsultationModal from '@/components/ConsultationModal'
 
 const words = [
   "AI Governance",
@@ -12,29 +14,34 @@ const words = [
 ]
 
 const Index = () => {
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false)
 
   return (
     <div className="min-h-screen">
       <NoiseBg />
       <Header />
-      {Masthead()}
+      {Masthead(setIsConsultationModalOpen)}
       {ServicesSection()}
-      {WhatYouGetSection()}
+      {WhatYouGetSection(setIsConsultationModalOpen)}
       {WhyChooseUsSection()}
-      {CaseStudiesSection()}
+      {CaseStudiesSection(setIsConsultationModalOpen)}
       {Credentials()}
-      {AboutSection()}
+      {AboutSection(setIsConsultationModalOpen)}
       {Certifications()}
-      {Contact()}
-      {PlatformLinksSection()}
+      {Contact(setIsConsultationModalOpen)}
+      {PlatformLinksSection(setIsConsultationModalOpen)}
       {NewsletterSection()}
       {SocialHandlesSection()}
-      {FAQSection()}
+      {FAQSection(setIsConsultationModalOpen)}
       <Footer />
+      <ConsultationModal 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
     </div>
   )
 
-  function Masthead() {
+  function Masthead(openModal: () => void) {
     return (
       <section className="relative mx-auto max-w-7xl px-4 pt-20 md:pt-32 pb-16">
         {/* Green/Light Blue gradient background accents */}
@@ -61,9 +68,9 @@ const Index = () => {
               SANJEEVANI AI helps organizations adopt AI responsibly—making it governed, compliant, and trustworthy from day one. We operate at the intersection of strategy, governance, and engineering across healthcare, fintech, edtech, and insurance, turning regulation into a design constraint that accelerates safe deployment and measurable ROI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25">
-                Get a Governance Consultation
-              </a>
+              <button onClick={openModal} className="bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-sky-300/25">
+                Book Your Free Consultation Call
+              </button>
               <a href="#services" className="border border-green-400/40 dark:border-green-300/30 text-green-600 dark:text-green-300 px-6 py-3 rounded-xl font-medium hover:bg-green-500/10 dark:hover:bg-green-500/20 transition-all duration-200">
                 See Services
               </a>
@@ -210,7 +217,7 @@ const Index = () => {
   }
 
 
-  function WhatYouGetSection() {
+  function WhatYouGetSection(openModal: () => void) {
     const deliverables = [
       {
         category: "AI Governance & Compliance",
@@ -337,14 +344,12 @@ const Index = () => {
                 Book a 1:1 consultation to discuss your specific needs and get a customized roadmap for implementing trustworthy AI in your organization.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://calendly.com/sia-sanjeevaniai/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={openModal}
                   className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
                 >
-                  Book Your Consultation
-                </a>
+                  Book Your Free Consultation Call
+                </button>
                 <a
                   href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
                   target="_blank"
@@ -437,7 +442,7 @@ const Index = () => {
     )
   }
 
-  function CaseStudiesSection() {
+  function CaseStudiesSection(openModal: () => void) {
     return (
       <section id="case-studies" className="mt-24 md:mt-32 relative">
         {/* Background accents */}
@@ -532,15 +537,13 @@ const Index = () => {
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
                 Whether you're a digital health team, compliance leader, or edtech founder, we help you build AI systems that are audit-ready, regulator-approved, and business-ready.
               </p>
-              <a
-                href="https://calendly.com/sia-sanjeevaniai/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openModal}
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
               >
-                Book Your Strategy Call
+                Book Your Free Consultation Call
                 <span className="ml-2">→</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -605,7 +608,7 @@ const Index = () => {
     )
   }
 
-  function AboutSection() {
+  function AboutSection(openModal: () => void) {
     return (
       <section id="about" className="mt-24 md:mt-32 relative">
         {/* Background accents */}
@@ -680,14 +683,12 @@ const Index = () => {
 
               {/* Call to Action */}
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://calendly.com/sia-sanjeevaniai/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={openModal}
                   className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 text-center"
                 >
-                  Book a Consultation
-                </a>
+                  Book Your Free Consultation Call
+                </button>
                 <a
                   href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
                   target="_blank"
@@ -791,7 +792,7 @@ const Index = () => {
     )
   }
 
-  function Contact() {
+  function Contact(openModal: () => void) {
     return (
       <section id="contact" className="mx-auto max-w-5xl px-4 mt-24 relative">
         {/* Background accents */}
@@ -811,9 +812,9 @@ const Index = () => {
               </div>
             </div>
             <div className="mt-8 md:mt-0 w-full md:w-auto">
-              <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-2xl px-5 py-3 bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white font-medium shadow-lg hover:shadow-sky-300/25 transition-all duration-200">
-                Schedule Consultation →
-              </a>
+              <button onClick={openModal} className="inline-flex items-center rounded-2xl px-5 py-3 bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white font-medium shadow-lg hover:shadow-sky-300/25 transition-all duration-200">
+                Book Your Free Consultation Call →
+              </button>
             </div>
           </div>
         </div>
@@ -821,7 +822,7 @@ const Index = () => {
     )
   }
 
-  function PlatformLinksSection() {
+  function PlatformLinksSection(openModal: () => void) {
     const platforms = [
       {
         name: "LinkedIn",
@@ -958,18 +959,16 @@ const Index = () => {
                 Whether you're an enterprise, SMB, or startup implementing AI strategies, I'm here to help you build trustworthy, compliant, and effective AI systems.
               </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://calendly.com/sia-sanjeevaniai/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                <button
+                  onClick={openModal}
                   className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
                 >
-                  Book a 1:1 Call
-                </a>
+                  Book Your Free Consultation Call
+                </button>
                 <a
                   href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                   className="border border-cyan-400/40 text-cyan-400 hover:bg-cyan-500/10 px-8 py-3 rounded-xl font-medium transition-all duration-200"
                 >
                   Connect on LinkedIn
@@ -1007,12 +1006,12 @@ const Index = () => {
                 />
                 <a
                   href="https://ainstein19.substack.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                   className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 whitespace-nowrap"
-                >
+              >
                   Subscribe
-                </a>
+              </a>
               </div>
               <p className="text-sm text-gray-400 mt-3 text-center">
                 Join 500+ AI leaders building responsible AI systems
@@ -1111,7 +1110,7 @@ const Index = () => {
     )
   }
 
-  function FAQSection() {
+  function FAQSection(openModal: () => void) {
     const faqs = [
       {
         question: "What are the benefits of having an AI Governance Consultant?",
@@ -1179,15 +1178,13 @@ const Index = () => {
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
                 Book a free 30-minute consultation to discuss your specific AI governance needs and get personalized recommendations.
               </p>
-              <a
-                href="https://calendly.com/sia-sanjeevaniai/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openModal}
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
               >
-                Schedule Free Consultation
+                Book Your Free Consultation Call
                 <span className="ml-2">→</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
