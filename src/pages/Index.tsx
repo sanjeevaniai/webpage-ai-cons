@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import NoiseBg from '@/components/NoiseBg'
 import Rotator from '@/components/Rotator'
 import ConsultationModal from '@/components/ConsultationModal'
+import NewsletterPopup from '@/components/NewsletterPopup'
 
 const words = [
   "AI Governance",
@@ -15,6 +16,24 @@ const words = [
 
 const Index = () => {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false)
+  const [isNewsletterPopupOpen, setIsNewsletterPopupOpen] = useState(false)
+
+  // Show newsletter popup after 30 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const hasSeenPopup = localStorage.getItem('newsletter-popup-seen')
+      if (!hasSeenPopup) {
+        setIsNewsletterPopupOpen(true)
+      }
+    }, 30000) // 30 seconds
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleNewsletterClose = () => {
+    setIsNewsletterPopupOpen(false)
+    localStorage.setItem('newsletter-popup-seen', 'true')
+  }
 
   return (
     <div className="min-h-screen">
@@ -38,6 +57,40 @@ const Index = () => {
         isOpen={isConsultationModalOpen} 
         onClose={() => setIsConsultationModalOpen(false)} 
       />
+      <NewsletterPopup 
+        isOpen={isNewsletterPopupOpen} 
+        onClose={handleNewsletterClose} 
+      />
+      
+      {/* Sticky Newsletter Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-emerald-600 to-cyan-600 p-4 z-40 shadow-lg">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-white">
+            <p className="font-semibold">Get AI Governance insights weekly</p>
+            <p className="text-sm text-emerald-100">Join 500+ AI leaders</p>
+          </div>
+          <form 
+            action="https://ainstein19.substack.com/api/v1/free?nojs=true" 
+            method="post" 
+            target="_blank"
+            className="flex gap-2 w-full sm:w-auto"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              className="px-3 py-2 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50 min-w-0 flex-1 sm:flex-none sm:w-64"
+            />
+            <button
+              type="submit"
+              className="bg-white text-emerald-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   )
 
@@ -809,6 +862,8 @@ const Index = () => {
                 Email us directly: <a className="underline underline-offset-4 text-sky-400 hover:text-sky-300 font-medium" href="mailto:suneeta@sanjeevaniai.com">suneeta@sanjeevaniai.com</a>
                 <br className="mt-2" />
                 <span className="mt-2 inline-block">Or schedule a conversation: <a className="underline underline-offset-4 text-emerald-400 hover:text-emerald-300 font-medium" href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer">Book a call</a></span>
+                <br className="mt-2" />
+                <span className="mt-2 inline-block text-emerald-300">📧 Get weekly AI insights: <a className="underline underline-offset-4 text-emerald-400 hover:text-emerald-300 font-medium" href="https://ainstein19.substack.com" target="_blank" rel="noopener noreferrer">Subscribe to our newsletter</a></span>
               </div>
             </div>
             <div className="mt-8 md:mt-0 w-full md:w-auto">
@@ -991,30 +1046,48 @@ const Index = () => {
         <div className="mx-auto max-w-4xl px-4 relative z-10">
           <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-emerald-400/20 shadow-2xl">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Get weekly AI governance playbooks, compliance insights, and practical frameworks delivered to your inbox.
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get AI Governance Insights Weekly</h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-4">
+                Join 500+ AI leaders getting exclusive playbooks, compliance frameworks, and real-world case studies every Tuesday.
               </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-emerald-300">
+                <span className="flex items-center gap-1">
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                  HIPAA & NIST frameworks
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                  AI ethics playbooks
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                  ROI optimization tips
+                </span>
+              </div>
             </div>
 
             <div className="max-w-md mx-auto">
-              <div className="flex gap-3">
+              <form 
+                action="https://ainstein19.substack.com/api/v1/free?nojs=true" 
+                method="post" 
+                className="flex gap-3"
+              >
                 <input
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
+                  required
                   className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 transition-all duration-200"
                 />
-                <a
-                  href="https://ainstein19.substack.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                <button
+                  type="submit"
                   className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 whitespace-nowrap"
-              >
-                  Subscribe
-              </a>
-              </div>
+                >
+                  Subscribe Free
+                </button>
+              </form>
               <p className="text-sm text-gray-400 mt-3 text-center">
-                Join 500+ AI leaders building responsible AI systems
+                ✅ Free forever • No spam • Unsubscribe anytime
               </p>
             </div>
           </div>
