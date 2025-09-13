@@ -69,26 +69,14 @@ const Index = () => {
             <p className="font-semibold">Get AI Governance insights weekly</p>
             <p className="text-sm text-emerald-100">Join 500+ AI leaders</p>
           </div>
-          <form 
-            action="https://ainstein19.substack.com/api/v1/free?nojs=true" 
-            method="post" 
+          <a
+            href="https://ainstein19.substack.com"
             target="_blank"
-            className="flex gap-2 w-full sm:w-auto"
+            rel="noopener noreferrer"
+            className="bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 hover:scale-105 transition-all duration-200 whitespace-nowrap shadow-lg"
           >
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              className="px-3 py-2 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50 min-w-0 flex-1 sm:flex-none sm:w-64"
-            />
-            <button
-              type="submit"
-              className="bg-white text-emerald-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap"
-            >
-              Subscribe
-            </button>
-          </form>
+            Subscribe to Our Newsletter →
+          </a>
         </div>
       </div>
     </div>
@@ -1066,27 +1054,17 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="max-w-md mx-auto">
-              <form 
-                action="https://ainstein19.substack.com/api/v1/free?nojs=true" 
-                method="post" 
-                className="flex gap-3"
+            <div className="text-center">
+              <a
+                href="https://ainstein19.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 hover:scale-105"
               >
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  required
-                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 transition-all duration-200"
-                />
-                <button
-                  type="submit"
-                  className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 whitespace-nowrap"
-                >
-                  Subscribe Free
-                </button>
-              </form>
-              <p className="text-sm text-gray-400 mt-3 text-center">
+                Subscribe to Our Newsletter
+                <span className="text-emerald-200">→</span>
+              </a>
+              <p className="text-sm text-gray-400 mt-4">
                 ✅ Free forever • No spam • Unsubscribe anytime
               </p>
             </div>
