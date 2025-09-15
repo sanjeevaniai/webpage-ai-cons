@@ -127,6 +127,70 @@ const Frameworks = () => {
                     </div>
                 </div>
 
+                {/* Our Approach Section */}
+                <div className="mb-16">
+                    <div className="text-center mb-12">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 dark:bg-cyan-500/20 border border-cyan-400/30 dark:border-cyan-300/30 text-sm text-cyan-600 dark:text-cyan-300 mb-6">
+                            <div className="w-2 h-2 bg-cyan-500 dark:bg-cyan-400 rounded-full animate-pulse"></div>
+                            Our Approach
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Non-OSFA: Governance is not 'One Size Fits All'</h2>
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                            Every organization is unique. We don't believe in generic AI governance templates. Instead, we design customized frameworks that align with your specific industry, size, risk profile, and growth stage.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/30 transition-all duration-300">
+                            <div className="text-3xl mb-4">🎯</div>
+                            <h3 className="text-lg font-semibold text-white mb-3">Industry-Specific</h3>
+                            <p className="text-gray-300 text-sm">
+                                Healthcare gets HIPAA-focused controls, finance gets SOX compliance, edtech gets FERPA safeguards. No generic templates.
+                            </p>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/30 transition-all duration-300">
+                            <div className="text-3xl mb-4">📏</div>
+                            <h3 className="text-lg font-semibold text-white mb-3">Size-Appropriate</h3>
+                            <p className="text-gray-300 text-sm">
+                                Startup governance looks different from enterprise. We scale frameworks to your team size and complexity.
+                            </p>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/30 transition-all duration-300">
+                            <div className="text-3xl mb-4">⚖️</div>
+                            <h3 className="text-lg font-semibold text-white mb-3">Risk-Calibrated</h3>
+                            <p className="text-gray-300 text-sm">
+                                High-risk AI gets more controls, low-risk gets streamlined processes. We match governance to actual risk levels.
+                            </p>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/30 transition-all duration-300">
+                            <div className="text-3xl mb-4">🚀</div>
+                            <h3 className="text-lg font-semibold text-white mb-3">Growth-Stage Ready</h3>
+                            <p className="text-gray-300 text-sm">
+                                Frameworks that evolve with you—from MVP to IPO. Built to scale, not to constrain.
+                            </p>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/30 transition-all duration-300">
+                            <div className="text-3xl mb-4">🔧</div>
+                            <h3 className="text-lg font-semibold text-white mb-3">Implementation-Focused</h3>
+                            <p className="text-gray-300 text-sm">
+                                Not just policies—actual code, processes, and tools that your team can use day one.
+                            </p>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/30 transition-all duration-300">
+                            <div className="text-3xl mb-4">📈</div>
+                            <h3 className="text-lg font-semibold text-white mb-3">ROI-Driven</h3>
+                            <p className="text-gray-300 text-sm">
+                                Every control ties back to business value: risk reduction, cost savings, or revenue protection.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Frameworks Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {frameworks.map((framework, index) => {

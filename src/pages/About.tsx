@@ -38,6 +38,70 @@ const About = () => {
           </div>
         </div>
 
+        {/* Detailed Our Approach Section */}
+        <div className="mt-16">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 dark:bg-cyan-500/20 border border-cyan-400/30 dark:border-cyan-300/30 text-sm text-cyan-600 dark:text-cyan-300 mb-6">
+              <div className="w-2 h-2 bg-cyan-500 dark:bg-cyan-400 rounded-full animate-pulse"></div>
+              Our Approach
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Non-OSFA: Governance is not 'One Size Fits All'</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Every organization is unique. We don't believe in generic AI governance templates. Instead, we design customized frameworks that align with your specific industry, size, risk profile, and growth stage.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-cyan-400/30 transition-all duration-300">
+              <div className="text-3xl mb-4">🎯</div>
+              <h3 className="text-lg font-semibold text-white mb-3">Industry-Specific</h3>
+              <p className="text-gray-300 text-sm">
+                Healthcare gets HIPAA-focused controls, finance gets SOX compliance, edtech gets FERPA safeguards. No generic templates.
+              </p>
+            </div>
+
+            <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-cyan-400/30 transition-all duration-300">
+              <div className="text-3xl mb-4">📏</div>
+              <h3 className="text-lg font-semibold text-white mb-3">Size-Appropriate</h3>
+              <p className="text-gray-300 text-sm">
+                Startup governance looks different from enterprise. We scale frameworks to your team size and complexity.
+              </p>
+            </div>
+
+            <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-cyan-400/30 transition-all duration-300">
+              <div className="text-3xl mb-4">⚖️</div>
+              <h3 className="text-lg font-semibold text-white mb-3">Risk-Calibrated</h3>
+              <p className="text-gray-300 text-sm">
+                High-risk AI gets more controls, low-risk gets streamlined processes. We match governance to actual risk levels.
+              </p>
+            </div>
+
+            <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-cyan-400/30 transition-all duration-300">
+              <div className="text-3xl mb-4">🚀</div>
+              <h3 className="text-lg font-semibold text-white mb-3">Growth-Stage Ready</h3>
+              <p className="text-gray-300 text-sm">
+                Frameworks that evolve with you—from MVP to IPO. Built to scale, not to constrain.
+              </p>
+            </div>
+
+            <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-cyan-400/30 transition-all duration-300">
+              <div className="text-3xl mb-4">🔧</div>
+              <h3 className="text-lg font-semibold text-white mb-3">Implementation-Focused</h3>
+              <p className="text-gray-300 text-sm">
+                Not just policies—actual code, processes, and tools that your team can use day one.
+              </p>
+            </div>
+
+            <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-cyan-400/30 transition-all duration-300">
+              <div className="text-3xl mb-4">📈</div>
+              <h3 className="text-lg font-semibold text-white mb-3">ROI-Driven</h3>
+              <p className="text-gray-300 text-sm">
+                Every control ties back to business value: risk reduction, cost savings, or revenue protection.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* About Suneeta Section */}
         <div className="mb-16">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
@@ -121,6 +185,60 @@ const About = () => {
                 >
                   Connect on LinkedIn
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Teams Choose Us Section */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Teams Choose Us</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We deliver AI solutions that are not just technically sound, but built for real-world compliance and business success.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl">
+              <div className="text-center">
+                <div className="text-4xl mb-4 text-emerald-400 group-hover:text-emerald-300 transition-colors">
+                  🛡️
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-gray-100 transition-colors">
+                  Compliance-first by design
+                </h3>
+                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                  Solutions and artifacts stand up to audits, security reviews, and regulators.
+                </p>
+              </div>
+            </div>
+
+            <div className="group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl">
+              <div className="text-center">
+                <div className="text-4xl mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                  ⚙️
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-gray-100 transition-colors">
+                  Pragmatic engineering
+                </h3>
+                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                  Production-ready patterns, not slideware—built for maintainability and scale.
+                </p>
+              </div>
+            </div>
+
+            <div className="group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl">
+              <div className="text-center">
+                <div className="text-4xl mb-4 text-sky-400 group-hover:text-sky-300 transition-colors">
+                  📈
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-gray-100 transition-colors">
+                  Business outcomes
+                </h3>
+                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                  Clear metrics tied to revenue, cost, risk reduction, and user experience.
+                </p>
               </div>
             </div>
           </div>

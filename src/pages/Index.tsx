@@ -48,7 +48,6 @@ const Index = () => {
       {NonOSFASection()}
       {WhatYouGetSection(setIsConsultationModalOpen)}
       {NewsletterSection()}
-      {WhyChooseUsSection()}
       {CaseStudiesSection(setIsConsultationModalOpen)}
       {Contact(setIsConsultationModalOpen)}
       {PlatformLinksSection(setIsConsultationModalOpen)}
@@ -820,80 +819,6 @@ const Index = () => {
   }
 
 
-  function WhyChooseUsSection() {
-    const reasons = [
-      {
-        title: "Compliance-first by design",
-        description: "Solutions and artifacts stand up to audits, security reviews, and regulators.",
-        icon: "🛡️",
-        color: "emerald"
-      },
-      {
-        title: "Pragmatic engineering",
-        description: "Production-ready patterns, not slideware—built for maintainability and scale.",
-        icon: "⚙️",
-        color: "cyan"
-      },
-      {
-        title: "Business outcomes",
-        description: "Clear metrics tied to revenue, cost, risk reduction, and user experience.",
-        icon: "📈",
-        color: "sky"
-      }
-    ]
-
-    return (
-      <section id="why-choose-us" className="mt-24 md:mt-32 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
-
-        <div className="mx-auto max-w-7xl px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Teams Choose Us</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We deliver AI solutions that are not just technically sound, but built for real-world compliance and business success.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {reasons.map((reason, i) => {
-              const colorClasses = {
-                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
-                cyan: 'border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10',
-                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10'
-              }
-
-              const textColorClasses = {
-                emerald: 'text-emerald-400 group-hover:text-emerald-300',
-                cyan: 'text-cyan-400 group-hover:text-cyan-300',
-                sky: 'text-sky-400 group-hover:text-sky-300'
-              }
-
-              return (
-                <div
-                  key={i}
-                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-8 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[reason.color]}`}
-                >
-                  <div className="text-center">
-                    <div className={`text-4xl mb-4 transition-colors ${textColorClasses[reason.color]}`}>
-                      {reason.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-4 transition-colors group-hover:text-gray-100">
-                      {reason.title}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-gray-200">
-                      {reason.description}
-                    </p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   function CaseStudiesSection(openModal: () => void) {
     return (
