@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import NoiseBg from '@/components/NoiseBg'
+import ISOCertifications from '@/components/ISOCertifications'
 
 const About = () => {
   return (
@@ -20,23 +21,33 @@ const About = () => {
           <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30">
             <h2 className="text-xl font-semibold text-white mb-4">Our Mission</h2>
             <p className="text-gray-300">
-              To democratize AI technology for healthcare organizations by providing affordable, 
+              To democratize AI technology for healthcare organizations by providing affordable,
               domain-specific AI solutions that enhance patient care and operational efficiency.
             </p>
           </div>
-          
+
           <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30">
             <h2 className="text-xl font-semibold text-white mb-4">Our Expertise</h2>
             <p className="text-gray-300">
-              7+ years in bioinformatics and data science research, with specialized focus on 
+              7+ years in bioinformatics and data science research, with specialized focus on
               healthcare AI applications and regulatory compliance.
             </p>
           </div>
         </div>
 
-        <div className="text-center">
-          <a 
-            href="/" 
+        {/* ISO Certifications Section */}
+        <div className="mt-16">
+          <ISOCertifications
+            title="Our ISO Certifications"
+            subtitle="Certified in international standards for AI governance, information security, and privacy"
+            showDownloadButtons={true}
+            compact={false}
+          />
+        </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="/"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white rounded-xl font-medium transition-all duration-200"
           >
             ← Back to Home
