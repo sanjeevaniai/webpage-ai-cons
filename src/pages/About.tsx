@@ -126,6 +126,86 @@ const About = () => {
           </div>
         </div>
 
+        {/* Industry Certifications Section */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Industry Certifications</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Certified expertise in AI governance, data security, privacy operations, and compliance frameworks
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* AI Security & Governance Certification */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
+              <div className="text-center">
+                <img
+                  src="/AI Security & Governance.png"
+                  alt="AI Security & Governance Certification"
+                  className="w-full h-32 object-contain mb-4"
+                />
+                <h3 className="text-lg font-semibold text-white mb-2">AI Security & Governance</h3>
+                <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block mb-3">
+                  VERIFIED
+                </div>
+                <a
+                  href="https://education.securiti.ai/verification/1332C68E8-1332C6757-12D084B90/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-emerald-300 hover:text-emerald-200 text-sm font-medium transition-colors"
+                >
+                  Verify Certificate →
+                </a>
+              </div>
+            </div>
+
+            {/* DSPM Certification */}
+            <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-6 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
+              <div className="text-center">
+                <img
+                  src="/DSPM.png"
+                  alt="DSPM Certification"
+                  className="w-full h-32 object-contain mb-4"
+                />
+                <h3 className="text-lg font-semibold text-white mb-2">DSPM</h3>
+                <div className="text-xs text-sky-300 font-medium bg-sky-500/20 px-2 py-1 rounded-full inline-block">
+                  IN PROGRESS
+                </div>
+              </div>
+            </div>
+
+            {/* PrivacyOps Certification */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
+              <div className="text-center">
+                <img
+                  src="/PrivacyOps.png"
+                  alt="PrivacyOps Certification"
+                  className="w-full h-32 object-contain mb-4"
+                />
+                <h3 className="text-lg font-semibold text-white mb-2">PrivacyOps</h3>
+                <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block">
+                  IN PROGRESS
+                </div>
+              </div>
+            </div>
+
+            {/* HIPAA Compliance */}
+            <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-6 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
+              <div className="text-center">
+                <div className="w-full h-32 flex items-center justify-center mb-4">
+                  <div className="w-20 h-20 bg-sky-500/30 rounded-xl flex items-center justify-center">
+                    <span className="text-3xl">🏥</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">HIPAA</h3>
+                <div className="text-xs text-sky-300 font-medium bg-sky-500/20 px-2 py-1 rounded-full inline-block">
+                  IN PROGRESS
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* ISO Certifications Section */}
         <div className="mt-16">
           <ISOCertifications

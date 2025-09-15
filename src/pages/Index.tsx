@@ -5,7 +5,6 @@ import NoiseBg from '@/components/NoiseBg'
 import Rotator from '@/components/Rotator'
 import ConsultationModal from '@/components/ConsultationModal'
 import NewsletterPopup from '@/components/NewsletterPopup'
-import ISOCertifications from '@/components/ISOCertifications'
 
 const words = [
   "AI Governance",
@@ -50,9 +49,6 @@ const Index = () => {
       {WhatYouGetSection(setIsConsultationModalOpen)}
       {WhyChooseUsSection()}
       {CaseStudiesSection(setIsConsultationModalOpen)}
-      {Credentials()}
-      {Certifications()}
-      {ISOCertificationsSection()}
       {Contact(setIsConsultationModalOpen)}
       {PlatformLinksSection(setIsConsultationModalOpen)}
       {NewsletterSection()}
@@ -1009,169 +1005,6 @@ const Index = () => {
     )
   }
 
-  function Credentials() {
-    return (
-      <section id="credentials" className="mx-auto max-w-6xl px-4 mt-20 md:mt-28 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-green-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-sky-500/5 rounded-full blur-3xl"></div>
-
-        <div className="grid md:grid-cols-12 gap-8 items-start relative z-10">
-          <div className="md:col-span-5">
-            <h2 className="text-xl tracking-wide text-green-400 dark:text-green-300 font-semibold">Meet the Founder</h2>
-            <div className="mt-6 space-y-4">
-              <div className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30">
-                <h3 className="text-green-600 dark:text-green-400 font-medium mb-3">Suneeta Modekurty</h3>
-                <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                  Suneeta Modekurty is an AI & Data Governance Consultant recognized with the O-1A Visa, recipient of an AI Thought Leadership Award (2025), and author of The AI-Human Synergy (2024). She helps healthcare, finance, and public-sector leaders adopt AI with governance, transparency, and measurable ROI.
-                </p>
-                <div className="flex items-center gap-2 text-xs text-gray-400">
-                  <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                  Available for new projects
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="md:col-span-7">
-            <div className="bg-gray-800/10 backdrop-blur-xl rounded-3xl border border-gray-700/30 shadow-lg hover:bg-gray-800/20 hover:shadow-2xl transition-all duration-300 p-6 grid sm:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Trust & Reliability",
-                  desc: "We build AI systems that people can trust, with comprehensive governance frameworks and ethical compliance.",
-                  accent: "green"
-                },
-                {
-                  title: "ROI Focused",
-                  desc: "Every AI solution we develop is designed to reduce unnecessary loss and deliver measurable business value.",
-                  accent: "sky"
-                },
-                {
-                  title: "Compliance First",
-                  desc: "HIPAA compliance and NIST frameworks ensure your AI systems meet the highest regulatory standards.",
-                  accent: "green"
-                },
-              ].map((c) => (
-                <div key={c.title} className="text-center">
-                  <div className={`font-medium mb-2 ${c.accent === 'green' ? 'text-emerald-400' : 'text-cyan-400'
-                    }`}>{c.title}</div>
-                  <div className={`mt-2 h-px mx-auto w-8 ${c.accent === 'green' ? 'bg-emerald-400' : 'bg-cyan-400'
-                    }`} />
-                  <p className="mt-3 text-sm text-gray-300 leading-relaxed">{c.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
-
-  function Certifications() {
-    return (
-      <section id="certifications" className="mx-auto max-w-6xl px-4 mt-20 md:mt-28 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-sky-500/5 rounded-full blur-3xl"></div>
-
-        <div className="text-center mb-12 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Industry Certifications</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Certified expertise in AI governance, data security, privacy operations, and compliance frameworks
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-          {/* AI Security & Governance Certification */}
-          <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
-            <div className="text-center">
-              <img
-                src="/AI Security & Governance.png"
-                alt="AI Security & Governance Certification"
-                className="w-full h-32 object-contain mb-4"
-              />
-              <h3 className="text-lg font-semibold text-white mb-2">AI Security & Governance</h3>
-              <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block mb-3">
-                VERIFIED
-              </div>
-              <a
-                href="https://education.securiti.ai/verification/1332C68E8-1332C6757-12D084B90/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-emerald-300 hover:text-emerald-200 text-sm font-medium transition-colors"
-              >
-                Verify Certificate →
-              </a>
-            </div>
-          </div>
-
-          {/* DSPM Certification */}
-          <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-6 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
-            <div className="text-center">
-              <img
-                src="/DSPM.png"
-                alt="DSPM Certification"
-                className="w-full h-32 object-contain mb-4"
-              />
-              <h3 className="text-lg font-semibold text-white mb-2">DSPM</h3>
-              <div className="text-xs text-sky-300 font-medium bg-sky-500/20 px-2 py-1 rounded-full inline-block">
-                IN PROGRESS
-              </div>
-            </div>
-          </div>
-
-          {/* PrivacyOps Certification */}
-          <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-400/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/40 hover:border-emerald-400/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20">
-            <div className="text-center">
-              <img
-                src="/PrivacyOps.png"
-                alt="PrivacyOps Certification"
-                className="w-full h-32 object-contain mb-4"
-              />
-              <h3 className="text-lg font-semibold text-white mb-2">PrivacyOps</h3>
-              <div className="text-xs text-emerald-300 font-medium bg-emerald-500/20 px-2 py-1 rounded-full inline-block">
-                IN PROGRESS
-              </div>
-            </div>
-          </div>
-
-          {/* HIPAA Compliance */}
-          <div className="bg-gradient-to-br from-sky-500/20 to-sky-400/10 backdrop-blur-xl rounded-2xl p-6 border border-sky-400/40 hover:border-sky-400/60 transition-all duration-300 shadow-lg hover:shadow-sky-500/20">
-            <div className="text-center">
-              <div className="w-full h-32 flex items-center justify-center mb-4">
-                <div className="w-20 h-20 bg-sky-500/30 rounded-xl flex items-center justify-center">
-                  <span className="text-3xl">🏥</span>
-                </div>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">HIPAA</h3>
-              <div className="text-xs text-sky-300 font-medium bg-sky-500/20 px-2 py-1 rounded-full inline-block">
-                IN PROGRESS
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
-  function ISOCertificationsSection() {
-    return (
-      <section id="iso-certifications" className="mx-auto max-w-6xl px-4 mt-20 md:mt-28 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
-
-        <div className="relative z-10">
-          <ISOCertifications
-            title="ISO Certifications"
-            subtitle="Internationally recognized standards for AI governance, information security, and privacy"
-            showDownloadButtons={false}
-            compact={true}
-          />
-        </div>
-      </section>
-    )
-  }
 
   function Contact(openModal: () => void) {
     return (
