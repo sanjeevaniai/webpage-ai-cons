@@ -52,7 +52,6 @@ const Index = () => {
       {Contact(setIsConsultationModalOpen)}
       {PlatformLinksSection(setIsConsultationModalOpen)}
       {NewsletterSection()}
-      {SocialHandlesSection()}
       {FAQSection(setIsConsultationModalOpen)}
       <Footer />
       <ConsultationModal
@@ -1247,92 +1246,6 @@ const Index = () => {
     )
   }
 
-  function SocialHandlesSection() {
-    const socialPlatforms = [
-      {
-        name: "X (Twitter)",
-        handle: "@sanjeevaniai",
-        url: "https://x.com/sanjeevaniai",
-        icon: "𝕏",
-        color: "sky"
-      },
-      {
-        name: "LinkedIn",
-        handle: "SANJEEVANI AI LLC",
-        url: "https://www.linkedin.com/company/sanjeevani-ai-llc/",
-        icon: "💼",
-        color: "emerald"
-      },
-      {
-        name: "Facebook",
-        handle: "SANJEEVANI AI",
-        url: "https://facebook.com/sanjeevaniai",
-        icon: "📘",
-        color: "blue"
-      }
-    ]
-
-    return (
-      <section id="social" className="mt-24 md:mt-32 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
-
-        <div className="mx-auto max-w-6xl px-4 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Connect With Us</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Follow our journey and stay updated with the latest in AI governance and responsible AI practices.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {socialPlatforms.map((platform, i) => {
-              const colorClasses = {
-                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
-                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
-                blue: 'border-blue-400/30 hover:border-blue-400/50 hover:bg-blue-500/5 hover:shadow-blue-500/10'
-              }
-
-              const textColorClasses = {
-                sky: 'text-sky-400 group-hover:text-sky-300',
-                emerald: 'text-emerald-400 group-hover:text-emerald-300',
-                blue: 'text-blue-400 group-hover:text-blue-300'
-              }
-
-              return (
-                <a
-                  key={i}
-                  href={platform.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[platform.color]}`}
-                >
-                  <div className="text-center">
-                    <div className={`text-4xl mb-4 transition-colors ${textColorClasses[platform.color]}`}>
-                      {platform.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-2 transition-colors group-hover:text-gray-100">
-                      {platform.name}
-                    </h3>
-                    <p className={`text-sm transition-colors ${textColorClasses[platform.color]}`}>
-                      {platform.handle}
-                    </p>
-                    <div className="mt-4 flex items-center justify-center text-sm font-medium group-hover:translate-x-1 transition-transform">
-                      <span className="text-gray-300 group-hover:text-white">Follow</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   function FAQSection(openModal: () => void) {
     const [openFAQs, setOpenFAQs] = useState<number[]>([])
@@ -1468,21 +1381,110 @@ const Index = () => {
 }
 
 function Footer() {
+  const socialPlatforms = [
+    {
+      name: "X (Twitter)",
+      handle: "@sanjeevaniai",
+      url: "https://x.com/sanjeevaniai",
+      icon: "𝕏",
+      color: "sky"
+    },
+    {
+      name: "LinkedIn",
+      handle: "SANJEEVANI AI LLC",
+      url: "https://www.linkedin.com/company/sanjeevani-ai-llc/",
+      icon: "💼",
+      color: "emerald"
+    },
+    {
+      name: "Facebook",
+      handle: "SANJEEVANI AI",
+      url: "https://facebook.com/sanjeevaniai",
+      icon: "📘",
+      color: "blue"
+    }
+  ]
+
   return (
-    <footer className="mx-auto max-w-6xl px-4 mt-20 md:mt-28 mb-16 text-gray-500 dark:text-gray-400 text-sm">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div className="flex items-center gap-3">
-          <span>© {new Date().getFullYear()} SANJEEVANI AI • Custom AI Agents & LLM Fine-tuning</span>
+    <footer className="mt-24 md:mt-32 relative">
+      {/* Background accents */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+      <div className="mx-auto max-w-6xl px-4 relative z-10">
+        {/* Connect With Us Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Connect With Us</h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+            Follow our journey and stay updated with the latest in AI governance and responsible AI practices.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {socialPlatforms.map((platform, i) => {
+              const colorClasses = {
+                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
+                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
+                blue: 'border-blue-400/30 hover:border-blue-400/50 hover:bg-blue-500/5 hover:shadow-blue-500/10'
+              }
+
+              const textColorClasses = {
+                sky: 'text-sky-400 group-hover:text-sky-300',
+                emerald: 'text-emerald-400 group-hover:text-emerald-300',
+                blue: 'text-blue-400 group-hover:text-blue-300'
+              }
+
+              return (
+                <a
+                  key={i}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[platform.color]}`}
+                >
+                  <div className="text-center">
+                    <div className={`text-4xl mb-4 transition-colors ${textColorClasses[platform.color]}`}>
+                      {platform.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2 transition-colors group-hover:text-gray-100">
+                      {platform.name}
+                    </h3>
+                    <p className={`text-sm transition-colors ${textColorClasses[platform.color]}`}>
+                      {platform.handle}
+                    </p>
+                    <div className="mt-4 flex items-center justify-center text-sm font-medium group-hover:translate-x-1 transition-transform">
+                      <span className="text-gray-300 group-hover:text-white">Follow</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              )
+            })}
+          </div>
         </div>
-        <div className="flex flex-wrap gap-4">
-          <a href="https://www.linkedin.com/company/sanjeevani-ai-llc/" target="_blank" rel="noopener noreferrer" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">LinkedIn</a>
-          <a href="https://www.upwork.com/freelancers/~01968cb9a3759f39de?mp_source=share" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Upwork</a>
-          <a href="https://topmate.io/suneeta19" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 dark:hover:text-purple-300 transition-colors">Topmate</a>
-          <a href="#" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">Publications</a>
-          <a href="#" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Speaking</a>
-          <span className="text-gray-300 dark:text-gray-600">•</span>
-          <a href="/privacy" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">Privacy Policy</a>
-          <a href="/terms" className="hover:text-sky-400 dark:hover:text-sky-300 transition-colors">Terms of Service</a>
+
+        {/* Footer Links */}
+        <div className="border-t border-gray-700/30 pt-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <span className="text-gray-400">© {new Date().getFullYear()} SANJEEVANI AI • Custom AI Agents & LLM Fine-tuning</span>
+            </div>
+            <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-4">
+                <a href="https://www.linkedin.com/company/sanjeevani-ai-llc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-400 transition-colors">LinkedIn</a>
+                <a href="https://www.upwork.com/freelancers/~01968cb9a3759f39de?mp_source=share" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-sky-400 transition-colors">Upwork</a>
+                <a href="https://topmate.io/suneeta19" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">Topmate</a>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Publications</a>
+                <a href="#" className="text-gray-400 hover:text-sky-400 transition-colors">Speaking</a>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <span className="text-gray-600">•</span>
+                <a href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">Privacy Policy</a>
+                <a href="/terms" className="text-gray-400 hover:text-sky-400 transition-colors">Terms & Conditions</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
