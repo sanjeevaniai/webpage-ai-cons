@@ -43,6 +43,10 @@ const Index = () => {
       <Header />
       {Masthead(setIsConsultationModalOpen)}
       {ServicesSection()}
+      {HowWeEngageSection()}
+      {WhyUsSection()}
+      {GRCServicesSection()}
+      {NonOSFASection()}
       {WhatYouGetSection(setIsConsultationModalOpen)}
       {WhyChooseUsSection()}
       {CaseStudiesSection(setIsConsultationModalOpen)}
@@ -92,50 +96,211 @@ const Index = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/20 rounded-full blur-3xl opacity-70"></div>
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl opacity-70"></div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
-          {/* Content */}
-          <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 dark:bg-green-500/20 border border-green-400/30 dark:border-green-300/30 text-sm text-green-600 dark:text-green-300 mb-6">
-              <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
-              Available for new projects
+        <div className="relative z-10">
+          {/* Top section with headline, subheadlines, and image */}
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start mb-12">
+            {/* Text content - takes up 3/5 of the width */}
+            <div className="lg:col-span-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 dark:bg-green-500/20 border border-green-400/30 dark:border-green-300/30 text-sm text-green-600 dark:text-green-300 mb-6">
+                <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
+                Available for new projects
+              </div>
+
+              <motion.h1
+                className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <span>AI That's </span>
+                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent">
+                  Safe to Ship
+                </span>
+                <span className="text-4xl md:text-5xl lg:text-6xl text-gray-300 font-medium">
+                  {" "}& Simple to Govern
+                </span>
+              </motion.h1>
+
+              <motion.div
+                className="mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                <p className="text-xl md:text-2xl text-gray-300 font-medium mb-4">
+                  Why not follow best practices from day one?
+                </p>
+                <p className="text-lg md:text-xl text-emerald-300 font-semibold">
+                  Build the best AI–human synergy the world has ever seen.
+                </p>
+              </motion.div>
             </div>
-            <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <span className="block">AI That's</span>
-              <span className="block bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                Safe to Ship
-              </span>
-              <span className="block text-4xl md:text-5xl lg:text-6xl text-gray-300 font-medium">
-                & Simple to Govern
-              </span>
-            </motion.h1>
 
+            {/* Graphic - takes up 2/5 of the width */}
             <motion.div
-              className="mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+              className="lg:col-span-2 relative lg:mt-8"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             >
-              <p className="text-xl md:text-2xl text-gray-300 font-medium mb-2">
-                Why not follow best practices from day one?
-              </p>
-              <p className="text-lg md:text-xl text-emerald-300 font-semibold">
-                Build the best AI–human synergy the world has ever seen.
-              </p>
-            </motion.div>
+              <div className="relative w-full">
+                {/* Main graphic container */}
+                <motion.div
+                  className="relative bg-gray-800/10 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/30 shadow-lg hover:bg-gray-800/20 transition-all duration-200"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* AI Governance Dashboard */}
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between">
+                      <div className="text-gray-300/70 font-medium hover:text-gray-200 transition-colors duration-200 cursor-default">AI Governance Dashboard</div>
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    </div>
 
+                    {/* Security & Ethics Indicators */}
+                    <div className="space-y-4">
+                      <motion.div
+                        className="flex items-center justify-between"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.2, duration: 0.6 }}
+                      >
+                        <span className="text-sm text-gray-400">Security Score</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <motion.div
+                              className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full"
+                              initial={{ width: 0 }}
+                              animate={{ width: '95%' }}
+                              transition={{ delay: 1.6, duration: 1.5, ease: "easeOut" }}
+                            ></motion.div>
+                          </div>
+                          <span className="text-emerald-400 text-sm font-medium">95%</span>
+                        </div>
+                      </motion.div>
+                      <motion.div
+                        className="flex items-center justify-between"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.4, duration: 0.6 }}
+                      >
+                        <span className="text-sm text-gray-400">Ethics Compliance</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <motion.div
+                              className="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full"
+                              initial={{ width: 0 }}
+                              animate={{ width: '92%' }}
+                              transition={{ delay: 1.8, duration: 1.5, ease: "easeOut" }}
+                            ></motion.div>
+                          </div>
+                          <span className="text-cyan-400 text-sm font-medium">92%</span>
+                        </div>
+                      </motion.div>
+                      <motion.div
+                        className="flex items-center justify-between"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.6, duration: 0.6 }}
+                      >
+                        <span className="text-sm text-gray-400">ROI Improvement</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <motion.div
+                              className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full"
+                              initial={{ width: 0 }}
+                              animate={{ width: '100%' }}
+                              transition={{ delay: 2.0, duration: 1.5, ease: "easeOut" }}
+                            ></motion.div>
+                          </div>
+                          <span className="text-green-400 text-sm font-medium">127%</span>
+                        </div>
+                      </motion.div>
+                    </div>
+
+                    {/* Key Metrics */}
+                    <motion.div
+                      className="grid grid-cols-2 gap-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 2.2, duration: 0.6 }}
+                    >
+                      <motion.div
+                        className="bg-emerald-900/20 rounded-xl p-3 border border-emerald-800/30"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="text-emerald-400 text-xs font-medium">Cost Reduction</div>
+                        <div className="text-white font-semibold">45%</div>
+                      </motion.div>
+                      <motion.div
+                        className="bg-cyan-900/20 rounded-xl p-3 border border-cyan-800/30"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="text-cyan-400 text-xs font-medium">Risk Mitigation</div>
+                        <div className="text-white font-semibold">78%</div>
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Floating elements */}
+                <motion.div
+                  className="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-500 to-emerald-600 backdrop-blur-sm rounded-2xl p-4 border border-emerald-400/30 shadow-lg"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.4, duration: 0.5 }}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                    <div className="text-white font-bold text-sm">🛡️</div>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="absolute -bottom-4 -left-4 bg-gradient-to-br from-cyan-400 to-cyan-500 backdrop-blur-sm rounded-2xl p-3 border border-cyan-300/30 shadow-lg"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.6, duration: 0.5 }}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <div className="text-white text-sm font-medium">AI You Can Trust</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom section with descriptive paragraphs */}
+          <div className="mt-12">
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-2xl"
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              SANJEEVANI AI is a specialized AI governance consultancy that helps healthcare and EdTech organizations implement AI Governance, Risk Management, and Compliance (GRC) into their AI systems. We build single and multi-agent systems with responsible AI principles from day one, ensuring your AI initiatives are production-ready, auditable, and deliver measurable ROI.
+              SANJEEVANI AI helps regulated enterprises govern and deploy multi-agent AI systems safely, responsibly, and profitably. We are the first governance-first advisory and engineering firm aligning ISO/IEC 42001, NIST AI RMF, and modern GRC frameworks to real-world AI engineering.
             </motion.p>
+
+            <motion.p
+              className="text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+            >
+              With 25+ years of cross-industry expertise, we bridge compliance, risk, and responsible AI design to help leaders ship AI that is safe to scale and simple to govern.
+            </motion.p>
+
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-400/30 dark:border-emerald-300/30 text-sm text-emerald-600 dark:text-emerald-300 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              <div className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
+              <span className="font-semibold">Non-OSFA Approach:</span>
+              <span>Governance is not 'One Size Fits All'</span>
+            </motion.div>
+
             <motion.div
               className="flex flex-col sm:flex-row gap-4 mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -159,144 +324,12 @@ const Index = () => {
                 See Services
               </motion.a>
             </motion.div>
+
             <div className="text-sm text-gray-500 dark:text-gray-400">
               <div className="mb-2 text-sky-400 dark:text-sky-300 font-medium">Expertise in:</div>
               <div className="text-green-600 dark:text-green-400 font-medium"><Rotator items={words} /></div>
             </div>
           </div>
-
-          {/* Graphic */}
-          <motion.div
-            className="order-1 lg:order-2 relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-          >
-            <div className="relative w-full max-w-md mx-auto lg:max-w-none">
-              {/* Main graphic container */}
-              <motion.div
-                className="relative bg-gray-800/10 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/30 shadow-lg hover:bg-gray-800/20 transition-all duration-200"
-                whileHover={{ scale: 1.02, y: -5 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* AI Governance Dashboard */}
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <div className="text-gray-300/70 font-medium hover:text-gray-200 transition-colors duration-200 cursor-default">AI Governance Dashboard</div>
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  </div>
-
-                  {/* Security & Ethics Indicators */}
-                  <div className="space-y-4">
-                    <motion.div
-                      className="flex items-center justify-between"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.8, duration: 0.6 }}
-                    >
-                      <span className="text-sm text-gray-400">Security Score</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                          <motion.div
-                            className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full"
-                            initial={{ width: 0 }}
-                            animate={{ width: '95%' }}
-                            transition={{ delay: 1.2, duration: 1.5, ease: "easeOut" }}
-                          ></motion.div>
-                        </div>
-                        <span className="text-emerald-400 text-sm font-medium">95%</span>
-                      </div>
-                    </motion.div>
-                    <motion.div
-                      className="flex items-center justify-between"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.0, duration: 0.6 }}
-                    >
-                      <span className="text-sm text-gray-400">Ethics Compliance</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                          <motion.div
-                            className="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full"
-                            initial={{ width: 0 }}
-                            animate={{ width: '92%' }}
-                            transition={{ delay: 1.4, duration: 1.5, ease: "easeOut" }}
-                          ></motion.div>
-                        </div>
-                        <span className="text-cyan-400 text-sm font-medium">92%</span>
-                      </div>
-                    </motion.div>
-                    <motion.div
-                      className="flex items-center justify-between"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.2, duration: 0.6 }}
-                    >
-                      <span className="text-sm text-gray-400">ROI Improvement</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                          <motion.div
-                            className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full"
-                            initial={{ width: 0 }}
-                            animate={{ width: '100%' }}
-                            transition={{ delay: 1.6, duration: 1.5, ease: "easeOut" }}
-                          ></motion.div>
-                        </div>
-                        <span className="text-green-400 text-sm font-medium">127%</span>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Key Metrics */}
-                  <motion.div
-                    className="grid grid-cols-2 gap-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.8, duration: 0.6 }}
-                  >
-                    <motion.div
-                      className="bg-emerald-900/20 rounded-xl p-3 border border-emerald-800/30"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="text-emerald-400 text-xs font-medium">Cost Reduction</div>
-                      <div className="text-white font-semibold">45%</div>
-                    </motion.div>
-                    <motion.div
-                      className="bg-cyan-900/20 rounded-xl p-3 border border-cyan-800/30"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="text-cyan-400 text-xs font-medium">Risk Mitigation</div>
-                      <div className="text-white font-semibold">78%</div>
-                    </motion.div>
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              {/* Floating elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-500 to-emerald-600 backdrop-blur-sm rounded-2xl p-4 border border-emerald-400/30 shadow-lg"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 2.0, duration: 0.5 }}
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-                  <div className="text-white font-bold text-sm">🛡️</div>
-                </div>
-              </motion.div>
-              <motion.div
-                className="absolute -bottom-4 -left-4 bg-gradient-to-br from-cyan-400 to-cyan-500 backdrop-blur-sm rounded-2xl p-3 border border-cyan-300/30 shadow-lg"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 2.2, duration: 0.5 }}
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="text-white text-sm font-medium">AI You Can Trust</div>
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
       </section>
     )
@@ -305,43 +338,53 @@ const Index = () => {
   function ServicesSection() {
     const services = [
       {
-        title: "AI Governance, Risk & Compliance (GRC)",
-        description: "Implement comprehensive AI GRC frameworks aligned with HIPAA, NIST AI RMF, and ISO 42001. We translate complex regulations into actionable controls, risk assessments, and auditable processes for healthcare and EdTech organizations.",
+        title: "AI & Data Governance",
+        description: "ISO/IEC 42001, NIST AI RMF, EU AI Act, HIPAA, GDPR, SOC 2, HITRUST compliance frameworks tailored for multi-agent AI systems.",
         symbol: "🛡️"
       },
       {
-        title: "Multi-Agent System Development",
-        description: "Design and build sophisticated single and multi-agent AI systems with responsible AI principles from day one. Includes agent orchestration, communication protocols, and safety guardrails.",
-        symbol: "🤖"
-      },
-      {
-        title: "Responsible AI Implementation",
-        description: "Bias assessment, fairness testing, model documentation, transparency reporting, and human-in-the-loop safeguards. Ensure your AI systems are ethical, explainable, and trustworthy.",
+        title: "Responsible/Explainable AI",
+        description: "Bias testing, fairness assessment, transparency reports, and human oversight protocols for multi-agent AI environments.",
         symbol: "📊"
       },
       {
-        title: "AI Strategy & Risk Management",
-        description: "Executive workshops on AI risk, compliance roadmaps, and adoption strategies. Tailored playbooks and investment cases for healthcare and EdTech leadership teams.",
+        title: "AI Engineering",
+        description: "Multi-agent architectures, RAG systems, fine-tuning (LoRA/QLoRA/PEFT), LangChain/CrewAI implementation with governance built-in.",
+        symbol: "⚙️"
+      },
+      {
+        title: "Privacy & Security",
+        description: "Differential Privacy, red-teaming, Zero Trust architecture, OWASP LLM Top 10, MITRE ATLAS security frameworks.",
+        symbol: "🔒"
+      },
+      {
+        title: "Advisory Services",
+        description: "Executive training, governance operating models, Fractional CAIO services for ongoing AI governance leadership.",
         symbol: "🎓"
+      },
+      {
+        title: "Sector Expertise",
+        description: "Healthcare, Finance, EdTech, Insurance - deep domain knowledge across regulated industries deploying multi-agent AI.",
+        symbol: "🏥"
       }
     ]
 
     return (
-      <section id="services" className="mt-24 md:mt-32 relative">
+      <section id="services" className="mt-12 md:mt-16 relative">
         {/* Background accents */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"></div>
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI GRC Consulting & Multi-Agent Systems</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Do</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We help healthcare and EdTech organizations implement AI Governance, Risk Management, and Compliance (GRC) into their AI systems. We build single and multi-agent systems with responsible AI principles from day one, ensuring production-ready, auditable solutions that deliver measurable ROI.
+              Comprehensive AI governance, engineering, and advisory services for regulated enterprises deploying multi-agent AI systems.
             </p>
           </div>
 
           {/* Main services grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, i) => {
               const isGreen = i % 2 === 0;
               return (
@@ -364,17 +407,284 @@ const Index = () => {
     )
   }
 
+  function HowWeEngageSection() {
+    const engagementSteps = [
+      {
+        step: "01",
+        title: "Baseline",
+        description: "Comprehensive assessment of your current AI systems, governance maturity, and compliance gaps.",
+        icon: "📊"
+      },
+      {
+        step: "02",
+        title: "Guardrails",
+        description: "Design and implement governance frameworks, risk controls, and compliance protocols tailored to your multi-agent AI systems.",
+        icon: "🛡️"
+      },
+      {
+        step: "03",
+        title: "Operationalize",
+        description: "Deploy governance systems, monitoring dashboards, and operational processes for ongoing compliance and risk management.",
+        icon: "⚙️"
+      },
+      {
+        step: "04",
+        title: "Enablement",
+        description: "Train your teams, establish governance operating models, and provide ongoing advisory support for sustainable AI governance.",
+        icon: "🎓"
+      }
+    ]
+
+    return (
+      <section className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How We Engage</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Our proven 4-step methodology ensures your multi-agent AI systems are governed, compliant, and ready for production scale.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {engagementSteps.map((step, i) => (
+              <motion.div
+                key={i}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+              >
+                <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/40 shadow-lg hover:shadow-purple-500/10 transition-all duration-300 h-full">
+                  <div className="text-4xl mb-4">{step.icon}</div>
+                  <div className="text-purple-400 font-bold text-lg mb-2">{step.step}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function WhyUsSection() {
+    const differentiators = [
+      {
+        title: "Compliance-First by Design",
+        description: "We don't retrofit governance - we build it into your AI systems from day one, ensuring regulatory compliance is a natural outcome, not an afterthought.",
+        icon: "✅"
+      },
+      {
+        title: "Pragmatic Engineering",
+        description: "25+ years of cross-industry expertise means we understand both the technical complexity and business realities of deploying AI in regulated environments.",
+        icon: "🔧"
+      },
+      {
+        title: "Business Outcomes",
+        description: "Our governance frameworks tie directly to revenue growth, cost reduction, risk mitigation, and customer trust - measurable ROI from day one.",
+        icon: "📈"
+      }
+    ]
+
+    return (
+      <section className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Us</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              The first governance-first advisory and engineering firm bridging compliance, risk, and responsible AI design for multi-agent systems.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {differentiators.map((item, i) => (
+              <motion.div
+                key={i}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/40 shadow-lg hover:shadow-emerald-500/10 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-4">{item.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function GRCServicesSection() {
+    const grcServices = [
+      {
+        title: "Internal Audits",
+        description: "Comprehensive audits of your AI systems, data flows, and governance processes to identify gaps and ensure compliance readiness.",
+        icon: "🔍"
+      },
+      {
+        title: "Assurance Reports",
+        description: "Detailed compliance reports for regulators, auditors, and stakeholders demonstrating adherence to AI governance standards.",
+        icon: "📋"
+      },
+      {
+        title: "Risk Assessments",
+        description: "Systematic evaluation of AI-related risks including bias, security, privacy, and operational risks with mitigation strategies.",
+        icon: "⚠️"
+      },
+      {
+        title: "Compliance Monitoring",
+        description: "Real-time dashboards and automated monitoring systems to track compliance metrics and alert on violations.",
+        icon: "📊"
+      },
+      {
+        title: "Other Assessments",
+        description: "Custom assessments including impact evaluations, readiness reviews, and specialized compliance checks.",
+        icon: "✅"
+      }
+    ]
+
+    return (
+      <section className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Core GRC Services</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Our specialized AI Governance, Risk & Compliance services ensure your healthcare and EdTech AI systems meet the highest standards of regulatory compliance and operational excellence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {grcServices.map((service, i) => (
+              <motion.div
+                key={i}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/40 shadow-lg hover:shadow-emerald-500/10 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function NonOSFASection() {
+    const customizations = [
+      {
+        title: "Industry-Specific Frameworks",
+        description: "Healthcare AI governance differs from EdTech requirements. We tailor frameworks to your specific regulatory landscape and operational needs.",
+        icon: "🏥"
+      },
+      {
+        title: "Organization-Size Appropriate",
+        description: "Startup governance needs differ from enterprise requirements. We scale our approach from lean frameworks to comprehensive systems.",
+        icon: "📏"
+      },
+      {
+        title: "Risk Profile Customization",
+        description: "Each organization has unique risk tolerances and compliance requirements. We design governance that matches your specific risk appetite.",
+        icon: "🎯"
+      },
+      {
+        title: "Technology Stack Integration",
+        description: "Your existing tech stack and AI tools determine governance implementation. We integrate with your current systems, not replace them.",
+        icon: "🔧"
+      },
+      {
+        title: "Regulatory Environment Focus",
+        description: "HIPAA for healthcare, FERPA for EdTech, plus state and international regulations. We focus on the regulations that matter to you.",
+        icon: "⚖️"
+      },
+      {
+        title: "Growth Stage Alignment",
+        description: "Pilot-stage governance differs from production-scale needs. We design frameworks that grow with your AI maturity.",
+        icon: "📈"
+      }
+    ]
+
+    return (
+      <section className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 dark:bg-cyan-500/20 border border-cyan-400/30 dark:border-cyan-300/30 text-sm text-cyan-600 dark:text-cyan-300 mb-6">
+              <div className="w-2 h-2 bg-cyan-500 dark:bg-cyan-400 rounded-full animate-pulse"></div>
+              Our Approach
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Non-OSFA: Governance is not 'One Size Fits All'</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Every organization is unique. We don't believe in generic AI governance templates. Instead, we design customized frameworks that align with your specific industry, size, risk profile, and growth stage.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {customizations.map((item, i) => (
+              <motion.div
+                key={i}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/40 shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-cyan-900/20 to-emerald-900/20 backdrop-blur-xl rounded-2xl p-8 border border-cyan-700/30">
+              <h3 className="text-2xl font-bold text-white mb-4">Why Non-OSFA Matters</h3>
+              <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Generic AI governance frameworks often create compliance gaps, operational inefficiencies, and unnecessary complexity.
+                Our Non-OSFA approach ensures your AI governance is <span className="text-cyan-400 font-semibold">precisely tailored</span> to your organization's needs,
+                <span className="text-emerald-400 font-semibold"> cost-effective</span> to implement, and
+                <span className="text-sky-400 font-semibold"> scalable</span> as you grow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   function WhatYouGetSection(openModal: () => void) {
     const deliverables = [
       {
         category: "AI GRC Framework Implementation",
         items: [
-          "Complete AI Governance, Risk & Compliance assessment",
+          "Internal audits of AI systems and processes",
+          "Assurance reports for regulatory compliance",
+          "Comprehensive risk assessments and mitigation strategies",
+          "Real-time compliance monitoring dashboards",
           "HIPAA/NIST/ISO 42001 gap analysis for healthcare & EdTech",
-          "AI risk register and mitigation strategies",
-          "Compliance monitoring dashboards and controls",
-          "Executive AI strategy roadmap",
           "Audit-ready documentation and processes"
         ],
         icon: "🛡️",
