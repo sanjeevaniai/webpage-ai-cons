@@ -51,7 +51,6 @@ const Index = () => {
       {WhyChooseUsSection()}
       {CaseStudiesSection(setIsConsultationModalOpen)}
       {Credentials()}
-      {AboutSection(setIsConsultationModalOpen)}
       {Certifications()}
       {ISOCertificationsSection()}
       {Contact(setIsConsultationModalOpen)}
@@ -1067,102 +1066,6 @@ const Index = () => {
     )
   }
 
-  function AboutSection(openModal: () => void) {
-    return (
-      <section id="about" className="mt-24 md:mt-32 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
-
-        <div className="mx-auto max-w-6xl px-4 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            {/* Profile Image */}
-            <div className="lg:col-span-4">
-              <div className="relative">
-                <img
-                  src="/suneeta-profile.png"
-                  alt="Suneeta Modekurty"
-                  className="w-full max-w-sm mx-auto lg:mx-0 rounded-2xl shadow-2xl"
-                />
-                <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg">
-                  O-1A Visa Holder
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="lg:col-span-8">
-              <div className="mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About Suneeta Modekurty</h2>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  Suneeta Modekurty is an AI & Data Governance Consultant and Responsible AI Strategist, helping regulated enterprises build AI that is governed, safe, and profitable by design. With 25+ years of cross-industry experience, she advises leadership teams on AI policy, compliance, and scalable architecture.
-                </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                  Suneeta holds the prestigious O-1A U.S. visa for extraordinary ability in AI & Data Science, and is the recipient of the AI Thought Leadership Award (2025). She is the author of <em className="text-emerald-400">The AI-Human Synergy</em> (Amazon, 2024) and has served as a mentor, speaker, and AI policy advisor across global platforms.
-                </p>
-              </div>
-
-              {/* Expertise Areas */}
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold text-white mb-6">Her expertise spans:</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-emerald-400/20">
-                      <h4 className="text-emerald-400 font-semibold mb-2">Governance Frameworks</h4>
-                      <p className="text-gray-300 text-sm">NIST AI RMF, EU AI Act, ISO 42001, HIPAA, GDPR, CPRA</p>
-                    </div>
-                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-cyan-400/20">
-                      <h4 className="text-cyan-400 font-semibold mb-2">Responsible AI & LLM Safety</h4>
-                      <p className="text-gray-300 text-sm">Bias mitigation, XAI, ALTAI, Model Cards, LLMOps</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-sky-400/20">
-                      <h4 className="text-sky-400 font-semibold mb-2">Engineering Strategy</h4>
-                      <p className="text-gray-300 text-sm">Multi-agent systems, RAG pipelines, LLM fine-tuning</p>
-                    </div>
-                    <div className="bg-gray-800/20 backdrop-blur-xl rounded-xl p-4 border border-purple-400/20">
-                      <h4 className="text-purple-400 font-semibold mb-2">Privacy & Security</h4>
-                      <p className="text-gray-300 text-sm">Differential Privacy, PETs, OWASP LLM, MITRE ATLAS, AI Red-Teaming</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Current Work */}
-              <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-6 border border-emerald-400/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Current Work</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  Suneeta currently advises founders, digital health teams, and compliance leaders across healthcare, finance, and edtech — helping them move from pilot models to production-grade, audit-ready systems with clear business ROI.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  She also mentors early-stage teams and is building her next venture, <span className="text-emerald-400 font-semibold">SANJEEVANI AI</span>, a consultancy and platform dedicated to governance-first AI adoption.
-                </p>
-              </div>
-
-              {/* Call to Action */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={openModal}
-                  className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 text-center"
-                >
-                  Book Your Free Consultation Call
-                </button>
-                <a
-                  href="https://www.linkedin.com/company/sanjeevani-ai-llc/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-cyan-400/40 text-cyan-400 hover:bg-cyan-500/10 px-6 py-3 rounded-xl font-medium transition-all duration-200 text-center"
-                >
-                  Connect on LinkedIn
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   function Certifications() {
     return (
