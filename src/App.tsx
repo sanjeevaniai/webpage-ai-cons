@@ -16,6 +16,8 @@ import Compliances from "./pages/Compliances";
 import ComplianceDetail from "./pages/ComplianceDetail";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import SanjeevaniChat from "./components/SanjeevaniChat";
 
@@ -68,6 +70,8 @@ const App = () => {
                 <Route path="/compliances/:id" element={<ComplianceDetail />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:id" element={<BlogDetail />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
