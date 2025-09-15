@@ -47,11 +47,11 @@ const Index = () => {
       {GRCServicesSection()}
       {NonOSFASection()}
       {WhatYouGetSection(setIsConsultationModalOpen)}
+      {NewsletterSection()}
       {WhyChooseUsSection()}
       {CaseStudiesSection(setIsConsultationModalOpen)}
       {Contact(setIsConsultationModalOpen)}
       {PlatformLinksSection(setIsConsultationModalOpen)}
-      {NewsletterSection()}
       {FAQSection(setIsConsultationModalOpen)}
       <Footer />
       <ConsultationModal
