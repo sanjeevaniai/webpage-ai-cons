@@ -119,6 +119,9 @@ const Header = () => {
               )}
             </div>
 
+            <Link to="/about" className="text-gray-300 hover:text-green-400 font-medium transition-colors">
+              About
+            </Link>
             <Link to="/case-studies" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
               Case Studies
             </Link>
@@ -258,6 +261,13 @@ const Header = () => {
                 )}
               </div>
 
+              <Link
+                to="/about"
+                className="text-gray-300 hover:text-green-400 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
               <Link
                 to="/case-studies"
                 className="text-gray-300 hover:text-cyan-400 font-medium transition-colors"
