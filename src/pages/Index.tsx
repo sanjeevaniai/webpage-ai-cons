@@ -1335,6 +1335,8 @@ const Index = () => {
   }
 
   function FAQSection(openModal: () => void) {
+    const [openFAQs, setOpenFAQs] = useState<number[]>([])
+
     const faqs = [
       {
         question: "What are the benefits of having an AI Governance Consultant?",
@@ -1362,6 +1364,14 @@ const Index = () => {
       }
     ]
 
+    const toggleFAQ = (index: number) => {
+      setOpenFAQs(prev => 
+        prev.includes(index) 
+          ? prev.filter(i => i !== index)
+          : [...prev, index]
+      )
+    }
+
     return (
       <section id="faq" className="mt-24 md:mt-32 relative">
         {/* Background accents */}
@@ -1376,24 +1386,63 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-emerald-400/30 transition-all duration-300 shadow-lg hover:shadow-emerald-500/10"
-              >
-                <h3 className="text-lg font-semibold text-white mb-3 flex items-start gap-3">
-                  <span className="text-emerald-400 text-xl">Q</span>
-                  {faq.question}
-                </h3>
-                <div className="ml-8">
-                  <p className="text-gray-300 leading-relaxed">
-                    <span className="text-cyan-400 font-medium">A: </span>
-                    {faq.answer}
-                  </p>
+          <div className="space-y-4">
+            {faqs.map((faq, i) => {
+              const isOpen = openFAQs.includes(i)
+              return (
+                <div
+                  key={i}
+                  className="bg-gray-800/10 backdrop-blur-xl rounded-2xl border border-gray-700/30 hover:border-emerald-400/30 transition-all duration-300 shadow-lg hover:shadow-emerald-500/10 overflow-hidden"
+                >
+                  <button
+                    onClick={() => toggleFAQ(i)}
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-700/10 transition-colors duration-200"
+                  >
+                    <h3 className="text-lg font-semibold text-white flex items-start gap-3 pr-4">
+                      <span className="text-emerald-400 text-xl">Q</span>
+                      {faq.question}
+                    </h3>
+                    <div className="flex-shrink-0">
+                      <svg
+                        className={`w-6 h-6 text-emerald-400 transition-transform duration-200 ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                  
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: isOpen ? 'auto' : 0,
+                      opacity: isOpen ? 1 : 0
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: 'easeInOut'
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 ml-8">
+                      <p className="text-gray-300 leading-relaxed">
+                        <span className="text-cyan-400 font-medium">A: </span>
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="text-center mt-12">
