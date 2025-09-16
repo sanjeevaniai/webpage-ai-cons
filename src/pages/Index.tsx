@@ -1091,12 +1091,12 @@ const Index = () => {
 
   function NewsletterSection() {
     return (
-      <section id="newsletter" className="mt-24 md:mt-32 relative">
+      <section id="newsletter" className="mt-16 md:mt-20 relative">
         {/* Background accents */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
 
-        <div className="mx-auto max-w-4xl px-4 relative z-10">
+        <div className="mx-auto max-w-4xl px-4 relative z-10 pb-8">
           <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-emerald-400/20 shadow-2xl">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get AI Governance Insights Weekly</h2>
@@ -1300,7 +1300,7 @@ function Footer() {
   ]
 
   return (
-    <footer className="mt-24 md:mt-32 relative">
+    <footer className="mt-16 md:mt-20 relative">
       {/* Background accents */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
