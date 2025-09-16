@@ -49,7 +49,6 @@ const Index = () => {
       {WhatYouGetSection(setIsConsultationModalOpen)}
       {NewsletterSection()}
       {CaseStudiesSection(setIsConsultationModalOpen)}
-      {Contact(setIsConsultationModalOpen)}
       {PlatformLinksSection(setIsConsultationModalOpen)}
       {FAQSection(setIsConsultationModalOpen)}
       <Footer />
@@ -930,37 +929,6 @@ const Index = () => {
   }
 
 
-  function Contact(openModal: () => void) {
-    return (
-      <section id="contact" className="mx-auto max-w-5xl px-4 mt-24 relative">
-        {/* Background accents */}
-        <div className="absolute -top-10 -left-10 w-96 h-96 bg-gradient-to-br from-green-500/10 to-sky-500/10 rounded-full blur-3xl"></div>
-
-        <div className="bg-gray-800/10 backdrop-blur-xl rounded-3xl border border-gray-700/30 shadow-lg hover:bg-gray-800/20 hover:shadow-2xl transition-all duration-300 p-6 md:p-10 relative z-10">
-          <div className="md:flex md:items-end md:justify-between gap-10">
-            <div className="max-w-xl">
-              <h2 className="text-2xl md:text-3xl font-medium text-white">Ready to Build AI That Actually Works?</h2>
-              <p className="mt-3 text-gray-300">
-                Let's discuss how our AI governance and multi-agent systems can reduce your losses, improve ROI, and build AI you can trust.
-              </p>
-              <div className="mt-6 text-sm text-gray-400">
-                Email us directly: <a className="underline underline-offset-4 text-sky-400 hover:text-sky-300 font-medium" href="mailto:suneeta@sanjeevaniai.com">suneeta@sanjeevaniai.com</a>
-                <br className="mt-2" />
-                <span className="mt-2 inline-block">Or schedule a conversation: <a className="underline underline-offset-4 text-emerald-400 hover:text-emerald-300 font-medium" href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer">Book a call</a></span>
-                <br className="mt-2" />
-                <span className="mt-2 inline-block text-emerald-300">📧 Get weekly AI insights: <a className="underline underline-offset-4 text-emerald-400 hover:text-emerald-300 font-medium" href="https://ainstein19.substack.com" target="_blank" rel="noopener noreferrer">Subscribe to our newsletter</a></span>
-              </div>
-            </div>
-            <div className="mt-8 md:mt-0 w-full md:w-auto">
-              <button onClick={openModal} className="inline-flex items-center rounded-2xl px-5 py-3 bg-gradient-to-r from-sky-300 to-sky-400 hover:from-sky-400 hover:to-sky-500 text-white font-medium shadow-lg hover:shadow-sky-300/25 transition-all duration-200">
-                Book Your Free Consultation Call →
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   function PlatformLinksSection(openModal: () => void) {
     const platforms = [
@@ -1396,12 +1364,26 @@ function Footer() {
               <span className="text-gray-400">© {new Date().getFullYear()} SANJEEVANI AI • Custom AI Agents & LLM Fine-tuning</span>
             </div>
             <div className="flex flex-wrap gap-6">
+              {/* Contact Icons */}
               <div className="flex flex-wrap gap-4">
+                <a href="mailto:suneeta@sanjeevaniai.com" className="text-gray-400 hover:text-emerald-400 transition-colors flex items-center gap-2">
+                  <span className="text-lg">📧</span>
+                  <span className="hidden sm:inline">Email</span>
+                </a>
+                <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-sky-400 transition-colors flex items-center gap-2">
+                  <span className="text-lg">📅</span>
+                  <span className="hidden sm:inline">Book Call</span>
+                </a>
+                <a href="https://ainstein19.substack.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-2">
+                  <span className="text-lg">📰</span>
+                  <span className="hidden sm:inline">Newsletter</span>
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <span className="text-gray-600">•</span>
                 <a href="https://www.linkedin.com/company/sanjeevani-ai-llc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-400 transition-colors">LinkedIn</a>
                 <a href="https://www.upwork.com/freelancers/~01968cb9a3759f39de?mp_source=share" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-sky-400 transition-colors">Upwork</a>
                 <a href="https://topmate.io/suneeta19" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">Topmate</a>
-                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">Publications</a>
-                <a href="#" className="text-gray-400 hover:text-sky-400 transition-colors">Speaking</a>
               </div>
               <div className="flex flex-wrap gap-4">
                 <span className="text-gray-600">•</span>
