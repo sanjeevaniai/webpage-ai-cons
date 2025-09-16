@@ -1274,6 +1274,7 @@ const Index = () => {
 }
 
 function Footer() {
+  // Footer with compact contact icons
   const socialPlatforms = [
     {
       name: "X (Twitter)",
