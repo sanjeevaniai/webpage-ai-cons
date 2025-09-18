@@ -64,8 +64,8 @@ const Header = () => {
 
         {/* Navigation Menu - Always visible when open */}
         {isMenuOpen && (
-          <div className="py-6 border-t border-gray-700/50">
-            <nav className="flex flex-col gap-6">
+          <div className="bg-black/95 backdrop-blur-md max-h-[80vh] overflow-y-auto py-6 border-t border-gray-700/50 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+            <nav className="flex flex-col gap-6 px-4">
               {/* Services Mobile Menu */}
               <div className="flex flex-col">
                 <button
