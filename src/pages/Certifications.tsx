@@ -11,7 +11,7 @@ const Certifications = () => {
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
             <NoiseBg />
             <Header />
-            
+
             <div className="relative z-10">
                 {/* Hero Section */}
                 <section className="mx-auto max-w-7xl px-4 pt-20 md:pt-32 pb-16">
@@ -20,13 +20,13 @@ const Certifications = () => {
                             <div className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
                             Professional Certifications
                         </div>
-                        
+
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-                            Our Certifications
+                            Certifications
                         </h1>
-                        
+
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                            SANJEEVANI AI is certified in leading AI governance and information security standards, 
+                            SANJEEVANI AI is certified in leading AI governance and information security standards,
                             ensuring we deliver the highest quality services to our clients.
                         </p>
                     </div>
@@ -92,7 +92,7 @@ const Certifications = () => {
                     <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl p-8 border border-emerald-400/20 text-center">
                         <h2 className="text-2xl font-bold text-white mb-4">Ready to Work with Certified Experts?</h2>
                         <p className="text-gray-300 mb-6">
-                            Our certifications ensure you receive the highest quality AI governance services 
+                            Our certifications ensure you receive the highest quality AI governance services
                             backed by internationally recognized standards.
                         </p>
                         <button
@@ -105,9 +105,9 @@ const Certifications = () => {
                 </section>
             </div>
 
-            <ConsultationModal 
-                isOpen={isConsultationModalOpen} 
-                onClose={() => setIsConsultationModalOpen(false)} 
+            <ConsultationModal
+                isOpen={isConsultationModalOpen}
+                onClose={() => setIsConsultationModalOpen(false)}
             />
         </div>
     )

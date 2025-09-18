@@ -150,10 +150,10 @@ const Header = () => {
             <Link to="/certifications" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
               Certifications
             </Link>
-            <a 
-              href="https://calendly.com/sia-sanjeevaniai/30min" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://calendly.com/sia-sanjeevaniai/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-500 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-sky-400/25"
             >
               Get in touch
