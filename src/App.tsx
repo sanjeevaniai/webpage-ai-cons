@@ -18,6 +18,7 @@ import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import RAICourses from "./pages/RAICourses";
 import NotFound from "./pages/NotFound";
 import SanjeevaniChat from "./components/SanjeevaniChat";
 
@@ -72,6 +73,7 @@ const App = () => {
                 <Route path="/blog/:id" element={<BlogDetail />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/rai-courses" element={<RAICourses />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>

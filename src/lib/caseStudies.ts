@@ -30,15 +30,6 @@ const mockCaseStudies: CaseStudySummary[] = [
         created_at: '2024-01-05T00:00:00Z'
     },
     {
-        id: '4',
-        title: 'E-Commerce Startup (Retail)',
-        description: 'Provided AI governance and DSPM coaching to support consumer data privacy, security, and responsible AI use in building an early-stage MVP for a retail e-commerce platform.',
-        client_name: 'RetailTech Startup',
-        industry: 'E-Commerce & Retail',
-        featured: false,
-        created_at: '2024-01-01T00:00:00Z'
-    },
-    {
         id: '5',
         title: 'Healthcare AI Platform',
         description: 'Guided founders and teams on responsible AI implementation, data governance, and compliance frameworks to support adoption in healthcare delivery systems.',

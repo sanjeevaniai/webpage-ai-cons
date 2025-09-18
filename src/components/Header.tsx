@@ -134,6 +134,9 @@ const Header = () => {
             <Link to="/blog" className="text-gray-300 hover:text-orange-400 font-medium transition-colors">
               Blog
             </Link>
+            <Link to="/rai-courses" className="text-gray-300 hover:text-pink-400 font-medium transition-colors">
+              RAI Courses
+            </Link>
             <a href="#certifications" className="text-gray-300 hover:text-yellow-400 font-medium transition-colors">
               Certifications
             </a>
@@ -295,6 +298,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
+              </Link>
+              <Link
+                to="/rai-courses"
+                className="text-gray-300 hover:text-pink-400 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                RAI Courses
               </Link>
               <a
                 href="#certifications"
