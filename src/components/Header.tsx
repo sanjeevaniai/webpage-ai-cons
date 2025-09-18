@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Lock } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -137,6 +137,10 @@ const Header = () => {
             </Link>
             <Link to="/frameworks" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors">
               Frameworks
+            </Link>
+            <Link to="/frameworks-locked" className="text-gray-300 hover:text-red-400 font-medium transition-colors flex items-center gap-1">
+              <Lock className="w-4 h-4" />
+              Pro Frameworks
             </Link>
             <Link to="/compliances" className="text-gray-300 hover:text-purple-400 font-medium transition-colors">
               Compliances
@@ -287,6 +291,14 @@ const Header = () => {
                 onClick={closeMenu}
               >
                 Frameworks
+              </Link>
+              <Link
+                to="/frameworks-locked"
+                className="text-gray-300 hover:text-red-400 font-medium transition-colors py-2 flex items-center gap-2"
+                onClick={closeMenu}
+              >
+                <Lock className="w-4 h-4" />
+                Pro Frameworks
               </Link>
               <Link
                 to="/compliances"

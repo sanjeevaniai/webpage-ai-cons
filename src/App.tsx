@@ -20,6 +20,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import RAICourses from "./pages/RAICourses";
 import Certifications from "./pages/Certifications";
+import LockedFrameworks from "./pages/LockedFrameworks";
 import NotFound from "./pages/NotFound";
 import SanjeevaniChat from "./components/SanjeevaniChat";
 
@@ -76,6 +77,7 @@ const App = () => {
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/rai-courses" element={<RAICourses />} />
                 <Route path="/certifications" element={<Certifications />} />
+                <Route path="/frameworks-locked" element={<LockedFrameworks />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
