@@ -35,28 +35,31 @@ const Header = () => {
             />
           </Link>
 
-          {/* Get in Touch Button - Always visible */}
-          <a 
-            href="https://calendly.com/sia-sanjeevaniai/30min" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-500 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-sky-400/25"
-          >
-            Get in touch
-          </a>
+          {/* Right side buttons */}
+          <div className="flex items-center gap-3">
+            {/* Get in Touch Button */}
+            <a 
+              href="https://calendly.com/sia-sanjeevaniai/30min" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-500 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-sky-400/25"
+            >
+              Get in touch
+            </a>
 
-          {/* Hamburger Menu Button - Always visible */}
-          <button
-            onClick={toggleMenu}
-            className="p-2 rounded-lg hover:bg-gray-700/50 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-gray-300" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-300" />
-            )}
-          </button>
+            {/* Hamburger Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="p-2 rounded-lg hover:bg-gray-700/50 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-gray-300" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-300" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Navigation Menu - Always visible when open */}
