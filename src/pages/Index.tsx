@@ -111,12 +111,10 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <span>AI That's </span>
-                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Safe to Ship
-                </span>
-                <span className="text-4xl md:text-5xl lg:text-6xl text-gray-300 font-medium">
-                  {" "}& Simple to Govern
+                <span>Complete AI GRC Services</span>
+                <br />
+                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl">
+                  Governance • Risk • Compliance
                 </span>
               </motion.h1>
 
@@ -127,10 +125,10 @@ const Index = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 <p className="text-xl md:text-2xl text-gray-300 font-medium mb-4">
-                  Why not follow best practices from day one?
+                  We provide technical GRC services for AI systems
                 </p>
                 <p className="text-lg md:text-xl text-emerald-300 font-semibold">
-                  Build the best AI–human synergy the world has ever seen.
+                  Data Science • Risk Assessment • Compliance Readiness
                 </p>
               </motion.div>
             </div>
@@ -277,7 +275,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              SANJEEVANI AI helps Life Sciences, EdTech, and Finance companies build trustworthy AI systems through data science, predictive analytics, and technical governance. We specialize in AI model development, ethical design, and internal governance frameworks - focusing on the "G" (Governance) of GRC without providing legal compliance certification.
+              SANJEEVANI AI is a technical GRC consulting firm specializing in AI systems for Life Sciences, EdTech, and Finance. We provide data science consulting, AI risk assessments, and compliance readiness services - helping you build trustworthy AI without crossing into legal compliance work.
             </motion.p>
 
             <motion.p
@@ -286,7 +284,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
             >
-              With 25+ years of cross-industry expertise in data science and AI engineering, we create internal governance frameworks, ethical AI policies, and technical standards that help leaders build AI systems that are trustworthy, scalable, and production-ready.
+              Our services include: AI governance frameworks, technical risk assessments, compliance readiness evaluations, data science consulting, and AI model development. We focus on the technical and operational aspects of GRC - not legal compliance certification or regulatory sign-off.
             </motion.p>
 
             <motion.div
@@ -412,13 +410,18 @@ const Index = () => {
     const services = [
       {
         title: "AI Governance & Strategy",
-        description: "Internal governance frameworks and ethical AI policies for Life Sciences, EdTech, and Finance. Technical/operational policies, not legal compliance documents.",
+        description: "Internal governance frameworks and ethical AI policies for Life Sciences, EdTech, and Finance. Technical/operational policies aligned with global standards.",
         symbol: "🛡️"
       },
       {
-        title: "Responsible AI & Ethics",
-        description: "Healthcare, Pharma, Biotech, EdTech, Finance AI systems with built-in ethics, transparency, and explainability from day one.",
-        symbol: "📊"
+        title: "AI Risk Assessment & Management",
+        description: "Comprehensive risk identification, analysis, and mitigation for algorithmic, model, and data risks including bias, security vulnerabilities, and model drift.",
+        symbol: "⚠️"
+      },
+      {
+        title: "Compliance Readiness & Advisory",
+        description: "Technical adherence to ISO/IEC 42001, GDPR, HIPAA, FERPA, SOC2 standards. Process mapping, readiness assessments, and mock audits for certification preparation.",
+        symbol: "📋"
       },
       {
         title: "Data Science Consulting",
@@ -434,11 +437,6 @@ const Index = () => {
         title: "AI Evals & Audits",
         description: "Comprehensive evaluation of AI models for bias, fairness, transparency, and explainability with technical mitigation strategies.",
         symbol: "🔍"
-      },
-      {
-        title: "Multi-Agent Systems",
-        description: "Complex multi-agent AI architectures with orchestration, communication protocols, and governance frameworks for enterprise deployment.",
-        symbol: "🏥"
       }
     ]
 
@@ -452,7 +450,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Do</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We build trustworthy AI systems through data science, predictive analytics, and technical governance. Our services ensure your AI is ethical, reliable, and production-ready.
+              We provide technical GRC services for AI systems. Our expertise covers AI governance frameworks, risk assessments, compliance readiness, and data science consulting - helping you build trustworthy AI without legal compliance work.
             </p>
           </div>
 
@@ -574,7 +572,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Us</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              The first governance-first advisory and engineering firm bridging technical governance, risk management, and responsible AI design for multi-agent systems.
+              We are technical GRC specialists with 25+ years of data science expertise. We provide AI governance, risk assessment, and compliance readiness services - not legal compliance work.
             </p>
           </div>
 
@@ -602,29 +600,34 @@ const Index = () => {
   function GRCServicesSection() {
     const grcServices = [
       {
-        title: "AI Ethics & Transparency Audits",
-        description: "Comprehensive evaluation of AI models for bias, fairness, transparency, and explainability with technical mitigation strategies.",
-        icon: "🔍"
+        title: "AI Governance Frameworks",
+        description: "Internal governance frameworks, ethical AI policies, and technical standards aligned with global best practices.",
+        icon: "🛡️"
       },
       {
-        title: "Regulatory Alignment Advisory",
-        description: "Guidance on aligning with ISO/IEC 42001, NIST AI RMF, and sector-specific standards without providing legal compliance certification.",
-        icon: "📋"
-      },
-      {
-        title: "Risk Assessment & Data Integrity",
-        description: "Technical risk evaluation and data integrity review for Healthcare, Finance, EdTech, and sensitive industries.",
+        title: "AI Risk Assessment & Management",
+        description: "Comprehensive risk identification, analysis, and mitigation for algorithmic, model, and data risks including bias and security vulnerabilities.",
         icon: "⚠️"
       },
       {
-        title: "Model Performance Monitoring",
-        description: "Real-time dashboards and automated monitoring systems to track model performance, data drift, and AI system health.",
-        icon: "📊"
+        title: "Compliance Readiness & Advisory",
+        description: "Technical adherence to ISO/IEC 42001, GDPR, HIPAA, FERPA, SOC2 standards. Process mapping and readiness assessments for certification preparation.",
+        icon: "📋"
       },
       {
-        title: "Internal Policy Development",
-        description: "Technical/operational AI usage guidelines, transparency protocols, explainability standards, and bias mitigation processes.",
-        icon: "✅"
+        title: "Data Science Consulting",
+        description: "Bioinformatics, Health Analytics, Insurance, Educational Analytics, Financial Modeling, and predictive analytics for regulated industries.",
+        icon: "⚙️"
+      },
+      {
+        title: "AI Model Development & Validation",
+        description: "End-to-end model development, validation, and deployment for all regulated and high-stakes sectors with technical excellence.",
+        icon: "🎓"
+      },
+      {
+        title: "AI Evals & Technical Audits",
+        description: "Comprehensive evaluation of AI models for bias, fairness, transparency, and explainability with technical mitigation strategies.",
+        icon: "🔍"
       }
     ]
 
@@ -636,9 +639,9 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Core Services: The "G" in GRC</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Core Services: Complete GRC Support</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We focus on AI Governance - creating internal frameworks, ethical policies, and technical standards. We advise on best practices and regulatory alignment, but don't provide legal compliance certification unless partnered with licensed experts.
+              We provide technical GRC services for AI systems: Governance frameworks, Risk assessments, and Compliance readiness. We focus on technical and operational aspects - not legal compliance certification or regulatory sign-off.
             </p>
           </div>
 
@@ -751,43 +754,42 @@ const Index = () => {
   function WhatYouGetSection(openModal: () => void) {
     const deliverables = [
       {
-        category: "AI Governance Framework Implementation",
+        category: "AI Governance & Risk Management",
         items: [
-          "AI system assessments and evaluations",
-          "Governance reports for stakeholders",
-          "Comprehensive AI model evaluations and technical mitigation strategies",
-          "Real-time governance monitoring dashboards",
-          "HIPAA/NIST/ISO 42001 gap analysis for healthcare & EdTech",
-          "Audit-ready documentation and processes"
+          "AI governance frameworks and ethical policies",
+          "Technical risk assessments and mitigation strategies",
+          "AI system evaluations and monitoring dashboards",
+          "ISO/IEC 42001, GDPR, HIPAA compliance readiness assessments",
+          "Technical documentation and audit-ready processes",
+          "Risk management frameworks and controls"
         ],
         icon: "🛡️",
         color: "emerald"
       },
       {
-        category: "Multi-Agent System Development",
+        category: "Data Science & AI Development",
         items: [
-          "Single and multi-agent architecture design",
-          "Agent orchestration and communication protocols",
-          "Responsible AI principles integration",
-          "Safety guardrails and monitoring systems",
-          "Ethical AI decision-making frameworks",
-          "Transparency and accountability measures",
-          "Stakeholder communication templates"
+          "Data science consulting and predictive analytics",
+          "AI model development and validation",
+          "Multi-agent system architecture and orchestration",
+          "Bias detection and fairness evaluation",
+          "Model performance monitoring and drift detection",
+          "Technical standards and best practices implementation"
         ],
-        icon: "📊",
+        icon: "⚙️",
         color: "cyan"
       },
       {
-        category: "Training & Enablement",
+        category: "Compliance Readiness & Advisory",
         items: [
-          "Executive AI governance training sessions",
-          "Team workshops on AI ethics and responsible design",
-          "Policy templates and implementation guides",
-          "AI procurement and vendor evaluation checklists",
-          "Risk management playbooks",
-          "Ongoing support and consultation"
+          "Compliance readiness evaluations and gap analysis",
+          "Process mapping to regulatory frameworks",
+          "Mock audits and certification preparation",
+          "Technical adherence to global standards",
+          "Training and enablement for technical teams",
+          "Ongoing technical support and consultation"
         ],
-        icon: "🎓",
+        icon: "📋",
         color: "sky"
       },
       {
@@ -813,9 +815,9 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Governance & Multi-Agent Deliverables</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What You Get</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Complete AI Governance, Risk Management & Ethics frameworks, multi-agent system development, and responsible AI implementation that ensures your healthcare and EdTech AI initiatives are production-ready and auditable.
+              Complete technical GRC support for AI systems: governance frameworks, risk assessments, compliance readiness, data science consulting, and AI model development. We focus on technical and operational aspects - not legal compliance work.
             </p>
           </div>
 
@@ -1226,28 +1228,28 @@ const Index = () => {
 
     const faqs = [
       {
-        question: "What are the benefits of having an AI Governance Consultant?",
-        answer: "An AI Governance Consultant helps you build AI systems that are ethical, responsible, and trustworthy from day one. Benefits include: reduced regulatory risk, faster time-to-market with governed AI, improved stakeholder trust, cost savings from avoiding governance issues, and measurable ROI through better AI performance and reduced legal exposure."
+        question: "What exactly do you provide - are you a legal compliance firm?",
+        answer: "No, we are NOT a legal compliance firm. We provide technical GRC services: AI governance frameworks, risk assessments, compliance readiness evaluations, and data science consulting. We focus on technical and operational aspects - not legal compliance certification or regulatory sign-off. We help you prepare for compliance but don't provide legal advice."
       },
       {
-        question: "How do you ensure AI systems meet HIPAA requirements?",
-        answer: "We conduct comprehensive gap analyses against HIPAA requirements, implement data flow mapping and access controls, establish audit trails, and create monitoring dashboards. Our approach includes technical safeguards (encryption, access controls), administrative safeguards (policies, training), and physical safeguards (data center security)."
+        question: "What's the difference between your services and legal compliance?",
+        answer: "We provide technical GRC services: governance frameworks, risk assessments, compliance readiness, and data science consulting. Legal compliance involves regulatory certification, legal advice, and regulatory sign-off - which we don't provide. We help you build trustworthy AI systems and prepare for compliance, but you'll need legal experts for final compliance certification."
       },
       {
-        question: "What's the difference between AI governance and AI ethics?",
-        answer: "AI governance is the framework of policies, processes, and controls that ensure AI systems meet business and ethical requirements. AI ethics focuses on moral principles and values. Governance makes ethics actionable through concrete policies, while ethics provides the moral foundation for governance decisions."
+        question: "How do you help with AI risk assessment?",
+        answer: "We conduct comprehensive technical risk assessments including algorithmic bias detection, model drift analysis, security vulnerability assessment, and data integrity review. We provide technical mitigation strategies and monitoring frameworks - not legal risk assessment or regulatory compliance certification."
       },
       {
-        question: "How long does it take to implement AI governance?",
-        answer: "Implementation timelines vary by organization size and complexity. We typically deliver a 90-day roadmap with prioritized controls. Initial governance baseline takes 2-4 weeks, core governance framework implementation takes 6-12 weeks, and full operationalization takes 3-6 months depending on your specific requirements."
+        question: "What does compliance readiness mean?",
+        answer: "Compliance readiness means we help you prepare for regulatory compliance by conducting gap analyses, process mapping, mock audits, and technical evaluations. We ensure your AI systems meet technical standards but don't provide legal compliance certification or regulatory sign-off - that requires licensed legal experts."
       },
       {
-        question: "Do you work with startups or only enterprises?",
-        answer: "We work with organizations of all sizes - from early-stage startups to Fortune 500 enterprises. Our approach scales based on your needs: startups get lean, cost-effective governance frameworks, while enterprises get comprehensive, audit-ready systems. We also offer fractional CAIO services for ongoing support."
+        question: "Do you provide data science consulting?",
+        answer: "Yes, we provide comprehensive data science consulting including predictive analytics, AI model development, bioinformatics, health analytics, financial modeling, and educational analytics. Our 25+ years of expertise covers all regulated industries with technical excellence and ethical AI principles."
       },
       {
         question: "What industries do you specialize in?",
-        answer: "We specialize in highly regulated industries including healthcare (HIPAA, clinical AI), finance (fraud detection, risk management), edtech (FERPA, student data protection), and insurance (actuarial AI, claims processing). Our expertise spans NIST AI RMF, EU AI Act, GDPR, CPRA, and other relevant governance frameworks."
+        answer: "We specialize in Life Sciences, EdTech, Finance, and other regulated industries. Our technical GRC services help these sectors build trustworthy AI systems through governance frameworks, risk assessments, compliance readiness, and data science consulting - all focused on technical and operational aspects."
       }
     ]
 
@@ -1269,7 +1271,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Common questions about AI governance, ethics, and our consulting services.
+              Common questions about our technical GRC services for AI systems.
             </p>
           </div>
 
