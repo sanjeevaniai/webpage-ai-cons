@@ -42,6 +42,7 @@ const Index = () => {
       <Header />
       {Masthead(setIsConsultationModalOpen)}
       {ServicesSection()}
+      {SectorsSection()}
       {HowWeEngageSection()}
       {WhyUsSection()}
       {GRCServicesSection()}
@@ -93,9 +94,15 @@ const Index = () => {
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start mb-12">
             {/* Text content - takes up 3/5 of the width */}
             <div className="lg:col-span-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 dark:bg-green-500/20 border border-green-400/30 dark:border-green-300/30 text-sm text-green-600 dark:text-green-300 mb-6">
-                <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
-                Available for new projects
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 dark:bg-green-500/20 border border-green-400/30 dark:border-green-300/30 text-sm text-green-600 dark:text-green-300">
+                  <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
+                  Available for new projects
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/10 dark:bg-yellow-500/20 border border-yellow-400/30 dark:border-yellow-300/30 text-sm text-yellow-600 dark:text-yellow-300">
+                  <div className="w-2 h-2 bg-yellow-500 dark:bg-yellow-400 rounded-full"></div>
+                  ISO/IEC 42001:2023 Certified
+                </div>
               </div>
 
               <motion.h1
@@ -327,6 +334,80 @@ const Index = () => {
     )
   }
 
+  function SectorsSection() {
+    const sectors = [
+      {
+        title: "Life Sciences & Healthcare",
+        description: "HIPAA-compliant AI systems for clinical decision support, drug discovery, patient monitoring, and diagnostic assistance. From pilot models to production-grade, audit-ready systems.",
+        icon: "🏥",
+        color: "emerald"
+      },
+      {
+        title: "EdTech",
+        description: "Responsible AI implementation for personalized learning, content generation, and student assessment. Building trustworthy AI that enhances education outcomes while protecting student data.",
+        icon: "🎓",
+        color: "cyan"
+      },
+      {
+        title: "Finance & Insurance",
+        description: "AI governance frameworks for risk management, fraud detection, and regulatory reporting. Ensuring AI systems meet financial regulations and audit requirements.",
+        icon: "💼",
+        color: "sky"
+      },
+      {
+        title: "Other Regulated Industries",
+        description: "Custom AI solutions for manufacturing, energy, transportation, and other highly regulated sectors requiring robust governance and ethical AI practices.",
+        icon: "🏭",
+        color: "purple"
+      }
+    ]
+
+    return (
+      <section id="sectors" className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Sectors We Serve</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Deep expertise across highly regulated industries where AI governance and ethical practices are critical for success.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {sectors.map((sector, i) => {
+              const colorClasses = {
+                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
+                cyan: 'border-cyan-400/30 hover:border-cyan-400/50 hover:bg-cyan-500/5 hover:shadow-cyan-500/10',
+                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
+                purple: 'border-purple-400/30 hover:border-purple-400/50 hover:bg-purple-500/5 hover:shadow-purple-500/10'
+              }
+
+              return (
+                <div
+                  key={i}
+                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[sector.color]}`}
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">{sector.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-gray-100 transition-colors">
+                      {sector.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                      {sector.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   function ServicesSection() {
     const services = [
       {
@@ -335,7 +416,7 @@ const Index = () => {
         symbol: "🛡️"
       },
       {
-        title: "Responsible AI Design & Deployment",
+        title: "Responsible AI & Ethics",
         description: "Healthcare, Pharma, Biotech, EdTech, Finance AI systems with built-in ethics, transparency, and explainability from day one.",
         symbol: "📊"
       },
@@ -345,17 +426,17 @@ const Index = () => {
         symbol: "⚙️"
       },
       {
-        title: "Generative AI Solutions",
-        description: "Custom GenAI implementations for Life Sciences, EdTech, and Finance with governance and safety protocols built-in.",
-        symbol: "🔒"
-      },
-      {
-        title: "AI Model Development & Validation",
+        title: "AI Model Development",
         description: "End-to-end model development, validation, and deployment for all regulated and high-stakes sectors with technical excellence.",
         symbol: "🎓"
       },
       {
-        title: "Multi-Agent Systems Consulting",
+        title: "AI Evals & Audits",
+        description: "Comprehensive evaluation of AI models for bias, fairness, transparency, and explainability with technical mitigation strategies.",
+        symbol: "🔍"
+      },
+      {
+        title: "Multi-Agent Systems",
         description: "Complex multi-agent AI architectures with orchestration, communication protocols, and governance frameworks for enterprise deployment.",
         symbol: "🏥"
       }
@@ -844,8 +925,8 @@ const Index = () => {
                 color: "emerald"
               },
               {
-        title: "Finance Risk Leaders",
-        description: "AI governance frameworks for risk management, fraud detection, and regulatory reporting. Ensuring AI systems meet financial governance standards and audit requirements.",
+                title: "Finance Risk Leaders",
+                description: "AI governance frameworks for risk management, fraud detection, and regulatory reporting. Ensuring AI systems meet financial governance standards and audit requirements.",
                 industry: "Finance",
                 icon: "💼",
                 color: "cyan"
@@ -858,8 +939,8 @@ const Index = () => {
                 color: "sky"
               },
               {
-        title: "Healthcare Governance Teams",
-        description: "NIST AI RMF alignment, PHI protection, and audit-ready documentation. Moving from governance burden to competitive advantage through AI governance.",
+                title: "Healthcare Governance Teams",
+                description: "NIST AI RMF alignment, PHI protection, and audit-ready documentation. Moving from governance burden to competitive advantage through AI governance.",
                 industry: "Healthcare",
                 icon: "🛡️",
                 color: "purple"
@@ -872,8 +953,8 @@ const Index = () => {
                 color: "emerald"
               },
               {
-        title: "EdTech Governance Officers",
-        description: "Student data protection, algorithmic transparency, and educational equity. Ensuring AI in education serves all learners fairly and safely.",
+                title: "EdTech Governance Officers",
+                description: "Student data protection, algorithmic transparency, and educational equity. Ensuring AI in education serves all learners fairly and safely.",
                 industry: "EdTech",
                 icon: "📚",
                 color: "cyan"
@@ -1171,8 +1252,8 @@ const Index = () => {
     ]
 
     const toggleFAQ = (index: number) => {
-      setOpenFAQs(prev => 
-        prev.includes(index) 
+      setOpenFAQs(prev =>
+        prev.includes(index)
           ? prev.filter(i => i !== index)
           : [...prev, index]
       )
@@ -1210,9 +1291,8 @@ const Index = () => {
                     </h3>
                     <div className="flex-shrink-0">
                       <svg
-                        className={`w-6 h-6 text-emerald-400 transition-transform duration-200 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
+                        className={`w-6 h-6 text-emerald-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -1226,7 +1306,7 @@ const Index = () => {
                       </svg>
                     </div>
                   </button>
-                  
+
                   <motion.div
                     initial={false}
                     animate={{

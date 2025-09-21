@@ -38,10 +38,10 @@ const Header = () => {
           {/* Right side buttons */}
           <div className="flex items-center gap-3">
             {/* Get in Touch Button */}
-            <a 
-              href="https://calendly.com/sia-sanjeevaniai/30min" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://calendly.com/sia-sanjeevaniai/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-500 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-sky-400/25"
             >
               Get in touch
@@ -89,7 +89,7 @@ const Header = () => {
                       className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      Responsible AI Design
+                      Responsible AI & Ethics
                     </a>
                     <a
                       href="#services"
@@ -103,14 +103,14 @@ const Header = () => {
                       className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      Generative AI Solutions
+                      AI Model Development
                     </a>
                     <a
                       href="#services"
                       className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      AI Model Development
+                      AI Evals & Audits
                     </a>
                     <a
                       href="#services"
@@ -123,109 +123,89 @@ const Header = () => {
                 )}
               </div>
 
-              {/* Pricing Mobile Menu */}
+              {/* Sectors Mobile Menu */}
               <div className="flex flex-col">
                 <button
                   onClick={() => setIsPricingOpen(!isPricingOpen)}
-                  className="text-gray-300 hover:text-emerald-400 font-medium transition-colors text-left flex items-center justify-between py-2"
+                  className="text-gray-300 hover:text-cyan-400 font-medium transition-colors text-left flex items-center justify-between py-2"
                 >
-                  Pricing
+                  Sectors
                   <ChevronDown className={`w-4 h-4 transition-transform ${isPricingOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isPricingOpen && (
                   <div className="mt-2 ml-4 flex flex-col gap-2">
-                    <div className="px-4 py-2 bg-gray-800/50 rounded-lg">
-                      <div className="text-emerald-400 font-semibold text-sm mb-2">Hourly Rates</div>
-                      <div className="space-y-1 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-gray-300">Virtual</span>
-                          <span className="text-emerald-400 font-medium">$300/hr</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-300">Onsite</span>
-                          <span className="text-emerald-400 font-medium">$500/hr</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="px-4 py-2 bg-gray-800/50 rounded-lg">
-                      <div className="text-cyan-400 font-semibold text-sm mb-2">Project Types</div>
-                      <div className="text-sm text-gray-300 space-y-1">
-                        <div>Enterprise AI Strategies</div>
-                        <div>SMB AI Implementation</div>
-                        <div>Startup AI Roadmaps</div>
-                      </div>
-                    </div>
                     <a
-                      href="https://calendly.com/sia-sanjeevaniai/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-lg font-medium text-center"
+                      href="#sectors"
+                      className="px-4 py-2 hover:bg-cyan-500/10 hover:text-cyan-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      Book 1:1 Call
+                      Life Sciences & Healthcare
+                    </a>
+                    <a
+                      href="#sectors"
+                      className="px-4 py-2 hover:bg-cyan-500/10 hover:text-cyan-400 text-gray-400 transition-colors font-medium rounded-lg"
+                      onClick={closeMenu}
+                    >
+                      EdTech
+                    </a>
+                    <a
+                      href="#sectors"
+                      className="px-4 py-2 hover:bg-cyan-500/10 hover:text-cyan-400 text-gray-400 transition-colors font-medium rounded-lg"
+                      onClick={closeMenu}
+                    >
+                      Finance & Insurance
+                    </a>
+                    <a
+                      href="#sectors"
+                      className="px-4 py-2 hover:bg-cyan-500/10 hover:text-cyan-400 text-gray-400 transition-colors font-medium rounded-lg"
+                      onClick={closeMenu}
+                    >
+                      Other Regulated Industries
                     </a>
                   </div>
                 )}
               </div>
 
+
               {/* Main Navigation Links */}
-              <Link
-                to="/about"
-                className="text-gray-300 hover:text-green-400 font-medium transition-colors py-2"
-                onClick={closeMenu}
-              >
-                About
-              </Link>
               <Link
                 to="/case-studies"
                 className="text-gray-300 hover:text-cyan-400 font-medium transition-colors py-2"
                 onClick={closeMenu}
               >
-                Case Studies
+                Case Studies / Impact
               </Link>
               <Link
-                to="/frameworks"
-                className="text-gray-300 hover:text-emerald-400 font-medium transition-colors py-2"
+                to="/about"
+                className="text-gray-300 hover:text-green-400 font-medium transition-colors py-2"
                 onClick={closeMenu}
               >
-                Frameworks
-              </Link>
-              <Link
-                to="/frameworks-locked"
-                className="text-gray-300 hover:text-red-400 font-medium transition-colors py-2 flex items-center gap-2"
-                onClick={closeMenu}
-              >
-                <Lock className="w-4 h-4" />
-                Pro Frameworks
-              </Link>
-              <Link
-                to="/compliances"
-                className="text-gray-300 hover:text-purple-400 font-medium transition-colors py-2"
-                onClick={closeMenu}
-              >
-                Compliances
+                About / Team
               </Link>
               <Link
                 to="/blog"
                 className="text-gray-300 hover:text-orange-400 font-medium transition-colors py-2"
                 onClick={closeMenu}
               >
-                Blog
-              </Link>
-              <Link
-                to="/rai-courses"
-                className="text-gray-300 hover:text-pink-400 font-medium transition-colors py-2"
-                onClick={closeMenu}
-              >
-                RAI Courses
+                Resources / Insights
               </Link>
               <Link
                 to="/certifications"
-                className="text-gray-300 hover:text-yellow-400 font-medium transition-colors py-2"
+                className="text-gray-300 hover:text-yellow-400 font-medium transition-colors py-2 flex items-center gap-2"
                 onClick={closeMenu}
               >
-                Certifications
+                <Lock className="w-4 h-4" />
+                ISO 42001 Certified
               </Link>
+              <a
+                href="https://calendly.com/sia-sanjeevaniai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-emerald-400 font-medium transition-colors py-2 bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 px-4 py-2 rounded-lg text-center"
+                onClick={closeMenu}
+              >
+                Book Consultation
+              </a>
             </nav>
           </div>
         )}
