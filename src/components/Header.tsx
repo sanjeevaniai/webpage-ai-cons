@@ -82,14 +82,35 @@ const Header = () => {
                       className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      Data Science & AI Governance
+                      AI Governance & Strategy
                     </a>
                     <a
                       href="#services"
                       className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      AI Strategy Consulting
+                      Responsible AI Design
+                    </a>
+                    <a
+                      href="#services"
+                      className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
+                      onClick={closeMenu}
+                    >
+                      Data Science Consulting
+                    </a>
+                    <a
+                      href="#services"
+                      className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
+                      onClick={closeMenu}
+                    >
+                      Generative AI Solutions
+                    </a>
+                    <a
+                      href="#services"
+                      className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
+                      onClick={closeMenu}
+                    >
+                      AI Model Development
                     </a>
                     <a
                       href="#services"
@@ -97,13 +118,6 @@ const Header = () => {
                       onClick={closeMenu}
                     >
                       Multi-Agent Systems
-                    </a>
-                    <a
-                      href="#services"
-                      className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
-                      onClick={closeMenu}
-                    >
-                      AI Ethics & Compliance
                     </a>
                   </div>
                 )}
