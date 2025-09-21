@@ -10,7 +10,7 @@ const words = [
   "AI Governance",
   "Data-Driven AI",
   "Multi-Agent Systems",
-  "AI Ethics & Compliance",
+  "AI Ethics & Responsibility",
   "ROI Optimization",
   "Trustworthy AI"
 ]
@@ -270,7 +270,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              SANJEEVANI AI helps regulated enterprises govern and deploy multi-agent AI systems safely, responsibly, and profitably. We are the first governance-first advisory and engineering firm aligning ISO/IEC 42001, NIST AI RMF, and modern GRC frameworks to real-world AI engineering.
+              SANJEEVANI AI helps regulated enterprises govern and deploy multi-agent AI systems safely, responsibly, and profitably. We are the first governance-first advisory and engineering firm specializing in AI ethics, responsible design, and technical governance frameworks for real-world AI engineering.
             </motion.p>
 
             <motion.p
@@ -279,7 +279,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
             >
-              With 25+ years of cross-industry expertise, we bridge compliance, risk, and responsible AI design to help leaders ship AI that is safe to scale and simple to govern.
+              With 25+ years of cross-industry expertise, we bridge governance, risk management, and responsible AI design to help leaders ship AI that is safe to scale and simple to govern.
             </motion.p>
 
             <motion.div
@@ -331,7 +331,7 @@ const Index = () => {
     const services = [
       {
         title: "AI & Data Governance",
-        description: "ISO/IEC 42001, NIST AI RMF, EU AI Act, HIPAA, GDPR, SOC 2, HITRUST compliance frameworks tailored for multi-agent AI systems.",
+        description: "ISO/IEC 42001, NIST AI RMF, EU AI Act, HIPAA, GDPR, SOC 2, HITRUST governance frameworks tailored for multi-agent AI systems.",
         symbol: "🛡️"
       },
       {
@@ -467,8 +467,8 @@ const Index = () => {
   function WhyUsSection() {
     const differentiators = [
       {
-        title: "Compliance-First by Design",
-        description: "We don't retrofit governance - we build it into your AI systems from day one, ensuring regulatory compliance is a natural outcome, not an afterthought.",
+        title: "Governance-First by Design",
+        description: "We don't retrofit governance - we build it into your AI systems from day one, ensuring ethical AI practices and risk management are natural outcomes, not afterthoughts.",
         icon: "✅"
       },
       {
@@ -493,7 +493,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Us</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              The first governance-first advisory and engineering firm bridging compliance, risk, and responsible AI design for multi-agent systems.
+              The first governance-first advisory and engineering firm bridging technical governance, risk management, and responsible AI design for multi-agent systems.
             </p>
           </div>
 
@@ -521,13 +521,13 @@ const Index = () => {
   function GRCServicesSection() {
     const grcServices = [
       {
-        title: "Internal Audits",
-        description: "Comprehensive audits of your AI systems, data flows, and governance processes to identify gaps and ensure compliance readiness.",
+        title: "AI System Assessments",
+        description: "Comprehensive evaluations of your AI systems, data flows, and governance processes to identify gaps and ensure responsible AI readiness.",
         icon: "🔍"
       },
       {
-        title: "Assurance Reports",
-        description: "Detailed compliance reports for regulators, auditors, and stakeholders demonstrating adherence to AI governance standards.",
+        title: "Governance Reports",
+        description: "Detailed reports for stakeholders demonstrating adherence to AI governance standards and responsible AI practices.",
         icon: "📋"
       },
       {
@@ -536,13 +536,13 @@ const Index = () => {
         icon: "⚠️"
       },
       {
-        title: "Compliance Monitoring",
-        description: "Real-time dashboards and automated monitoring systems to track compliance metrics and alert on violations.",
+        title: "Governance Monitoring",
+        description: "Real-time dashboards and automated monitoring systems to track governance metrics and alert on potential issues.",
         icon: "📊"
       },
       {
         title: "Other Assessments",
-        description: "Custom assessments including impact evaluations, readiness reviews, and specialized compliance checks.",
+        description: "Custom assessments including impact evaluations, readiness reviews, and specialized governance checks.",
         icon: "✅"
       }
     ]
@@ -555,9 +555,9 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Core GRC Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Core AI Governance Services</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Our specialized AI Governance, Risk & Compliance services ensure your healthcare and EdTech AI systems meet the highest standards of regulatory compliance and operational excellence.
+              Our specialized AI Governance, Risk Management & Ethics services ensure your healthcare and EdTech AI systems meet the highest standards of responsible AI practices and operational excellence.
             </p>
           </div>
 
@@ -606,7 +606,7 @@ const Index = () => {
       },
       {
         title: "Regulatory Environment Focus",
-        description: "HIPAA for healthcare, FERPA for EdTech, plus state and international regulations. We focus on the regulations that matter to you.",
+        description: "HIPAA for healthcare, FERPA for EdTech, plus state and international regulations. We focus on the governance frameworks that matter to you.",
         icon: "⚖️"
       },
       {
@@ -670,12 +670,12 @@ const Index = () => {
   function WhatYouGetSection(openModal: () => void) {
     const deliverables = [
       {
-        category: "AI GRC Framework Implementation",
+        category: "AI Governance Framework Implementation",
         items: [
-          "Internal audits of AI systems and processes",
-          "Assurance reports for regulatory compliance",
+          "AI system assessments and evaluations",
+          "Governance reports for stakeholders",
           "Comprehensive risk assessments and mitigation strategies",
-          "Real-time compliance monitoring dashboards",
+          "Real-time governance monitoring dashboards",
           "HIPAA/NIST/ISO 42001 gap analysis for healthcare & EdTech",
           "Audit-ready documentation and processes"
         ],
@@ -732,9 +732,9 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI GRC & Multi-Agent Deliverables</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Governance & Multi-Agent Deliverables</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Complete AI Governance, Risk & Compliance frameworks, multi-agent system development, and responsible AI implementation that ensures your healthcare and EdTech AI initiatives are production-ready and auditable.
+              Complete AI Governance, Risk Management & Ethics frameworks, multi-agent system development, and responsible AI implementation that ensures your healthcare and EdTech AI initiatives are production-ready and auditable.
             </p>
           </div>
 
@@ -844,8 +844,8 @@ const Index = () => {
                 color: "emerald"
               },
               {
-                title: "Finance Compliance Leaders",
-                description: "AI governance frameworks for risk management, fraud detection, and regulatory reporting. Ensuring AI systems meet financial regulations and audit requirements.",
+        title: "Finance Risk Leaders",
+        description: "AI governance frameworks for risk management, fraud detection, and regulatory reporting. Ensuring AI systems meet financial governance standards and audit requirements.",
                 industry: "Finance",
                 icon: "💼",
                 color: "cyan"
@@ -858,8 +858,8 @@ const Index = () => {
                 color: "sky"
               },
               {
-                title: "Healthcare Compliance Teams",
-                description: "NIST AI RMF alignment, PHI protection, and audit-ready documentation. Moving from compliance burden to competitive advantage through AI governance.",
+        title: "Healthcare Governance Teams",
+        description: "NIST AI RMF alignment, PHI protection, and audit-ready documentation. Moving from governance burden to competitive advantage through AI governance.",
                 industry: "Healthcare",
                 icon: "🛡️",
                 color: "purple"
@@ -872,8 +872,8 @@ const Index = () => {
                 color: "emerald"
               },
               {
-                title: "EdTech Compliance Officers",
-                description: "Student data protection, algorithmic transparency, and educational equity. Ensuring AI in education serves all learners fairly and safely.",
+        title: "EdTech Governance Officers",
+        description: "Student data protection, algorithmic transparency, and educational equity. Ensuring AI in education serves all learners fairly and safely.",
                 industry: "EdTech",
                 icon: "📚",
                 color: "cyan"
@@ -912,7 +912,7 @@ const Index = () => {
             <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-8 border border-emerald-400/20">
               <h3 className="text-2xl font-bold text-white mb-4">Ready to Move from Pilot to Production?</h3>
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                Whether you're a digital health team, compliance leader, or edtech founder, we help you build AI systems that are audit-ready, regulator-approved, and business-ready.
+                Whether you're a digital health team, governance leader, or edtech founder, we help you build AI systems that are audit-ready, regulator-approved, and business-ready.
               </p>
               <button
                 onClick={openModal}
@@ -1146,19 +1146,19 @@ const Index = () => {
     const faqs = [
       {
         question: "What are the benefits of having an AI Governance Consultant?",
-        answer: "An AI Governance Consultant helps you build AI systems that are compliant, ethical, and trustworthy from day one. Benefits include: reduced regulatory risk, faster time-to-market with compliant AI, improved stakeholder trust, cost savings from avoiding compliance issues, and measurable ROI through better AI performance and reduced legal exposure."
+        answer: "An AI Governance Consultant helps you build AI systems that are ethical, responsible, and trustworthy from day one. Benefits include: reduced regulatory risk, faster time-to-market with governed AI, improved stakeholder trust, cost savings from avoiding governance issues, and measurable ROI through better AI performance and reduced legal exposure."
       },
       {
-        question: "How do you ensure AI systems are HIPAA compliant?",
+        question: "How do you ensure AI systems meet HIPAA requirements?",
         answer: "We conduct comprehensive gap analyses against HIPAA requirements, implement data flow mapping and access controls, establish audit trails, and create monitoring dashboards. Our approach includes technical safeguards (encryption, access controls), administrative safeguards (policies, training), and physical safeguards (data center security)."
       },
       {
         question: "What's the difference between AI governance and AI ethics?",
-        answer: "AI governance is the framework of policies, processes, and controls that ensure AI systems meet regulatory and business requirements. AI ethics focuses on moral principles and values. Governance makes ethics actionable through concrete policies, while ethics provides the moral foundation for governance decisions."
+        answer: "AI governance is the framework of policies, processes, and controls that ensure AI systems meet business and ethical requirements. AI ethics focuses on moral principles and values. Governance makes ethics actionable through concrete policies, while ethics provides the moral foundation for governance decisions."
       },
       {
         question: "How long does it take to implement AI governance?",
-        answer: "Implementation timelines vary by organization size and complexity. We typically deliver a 90-day roadmap with prioritized controls. Initial compliance baseline takes 2-4 weeks, core governance framework implementation takes 6-12 weeks, and full operationalization takes 3-6 months depending on your specific requirements."
+        answer: "Implementation timelines vary by organization size and complexity. We typically deliver a 90-day roadmap with prioritized controls. Initial governance baseline takes 2-4 weeks, core governance framework implementation takes 6-12 weeks, and full operationalization takes 3-6 months depending on your specific requirements."
       },
       {
         question: "Do you work with startups or only enterprises?",
@@ -1166,7 +1166,7 @@ const Index = () => {
       },
       {
         question: "What industries do you specialize in?",
-        answer: "We specialize in highly regulated industries including healthcare (HIPAA, clinical AI), finance (fraud detection, risk management), edtech (FERPA, student data protection), and insurance (actuarial AI, claims processing). Our expertise spans NIST AI RMF, EU AI Act, GDPR, CPRA, and other relevant frameworks."
+        answer: "We specialize in highly regulated industries including healthcare (HIPAA, clinical AI), finance (fraud detection, risk management), edtech (FERPA, student data protection), and insurance (actuarial AI, claims processing). Our expertise spans NIST AI RMF, EU AI Act, GDPR, CPRA, and other relevant governance frameworks."
       }
     ]
 
@@ -1188,7 +1188,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Common questions about AI governance, compliance, and our consulting services.
+              Common questions about AI governance, ethics, and our consulting services.
             </p>
           </div>
 
