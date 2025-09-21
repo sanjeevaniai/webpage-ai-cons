@@ -23,15 +23,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/30">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 md:h-28 lg:h-32">
           {/* Logo */}
-          <Link to="/" className="flex items-center" onClick={closeMenu}>
-            <video
-              src="/your_logo.mp4"
-              autoPlay
-              loop
-              muted
-              className="h-20 w-auto"
+          <Link to="/" className="flex items-center group" onClick={closeMenu}>
+            <img
+              src="/Sanjeevaniai-logo.png"
+              alt="SANJEEVANI AI"
+              className="h-14 w-auto md:h-18 lg:h-20 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-lg group-hover:drop-shadow-cyan-500/25"
             />
           </Link>
 

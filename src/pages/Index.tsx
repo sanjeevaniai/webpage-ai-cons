@@ -48,7 +48,6 @@ const Index = () => {
       {GRCServicesSection()}
       {NonOSFASection()}
       {WhatYouGetSection(setIsConsultationModalOpen)}
-      {NewsletterSection()}
       {CaseStudiesSection(setIsConsultationModalOpen)}
       {PlatformLinksSection(setIsConsultationModalOpen)}
       {FAQSection(setIsConsultationModalOpen)}
@@ -62,29 +61,12 @@ const Index = () => {
         onClose={handleNewsletterClose}
       />
 
-      {/* Sticky Newsletter Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-emerald-600 to-cyan-600 p-4 z-40 shadow-lg">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-white">
-            <p className="font-semibold">Get AI Governance insights weekly</p>
-            <p className="text-sm text-emerald-100">Join 500+ AI leaders</p>
-          </div>
-          <a
-            href="https://ainstein19.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 hover:scale-105 transition-all duration-200 whitespace-nowrap shadow-lg"
-          >
-            Subscribe to Our Newsletter →
-          </a>
-        </div>
-      </div>
     </div>
   )
 
   function Masthead(openModal: () => void) {
     return (
-      <section className="relative mx-auto max-w-7xl px-4 pt-20 md:pt-32 pb-16">
+      <section className="relative mx-auto max-w-7xl px-4 pt-24 md:pt-32 lg:pt-36 pb-16">
         {/* Green/Light Blue gradient background accents */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/20 rounded-full blur-3xl opacity-70"></div>
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl opacity-70"></div>
@@ -105,29 +87,53 @@ const Index = () => {
                 </div>
               </div>
 
+              {/* Main Headline */}
               <motion.h1
                 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <span>Complete AI GRC Services</span>
-                <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl">
-                  Governance • Risk • Compliance
+                <span>AI That's </span>
+                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent">
+                  Safe to Ship
+                </span>
+                <span className="text-4xl md:text-5xl lg:text-6xl text-gray-300 font-medium">
+                  {" "}& Simple to Govern
                 </span>
               </motion.h1>
 
               <motion.div
-                className="mb-8"
+                className="mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 <p className="text-xl md:text-2xl text-gray-300 font-medium mb-4">
-                  We provide technical GRC services for AI systems
+                  Why not follow best practices from day one?
                 </p>
                 <p className="text-lg md:text-xl text-emerald-300 font-semibold">
+                  Build the best AI–human synergy the world has ever seen.
+                </p>
+              </motion.div>
+
+              {/* Secondary Section */}
+              <motion.div
+                className="mb-8 p-6 bg-gradient-to-r from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/50 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Complete AI GRC Services
+                </h2>
+                <p className="text-xl md:text-2xl text-cyan-300 font-semibold mb-4">
+                  Governance • Risk • Compliance
+                </p>
+                <p className="text-lg text-gray-300 mb-4">
+                  We provide technical GRC services for AI systems.
+                </p>
+                <p className="text-base text-emerald-300 font-medium">
                   Data Science • Risk Assessment • Compliance Readiness
                 </p>
               </motion.div>
@@ -1172,55 +1178,6 @@ const Index = () => {
     )
   }
 
-  function NewsletterSection() {
-    return (
-      <section id="newsletter" className="mt-16 md:mt-20 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
-
-        <div className="mx-auto max-w-4xl px-4 relative z-10 pb-8">
-          <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-emerald-400/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get AI Governance Insights Weekly</h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-4">
-                Join 500+ AI leaders getting exclusive playbooks, governance frameworks, and real-world case studies every Tuesday.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-emerald-300">
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
-                  HIPAA & NIST frameworks
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
-                  AI ethics playbooks
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
-                  ROI optimization tips
-                </span>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <a
-                href="https://ainstein19.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 hover:scale-105"
-              >
-                Subscribe to Our Newsletter
-                <span className="text-emerald-200">→</span>
-              </a>
-              <p className="text-sm text-gray-400 mt-4">
-                ✅ Free forever • No spam • Unsubscribe anytime
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
 
 
   function FAQSection(openModal: () => void) {
@@ -1356,123 +1313,34 @@ const Index = () => {
 }
 
 function Footer() {
-  // Footer with compact contact icons
-  const socialPlatforms = [
-    {
-      name: "X (Twitter)",
-      handle: "@sanjeevaniai",
-      url: "https://x.com/sanjeevaniai",
-      icon: "𝕏",
-      color: "sky"
-    },
-    {
-      name: "LinkedIn",
-      handle: "SANJEEVANI AI LLC",
-      url: "https://www.linkedin.com/company/sanjeevani-ai-llc/",
-      icon: "💼",
-      color: "emerald"
-    },
-    {
-      name: "Facebook",
-      handle: "SANJEEVANI AI",
-      url: "https://facebook.com/sanjeevaniai",
-      icon: "📘",
-      color: "blue"
-    }
-  ]
-
   return (
     <footer className="mt-16 md:mt-20 relative">
-      {/* Background accents */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
-
-      <div className="mx-auto max-w-6xl px-4 relative z-10">
-        {/* Connect With Us Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Connect With Us</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-            Follow our journey and stay updated with the latest in AI governance and responsible AI practices.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {socialPlatforms.map((platform, i) => {
-              const colorClasses = {
-                sky: 'border-sky-400/30 hover:border-sky-400/50 hover:bg-sky-500/5 hover:shadow-sky-500/10',
-                emerald: 'border-emerald-400/30 hover:border-emerald-400/50 hover:bg-emerald-500/5 hover:shadow-emerald-500/10',
-                blue: 'border-blue-400/30 hover:border-blue-400/50 hover:bg-blue-500/5 hover:shadow-blue-500/10'
-              }
-
-              const textColorClasses = {
-                sky: 'text-sky-400 group-hover:text-sky-300',
-                emerald: 'text-emerald-400 group-hover:text-emerald-300',
-                blue: 'text-blue-400 group-hover:text-blue-300'
-              }
-
-              return (
-                <a
-                  key={i}
-                  href={platform.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group bg-gray-800/10 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 shadow-lg hover:shadow-2xl hover:backdrop-blur-2xl ${colorClasses[platform.color]}`}
-                >
-                  <div className="text-center">
-                    <div className={`text-4xl mb-4 transition-colors ${textColorClasses[platform.color]}`}>
-                      {platform.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-2 transition-colors group-hover:text-gray-100">
-                      {platform.name}
-                    </h3>
-                    <p className={`text-sm transition-colors ${textColorClasses[platform.color]}`}>
-                      {platform.handle}
-                    </p>
-                    <div className="mt-4 flex items-center justify-center text-sm font-medium group-hover:translate-x-1 transition-transform">
-                      <span className="text-gray-300 group-hover:text-white">Follow</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Footer Links */}
-        <div className="border-t border-gray-700/30 pt-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <span className="text-gray-400">© {new Date().getFullYear()} SANJEEVANI AI • Custom AI Agents & LLM Fine-tuning</span>
+      <div className="mx-auto max-w-6xl px-4">
+        {/* Simple Footer */}
+        <div className="border-t border-gray-700/30 pt-8 pb-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Copyright */}
+            <div className="text-center md:text-left">
+              <span className="text-gray-400">© {new Date().getFullYear()} SANJEEVANI AI • Technical GRC Services for AI Systems</span>
             </div>
-            <div className="flex flex-wrap gap-6">
-              {/* Contact Icons */}
-              <div className="flex flex-wrap gap-4">
-                <a href="mailto:suneeta@sanjeevaniai.com" className="text-gray-400 hover:text-emerald-400 transition-colors flex items-center gap-2">
-                  <span className="text-lg">📧</span>
-                  <span className="hidden sm:inline">Email</span>
-                </a>
-                <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-sky-400 transition-colors flex items-center gap-2">
-                  <span className="text-lg">📅</span>
-                  <span className="hidden sm:inline">Book Call</span>
-                </a>
-                <a href="https://ainstein19.substack.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-2">
-                  <span className="text-lg">📰</span>
-                  <span className="hidden sm:inline">Newsletter</span>
-                </a>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <span className="text-gray-600">•</span>
-                <a href="https://www.linkedin.com/company/sanjeevani-ai-llc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-400 transition-colors">LinkedIn</a>
-                <a href="https://www.upwork.com/freelancers/~01968cb9a3759f39de?mp_source=share" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-sky-400 transition-colors">Upwork</a>
-                <a href="https://topmate.io/suneeta19" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">Topmate</a>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <span className="text-gray-600">•</span>
-                <a href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">Privacy Policy</a>
-                <a href="/terms" className="text-gray-400 hover:text-sky-400 transition-colors">Terms & Conditions</a>
-              </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-6">
+              <a href="mailto:suneeta@sanjeevaniai.com" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                Email
+              </a>
+              <a href="https://calendly.com/sia-sanjeevaniai/30min" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-sky-400 transition-colors">
+                Book Call
+              </a>
+              <a href="https://www.linkedin.com/company/sanjeevani-ai-llc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                LinkedIn
+              </a>
+              <a href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                Privacy
+              </a>
+              <a href="/terms" className="text-gray-400 hover:text-sky-400 transition-colors">
+                Terms
+              </a>
             </div>
           </div>
         </div>
