@@ -176,7 +176,7 @@ const Index = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.4, duration: 0.6 }}
                       >
-                        <span className="text-sm text-gray-400">Ethics Compliance</span>
+                        <span className="text-sm text-gray-400">Ethics Score</span>
                         <div className="flex items-center gap-2">
                           <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
                             <motion.div
@@ -270,7 +270,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              SANJEEVANI AI helps regulated enterprises govern and deploy multi-agent AI systems safely, responsibly, and profitably. We are the first governance-first advisory and engineering firm specializing in AI ethics, responsible design, and technical governance frameworks for real-world AI engineering.
+              SANJEEVANI AI helps Life Sciences, EdTech, and Finance companies build trustworthy AI systems through data science, predictive analytics, and technical governance. We specialize in AI model development, ethical design, and internal governance frameworks - focusing on the "G" (Governance) of GRC without providing legal compliance certification.
             </motion.p>
 
             <motion.p
@@ -279,7 +279,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
             >
-              With 25+ years of cross-industry expertise, we bridge governance, risk management, and responsible AI design to help leaders ship AI that is safe to scale and simple to govern.
+              With 25+ years of cross-industry expertise in data science and AI engineering, we create internal governance frameworks, ethical AI policies, and technical standards that help leaders build AI systems that are trustworthy, scalable, and production-ready.
             </motion.p>
 
             <motion.div
@@ -330,33 +330,33 @@ const Index = () => {
   function ServicesSection() {
     const services = [
       {
-        title: "AI & Data Governance",
-        description: "ISO/IEC 42001, NIST AI RMF, EU AI Act, HIPAA, GDPR, SOC 2, HITRUST governance frameworks tailored for multi-agent AI systems.",
+        title: "AI Governance & Strategy",
+        description: "Internal governance frameworks and ethical AI policies for Life Sciences, EdTech, and Finance. Technical/operational policies, not legal compliance documents.",
         symbol: "🛡️"
       },
       {
-        title: "Responsible/Explainable AI",
-        description: "Bias testing, fairness assessment, transparency reports, and human oversight protocols for multi-agent AI environments.",
+        title: "Responsible AI Design & Deployment",
+        description: "Healthcare, Pharma, Biotech, EdTech, Finance AI systems with built-in ethics, transparency, and explainability from day one.",
         symbol: "📊"
       },
       {
-        title: "AI Engineering",
-        description: "Multi-agent architectures, RAG systems, fine-tuning (LoRA/QLoRA/PEFT), LangChain/CrewAI implementation with governance built-in.",
+        title: "Data Science Consulting",
+        description: "Bioinformatics, Health Analytics, Insurance, Educational Analytics, Financial Modeling, and predictive analytics for regulated industries.",
         symbol: "⚙️"
       },
       {
-        title: "Privacy & Security",
-        description: "Differential Privacy, red-teaming, Zero Trust architecture, OWASP LLM Top 10, MITRE ATLAS security frameworks.",
+        title: "Generative AI Solutions",
+        description: "Custom GenAI implementations for Life Sciences, EdTech, and Finance with governance and safety protocols built-in.",
         symbol: "🔒"
       },
       {
-        title: "Advisory Services",
-        description: "Executive training, governance operating models, Fractional CAIO services for ongoing AI governance leadership.",
+        title: "AI Model Development & Validation",
+        description: "End-to-end model development, validation, and deployment for all regulated and high-stakes sectors with technical excellence.",
         symbol: "🎓"
       },
       {
-        title: "Sector Expertise",
-        description: "Healthcare, Finance, EdTech, Insurance - deep domain knowledge across regulated industries deploying multi-agent AI.",
+        title: "Multi-Agent Systems Consulting",
+        description: "Complex multi-agent AI architectures with orchestration, communication protocols, and governance frameworks for enterprise deployment.",
         symbol: "🏥"
       }
     ]
@@ -371,7 +371,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What We Do</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Comprehensive AI governance, engineering, and advisory services for regulated enterprises deploying multi-agent AI systems.
+              We build trustworthy AI systems through data science, predictive analytics, and technical governance. Our services ensure your AI is ethical, reliable, and production-ready.
             </p>
           </div>
 
@@ -404,19 +404,19 @@ const Index = () => {
       {
         step: "01",
         title: "Baseline",
-        description: "Comprehensive assessment of your current AI systems, governance maturity, and compliance gaps.",
+        description: "Comprehensive assessment of your current AI systems, governance maturity, and technical readiness for trustworthy AI deployment.",
         icon: "📊"
       },
       {
         step: "02",
         title: "Guardrails",
-        description: "Design and implement governance frameworks, risk controls, and compliance protocols tailored to your multi-agent AI systems.",
+        description: "Design and implement governance frameworks, ethical controls, and technical protocols tailored to your multi-agent AI systems.",
         icon: "🛡️"
       },
       {
         step: "03",
         title: "Operationalize",
-        description: "Deploy governance systems, monitoring dashboards, and operational processes for ongoing compliance and risk management.",
+        description: "Deploy governance systems, monitoring dashboards, and operational processes for ongoing trustworthy AI management.",
         icon: "⚙️"
       },
       {
@@ -521,28 +521,28 @@ const Index = () => {
   function GRCServicesSection() {
     const grcServices = [
       {
-        title: "AI System Assessments",
-        description: "Comprehensive evaluations of your AI systems, data flows, and governance processes to identify gaps and ensure responsible AI readiness.",
+        title: "AI Ethics & Transparency Audits",
+        description: "Comprehensive evaluation of AI models for bias, fairness, transparency, and explainability with technical mitigation strategies.",
         icon: "🔍"
       },
       {
-        title: "Governance Reports",
-        description: "Detailed reports for stakeholders demonstrating adherence to AI governance standards and responsible AI practices.",
+        title: "Regulatory Alignment Advisory",
+        description: "Guidance on aligning with ISO/IEC 42001, NIST AI RMF, and sector-specific standards without providing legal compliance certification.",
         icon: "📋"
       },
       {
-        title: "Risk Assessments",
-        description: "Systematic evaluation of AI-related risks including bias, security, privacy, and operational risks with mitigation strategies.",
+        title: "Risk Assessment & Data Integrity",
+        description: "Technical risk evaluation and data integrity review for Healthcare, Finance, EdTech, and sensitive industries.",
         icon: "⚠️"
       },
       {
-        title: "Governance Monitoring",
-        description: "Real-time dashboards and automated monitoring systems to track governance metrics and alert on potential issues.",
+        title: "Model Performance Monitoring",
+        description: "Real-time dashboards and automated monitoring systems to track model performance, data drift, and AI system health.",
         icon: "📊"
       },
       {
-        title: "Other Assessments",
-        description: "Custom assessments including impact evaluations, readiness reviews, and specialized governance checks.",
+        title: "Internal Policy Development",
+        description: "Technical/operational AI usage guidelines, transparency protocols, explainability standards, and bias mitigation processes.",
         icon: "✅"
       }
     ]
@@ -555,9 +555,9 @@ const Index = () => {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Core AI Governance Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Core Services: The "G" in GRC</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Our specialized AI Governance, Risk Management & Ethics services ensure your healthcare and EdTech AI systems meet the highest standards of responsible AI practices and operational excellence.
+              We focus on AI Governance - creating internal frameworks, ethical policies, and technical standards. We advise on best practices and regulatory alignment, but don't provide legal compliance certification unless partnered with licensed experts.
             </p>
           </div>
 
@@ -596,7 +596,7 @@ const Index = () => {
       },
       {
         title: "Risk Profile Customization",
-        description: "Each organization has unique risk tolerances and compliance requirements. We design governance that matches your specific risk appetite.",
+        description: "Each organization has unique technical requirements and ethical standards. We design governance that matches your specific AI deployment needs.",
         icon: "🎯"
       },
       {
@@ -655,7 +655,7 @@ const Index = () => {
             <div className="bg-gradient-to-r from-cyan-900/20 to-emerald-900/20 backdrop-blur-xl rounded-2xl p-8 border border-cyan-700/30">
               <h3 className="text-2xl font-bold text-white mb-4">Why Non-OSFA Matters</h3>
               <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Generic AI governance frameworks often create compliance gaps, operational inefficiencies, and unnecessary complexity.
+                Generic AI governance frameworks often create technical gaps, operational inefficiencies, and unnecessary complexity.
                 Our Non-OSFA approach ensures your AI governance is <span className="text-cyan-400 font-semibold">precisely tailored</span> to your organization's needs,
                 <span className="text-emerald-400 font-semibold"> cost-effective</span> to implement, and
                 <span className="text-sky-400 font-semibold"> scalable</span> as you grow.
@@ -674,7 +674,7 @@ const Index = () => {
         items: [
           "AI system assessments and evaluations",
           "Governance reports for stakeholders",
-          "Comprehensive risk assessments and mitigation strategies",
+          "Comprehensive AI model evaluations and technical mitigation strategies",
           "Real-time governance monitoring dashboards",
           "HIPAA/NIST/ISO 42001 gap analysis for healthcare & EdTech",
           "Audit-ready documentation and processes"
@@ -700,7 +700,7 @@ const Index = () => {
         category: "Training & Enablement",
         items: [
           "Executive AI governance training sessions",
-          "Team workshops on AI ethics and compliance",
+          "Team workshops on AI ethics and responsible design",
           "Policy templates and implementation guides",
           "AI procurement and vendor evaluation checklists",
           "Risk management playbooks",
@@ -830,7 +830,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Who We Serve</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Digital health teams and compliance leaders across healthcare, finance, and edtech who need AI that's safe to ship and simple to govern.
+              Digital health teams and technical leaders across healthcare, finance, and edtech who need AI that's safe to ship and simple to govern.
             </p>
           </div>
 
@@ -1101,7 +1101,7 @@ const Index = () => {
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get AI Governance Insights Weekly</h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-4">
-                Join 500+ AI leaders getting exclusive playbooks, compliance frameworks, and real-world case studies every Tuesday.
+                Join 500+ AI leaders getting exclusive playbooks, governance frameworks, and real-world case studies every Tuesday.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-emerald-300">
                 <span className="flex items-center gap-1">
