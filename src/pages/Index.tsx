@@ -48,6 +48,7 @@ const Index = () => {
       {GRCServicesSection()}
       {NonOSFASection()}
       {WhatYouGetSection(setIsConsultationModalOpen)}
+      {DataScienceMentoringSection(setIsConsultationModalOpen)}
       {CaseStudiesSection(setIsConsultationModalOpen)}
       {PlatformLinksSection(setIsConsultationModalOpen)}
       {FAQSection(setIsConsultationModalOpen)}
@@ -425,6 +426,11 @@ const Index = () => {
         symbol: "⚠️"
       },
       {
+        title: "Data Science & Analytics Mentoring",
+        description: "1-on-1 mentoring for data scientists, ML engineers, and analysts. Covering Python, R, SQL, statistical modeling, data visualization, and advanced analytics techniques.",
+        symbol: "📊"
+      },
+      {
         title: "Compliance Readiness & Advisory",
         description: "Technical adherence to ISO/IEC 42001, GDPR, HIPAA, FERPA, SOC2 standards. Process mapping, readiness assessments, and mock audits for certification preparation.",
         symbol: "📋"
@@ -435,14 +441,9 @@ const Index = () => {
         symbol: "⚙️"
       },
       {
-        title: "AI Model Development",
-        description: "End-to-end model development, validation, and deployment for all regulated and high-stakes sectors with technical excellence.",
+        title: "AI Model Development & Training",
+        description: "End-to-end model development, validation, and deployment. Custom ML solutions, model training, and production deployment for regulated sectors.",
         symbol: "🎓"
-      },
-      {
-        title: "AI Evals & Audits",
-        description: "Comprehensive evaluation of AI models for bias, fairness, transparency, and explainability with technical mitigation strategies.",
-        symbol: "🔍"
       }
     ]
 
@@ -907,6 +908,102 @@ const Index = () => {
   }
 
 
+
+  function DataScienceMentoringSection(openModal: () => void) {
+    const mentoringAreas = [
+      {
+        title: "Python & R Programming",
+        description: "Advanced programming techniques, data manipulation, and statistical computing",
+        icon: "🐍"
+      },
+      {
+        title: "Machine Learning & AI",
+        description: "Model development, training, validation, and deployment strategies",
+        icon: "🤖"
+      },
+      {
+        title: "Data Visualization",
+        description: "Creating compelling visualizations with Matplotlib, Seaborn, Plotly, and Tableau",
+        icon: "📈"
+      },
+      {
+        title: "Statistical Analysis",
+        description: "Advanced statistics, hypothesis testing, and experimental design",
+        icon: "📊"
+      },
+      {
+        title: "Big Data & SQL",
+        description: "Working with large datasets, SQL optimization, and data warehousing",
+        icon: "🗄️"
+      },
+      {
+        title: "Career Development",
+        description: "Portfolio building, interview prep, and career advancement strategies",
+        icon: "🚀"
+      }
+    ]
+
+    return (
+      <section className="mt-24 md:mt-32 relative">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <div className="mx-auto max-w-7xl px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Data Science & Analytics Mentoring</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Accelerate your data science career with personalized 1-on-1 mentoring from industry experts.
+              Learn practical skills, build real-world projects, and advance your career in AI and data analytics.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {mentoringAreas.map((area, i) => (
+              <motion.div
+                key={i}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/40 shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-4xl mb-4">{area.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{area.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{area.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-400/20">
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to Level Up Your Data Science Skills?</h3>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Get personalized mentoring from industry experts with 25+ years of experience.
+                Whether you're starting your journey or looking to advance, we'll help you succeed.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={openModal}
+                  className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-purple-500/25 hover:scale-105"
+                >
+                  Book Mentoring Session
+                </button>
+                <a
+                  href="https://calendly.com/sia-sanjeevaniai/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800/50 hover:bg-gray-700/50 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 border border-gray-600/50 hover:border-purple-400/50"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   function CaseStudiesSection(openModal: () => void) {
     return (

@@ -21,7 +21,7 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/30">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900/20 via-gray-800/30 to-gray-900/20 backdrop-blur-xl border-b border-emerald-400/20 shadow-lg">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex items-center justify-between h-24 md:h-28 lg:h-32">
           {/* Logo */}
@@ -40,7 +40,7 @@ const Header = () => {
               href="https://calendly.com/sia-sanjeevaniai/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-500 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-sky-400/25"
+              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-emerald-500/25"
             >
               Get in touch
             </a>
@@ -62,7 +62,7 @@ const Header = () => {
 
         {/* Navigation Menu - Always visible when open */}
         {isMenuOpen && (
-          <div className="bg-black/95 backdrop-blur-md max-h-[80vh] overflow-y-auto py-6 border-t border-gray-700/50 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+          <div className="bg-gradient-to-b from-gray-900/95 via-gray-800/90 to-gray-900/95 backdrop-blur-xl max-h-[80vh] overflow-y-auto py-6 border-t border-emerald-400/20 shadow-lg scrollbar-thin scrollbar-thumb-emerald-600/50 scrollbar-track-gray-800">
             <nav className="flex flex-col gap-6 px-4">
               {/* Services Mobile Menu */}
               <div className="flex flex-col">
@@ -108,14 +108,14 @@ const Header = () => {
                       className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      AI Evals & Audits
+                      Data Science Mentoring
                     </a>
                     <a
                       href="#services"
                       className="px-4 py-2 hover:bg-emerald-500/10 hover:text-emerald-400 text-gray-400 transition-colors font-medium rounded-lg"
                       onClick={closeMenu}
                     >
-                      Multi-Agent Systems
+                      AI Evals & Audits
                     </a>
                   </div>
                 )}
